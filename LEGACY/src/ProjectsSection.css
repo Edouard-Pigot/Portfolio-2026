@@ -1,0 +1,22 @@
+.projects-section {
+  --projects-rows: 2;
+  --projects-cols: 2;
+  --projects-cell-max-width: calc((1400px - (11.0px * (var(--projects-cols) - 1))) / var(--projects-cols));
+  --projects-banner-row-height-scaling-factor: 0.0215;
+  --projects-row-height-scaling-factor: 0.215;
+  --projects-container-width: 1400px;
+  grid-template-columns: 1fr repeat(var(--projects-cols), minmax(0, var(--projects-cell-max-width))) 1fr;
+  grid-template-rows: minmax(calc(var(--projects-container-width) * var(--projects-banner-row-height-scaling-factor)), auto) repeat(var(--projects-rows), minmax(calc(var(--projects-container-width) * var(--projects-row-height-scaling-factor)), auto));
+}
+
+.projects-section #projects-cards-container {
+  /* row-start / col-start / row-end / col-end */
+  grid-area: 2 / 1 / 2 / 5;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.projects-section .scrolling-banner {
+  grid-area: 1 / 1 / 2 / 5;
+}

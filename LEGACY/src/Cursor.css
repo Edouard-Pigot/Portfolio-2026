@@ -1,0 +1,44 @@
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.cursor-line {
+  position: absolute;
+  pointer-events: none;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.cursor-vertical{
+  width: 1px;
+  height: 200vh;
+}
+
+.cursor-horizontal{
+  width: 200vw; 
+  height: 1px;
+}
+
+.cursor-center-vertical,
+.cursor-center-horizontal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.cursor-center-vertical {
+  transition: height 120ms ease, background-color 150ms ease;
+  height: 24px;
+  width: 1px;
+}
+
+.cursor-center-horizontal {
+  transition: width 120ms ease, background-color 150ms ease;
+  height: 1px;
+  width: 24px;
+}

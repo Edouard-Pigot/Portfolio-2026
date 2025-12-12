@@ -1,0 +1,12 @@
+{   
+    "nav-home": "ACCUEIL",
+    "nav-about": "À\u00a0PROPOS",
+    "nav-projects": "PROJETS",
+    "nav-experience": "EXPÉRIENCE",
+    "nav-education": "PARCOURS",
+    "nav-contact": "CONTACT",
+    "hero-description": "Développeur logiciel français curieux et créatif.",
+    "about-banner": "À PROPOS DE MOI",
+    "about-description": "A étudié l'informatique et l'infographie en France, obtenant un DUT en informatique avec une spécialisation en développement Android en 2018, suivi d'une licence en informatique avec une spécialisation en modélisation 3D en 2019. A obtenu un master en informatique - Géométrie et Informatique Graphique en 2021, avec une spécialisation en modélisation géométrique, interfaces homme-machine et visualisation interactive.\n\n En 2021, a rejoint Dassault Systèmes en tant que stagiaire en génie logiciel au sein de l'équipe « CID/WebUX » chargée des interfaces humaines. Pendant cette période, a travaillé à l'optimisation des interactions des utilisateurs en réalité virtuelle et à la mise en œuvre de techniques avancées de sélection d'objets en C++, améliorant ainsi la précision et la réactivité dans les environnements immersifs.\n\n En 2022, il a été promu au poste d'ingénieur logiciel associé à temps plein au sein de la même équipe. Il a contribué au développement et à la maintenance de composants d'interface utilisateur natifs et web pour les outils et frameworks internes utilisés sur les plateformes de Dassault Systèmes. Son travail couvre à la fois les systèmes d'interface utilisateur C++ de bas niveau et l'intégration web de haut niveau utilisant JavaScript, JSON et JSON Schema.\n\n Alliant une solide base technique à une passion pour le design, Édouard explore l'intersection entre l'ergonomie, la communication visuelle et la technologie 3D. Ses centres d'intérêt s'étendent de la conception web et d'interfaces à la modélisation 3D, la génération procédurale et l'animation.",
+    "projects-banner": "MES PROJETS"
+}

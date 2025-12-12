@@ -1,0 +1,69 @@
+@font-face {
+  font-family: Doto-rounded;
+  src: url(./assets/Doto_Rounded-Black.ttf);
+}
+@font-face {
+  font-family: Doto;
+  src: url(./assets/Doto-Bold.ttf);
+}
+@font-face {
+  font-family: Oxanium;
+  src: url(./assets/Oxanium-Light.ttf);
+}
+@font-face {
+  font-family: Nosutaru;
+  src: url(./assets/Nosutaru-dotMPlusH-10-Regular.ttf);
+}
+
+
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  --accent-color: rgb(255, 242, 0);
+  --accent-shadow: var(--accent-color) 4px 0 20px, var(--accent-color) 0px 4px 20px, var(--accent-color) -4px 0 20px, var(--accent-color) 0 -4px 20px;
+}
+
+:root {
+  font-family: Oxanium, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /*color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #000000;*/
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  white-space: pre-line;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  
+  /*cursor: none;*/
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    /*color: #213547;
+    background-color: #ffffff;
+    --accent-color: rgb(0, 200, 200);
+    --accent-shadow: var(--accent-color) 4px 0 20px, var(--accent-color) 0px 4px 20px, var(--accent-color) -4px 0 20px, var(--accent-color) 0 -4px 20px;*/
+  }
+}

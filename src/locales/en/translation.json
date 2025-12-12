@@ -1,0 +1,12 @@
+{   
+    "nav-home": "HOME",
+    "nav-about": "ABOUT",
+    "nav-projects": "PROJECTS",
+    "nav-experience": "EXPERIENCE",
+    "nav-education": "EDUCATION",
+    "nav-contact": "CONTACT",
+    "hero-description": "Curious and creative French software developer.",
+    "about-banner": "ABOUT ME",
+    "about-description": "Studied computer science and computer graphics in France, earning a DUT in Informatique with a focus on Android development in 2018, followed by a Licence Informatique specializing in 3D modelling in 2019. Completed a Master’s degree in Informatique — Géométrie et Informatique Graphique in 2021, focusing on geometric modelling, human–machine interfaces, and interactive visualization.\n\n In 2021, joined Dassault Systèmes as a Software Engineering Intern in the Human Interface “CID/WebUX” team. During this time, worked on optimizing VR user interactions and implementing advanced object-picking techniques in C++, enhancing precision and responsiveness in immersive environments.\n\n In 2022, transitioned to a full-time position as Software Engineering Associate in the same team. Contributed to the development and maintenance of native and web user interface components for internal tools and frameworks used across Dassault Systèmes’ platforms. Work spans both low-level C++ UI systems and higher-level web integration using JavaScript, JSON, and JSON Schema.\n\n Combining a strong technical foundation with a passion for design, Édouard explores the intersection of usability, visual communication, and 3D technology. His interests extend from web and interface design to 3D modelling, procedural generation, and animation.",
+    "projects-banner": "MY PROJECTS"
+}

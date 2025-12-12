@@ -1,0 +1,44 @@
+.about-section {
+  --about-rows: 15;
+  --about-cols: 24;
+  --about-cell-max-width: calc((1400px - (11.0px * (var(--about-cols) - 1))) / var(--about-cols));
+  --about-row-height-scaling-factor: 0.0215;
+  --about-container-width: 1400px;
+  grid-template-columns: 1fr repeat(var(--about-cols), minmax(0, var(--about-cell-max-width))) 1fr;
+  grid-template-rows: repeat(var(--about-rows), minmax(calc(var(--about-container-width) * var(--about-row-height-scaling-factor)), auto));
+}
+
+.scrolling-banner {
+  grid-area: 1 / 1 / 2 / 27;
+  z-index: 2;
+  background-color: black;
+}
+
+.border-right {
+  grid-area: 1 / 25 / 16 / 25;
+  border-right: 1px white solid;
+  z-index: 1;
+}
+
+.border-left {
+  grid-area: 1 / 2 / 16 / 2;
+  border-left: 1px white solid;
+  z-index: 1;
+}
+
+.about-section #about-description {
+  /* row-start / col-start / row-end / col-end */
+  grid-area: 4 / 3 / 15 / 25;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+}
+
+.about-section #about-description p+p {
+  margin-top: 1rem;
+}
+
+.about-section #about-description p+p {
+  color: rgba(255, 255, 255, 0.192)
+}

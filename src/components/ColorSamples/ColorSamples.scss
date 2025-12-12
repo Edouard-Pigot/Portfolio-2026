@@ -1,0 +1,135 @@
+@use "sass:color";
+
+.color-square {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+}
+
+$QUARTZ: #e7e2de;
+$LIMESTONE: #c9c5c2;
+$FLINT: #b2aead;
+$DOLOMITE: #747273;
+$GRANITE: #545351;
+$OBSIDIAN: #252525;
+$ORANGE: #ff792e;
+$PEACH: #fc4948;
+$STRAWBERRY: #f03067;
+$SKY: #5cb3df;
+
+
+
+.quartz {
+  background-color: $QUARTZ;
+}
+
+.limestone {
+  background-color: $LIMESTONE;
+}
+
+.flint {
+  background-color: $FLINT;
+}
+
+.dolomite {
+  background-color: $DOLOMITE;
+}
+
+.granite {
+  background-color: $GRANITE;
+}
+
+.obsidian {
+  background-color: $OBSIDIAN;
+}
+
+.orange {
+  background-color: $ORANGE;
+}
+
+.peach {
+  background-color: $PEACH;
+}
+
+.strawberry {
+  background-color: $STRAWBERRY;
+}
+
+.sky {
+  background-color: $SKY;
+}
+
+.dolomite, .granite, .obsidian {
+  color: white;
+}
+
+.dot {
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  margin: 42.5px;
+  box-shadow: 1px 1px 3px 1px #ffffff, -1px -1px 3px 1px rgba(0,0,0,0.25), inset 1px 1px 3px rgba(0,0,0,0.25);
+}
+
+.button {
+  border-radius: 1rem;
+  border: none;
+  font-family: Oxanium;
+  height: 30px;
+  margin: 0 5px;
+  text-align: center;
+  padding: 0 1rem;
+  line-height: 32px;
+  box-shadow: inset 1px 1px 1px 1px rgba(255, 255, 255,0.35), inset -1px -1px 2px 1px rgba(0,0,0,0.09), 1px 1px 2px 0px rgba(0,0,0,0.25);
+  transition: box-shadow 0.2s ease;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+$colors: (
+  'quartz': $QUARTZ,
+  'limestone': $LIMESTONE,
+  'flint': $FLINT,
+  'dolomite': $DOLOMITE,
+  'granite': $GRANITE,
+  'obsidian': $OBSIDIAN,
+  'orange': $ORANGE,
+  'peach': $PEACH,
+  'strawberry': $STRAWBERRY,
+  'sky': $SKY
+);
+
+@mixin button-hover($color) {
+  background-color: color.adjust($color, $lightness: 5%);
+  box-shadow: inset 1px 1px 1px 1px rgba(255, 255, 255, 0.35),
+    inset -1px -1px 3px 1px rgba(0, 0, 0, 0.09),
+    2px 2px 4px 0px rgba(0, 0, 0, 0.25),
+    0px 0px 3px 3px rgba($color, 0.25);
+}
+
+@each $name, $color in $colors {
+  .button:hover.#{$name},
+  .button.hover.#{$name} {
+    @include button-hover($color);
+  }
+}
+
+
+#buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 5rem;
+}
+
+

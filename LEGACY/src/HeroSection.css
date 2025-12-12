@@ -1,0 +1,46 @@
+.hero-section {
+  padding-top: 6rem;
+}
+
+.hero-section div {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-section #hero-title {
+  /* row-start / col-start / row-end / col-end */
+  grid-area: 10 / 3 / 15 / 13;
+  font-size: 2rem;
+  font-family: 'Doto', sans-serif;
+}
+
+.hero-section #hero-title h2 {
+  font-family: 'Nosutaru', sans-serif;
+}
+
+.hero-section #hero-title .slash-decorator {
+  font-family: 'Doto', sans-serif;
+}
+
+.hero-section #hero-description {
+  /* row-start / col-start / row-end / col-end */
+  grid-area: 17 / 3 / 19 / 12;
+  font-size: 1rem;
+}
+
+.hero-section #hero-description p+p {
+  margin-top: 1rem;
+}
+
+.hero-section div h2, .hero-section div p+p {
+  color: rgba(255, 255, 255, 0.192)
+}
+
+.hero-section #hero-image {
+  /* row-start / col-start / row-end / col-end */
+  grid-area: 2 / 15 / 28 / 25;
+  background-color: rgba(255, 255, 255, 0.1);
+  background-clip: content-box;
+  padding: 1rem;
+  border: rgba(255, 255, 255, 0.5) dashed 1px;
+}

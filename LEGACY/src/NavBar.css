@@ -1,0 +1,22 @@
+#navbar {
+  top: 0;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  background-color: black;
+  border-bottom: rgba(255, 255, 255, 0.6) 1px solid;
+  z-index: 1;
+}
+
+#menu {
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-weight: 500;
+  font-size: 14px;
+  justify-content: center;
+}

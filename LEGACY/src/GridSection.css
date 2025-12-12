@@ -1,0 +1,12 @@
+.grid-section {
+  display: grid;
+  row-gap: 11px;
+  column-gap: 11px;
+  --rows: 29;
+  --cols: 24;
+  --cell-max-width: calc((1400px - (11.0px * (var(--cols) - 1))) / var(--cols));
+  --row-height-scaling-factor: 0.0215;
+  --container-width: 1400px;
+  grid-template-columns: 1fr repeat(var(--cols), minmax(0, var(--cell-max-width))) 1fr;
+  grid-template-rows: repeat(var(--rows), minmax(calc(var(--container-width) * var(--row-height-scaling-factor)), auto));
+}

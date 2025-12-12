@@ -1,0 +1,51 @@
+.scrolling-banner {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  display: flex;
+  --scroll-direction: scroll-left;
+}
+
+.scrolling-banner-section {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.scrolling-banner-section p {
+  display: inline-block;
+  margin: 0 .5rem;
+  font-size: .7rem;
+  font-weight: 500;
+}
+
+.banner-slash-decorator {
+  letter-spacing: .2rem;
+  font-family: 'Doto', sans-serif;
+}
+
+.scrolling-banner-section {
+  animation: var(--scroll-direction) 15s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}

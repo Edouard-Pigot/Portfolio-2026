@@ -1,0 +1,75 @@
+[
+  {
+    "title": "1_tank_physics",
+    "imageSrc": "/images/projects/1_1.webp"
+  },
+  {
+    "title": "2_3d_modeling",
+    "imageSrc": "/images/projects/2_1.webp"
+  },
+  {
+    "title": "3_tank_shooter",
+    "imageSrc": "/images/projects/3_1.webm"
+  },
+  {
+    "title": "4_procedural_sword",
+    "imageSrc": "/images/projects/4_1.webp"
+  },
+  {
+    "title": "5_mesh_analyzer",
+    "imageSrc": "/images/projects/5_1.webp"
+  },
+  {
+    "title": "6_scripted_animation",
+    "imageSrc": "/images/projects/6_1.webm"
+  },
+  {
+    "title": "7_blitz_game",
+    "imageSrc": "/images/projects/7_1.webp"
+  },
+  {
+    "title": "8_elevator_controller",
+    "imageSrc": "/images/projects/8_1.webm"
+  },
+  {
+    "title": "9_pacman_clone",
+    "imageSrc": "/images/projects/9_1.webm"
+  },
+  {
+    "title": "10_photo_editor",
+    "imageSrc": "/images/projects/10_1.webp"
+  }, 
+  {
+    "title": "11_flood_simulator",
+    "imageSrc": "/images/projects/11_1.webp"
+  },
+  {
+    "title": "12_portfolio_website",
+    "imageSrc": "/images/projects/12_1.webp"
+  },
+  {
+    "title": "13_particle_system",
+    "imageSrc": "/images/projects/13_1.webm"
+  },
+  {
+    "title": "14_boids_simulation",
+    "imageSrc": "/images/projects/14_1.webm"
+  },
+  {
+    "title": "15_drone_dance",
+    "imageSrc": "/images/projects/15_1.webp"
+  },
+  {
+    "title": "16_intro_to_shaders",
+    "imageSrc": "/images/projects/16_1.webm"
+  },
+  {
+    "title": "17_portfolio_website_v2",
+    "imageSrc": "/images/projects/17_1.webp"
+  },
+  {
+    "title": "18_catan_game",
+    "imageSrc": "/images/projects/18_1.webp"
+  }
+
+]

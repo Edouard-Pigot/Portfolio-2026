@@ -1,0 +1,32 @@
+/* parent (example) */
+.cards {
+  display: flex;
+  align-items: stretch;
+}
+
+/* each card gets equal width */
+.card {
+  flex: 0 1 0;       /* equal flexible widths */
+  min-width: 400px;      /* prevents overflow when content is long */
+  height: 200px;     /* set a consistent height (optional) */
+  border: 1px solid rgba(255, 255, 255, 0.575);
+  position: relative;
+  display: flex;
+  margin: .5rem;
+}
+
+.card h2 {
+  padding: 0.5rem;
+  font-size: .8rem;
+  writing-mode: sideways-lr;
+  border-right: 1px solid rgba(255, 255, 255, 0.575);
+}
+
+.card img, .card video {
+  object-fit: cover;
+  width: calc(100% - 1.8rem - 7px); /* full width minus h2 width and borders */
+}
+
+.card video {
+  height: calc(100% - 1px);
+}

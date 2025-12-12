@@ -1,0 +1,50 @@
+li {
+  padding: 0.5rem 1rem;
+  border-radius: 1em;
+  transition: background-color 0.3s ease;
+  background-color: transparent;
+  line-height: normal;
+  display: flex;
+}
+
+li::before, li::after {
+  color: rgba(255, 255, 255, 0.5);
+  width: 1rem;
+  font-family: 'Doto', sans-serif;
+}
+
+li::before {
+  content: '/';
+  padding-right: .5rem;
+  transition: padding-right 0.1s ease, width 0.1s ease;
+}
+
+li::after {
+  content: '/';
+  padding-left: .5rem;
+  transition: padding-left 0.1s ease, width 0.1s ease;
+}
+
+li p {
+  margin: 0; 
+  font-family: 'Doto', sans-serif;
+}
+
+li:hover::before {
+  padding-right: 1rem;
+  width: .5rem;
+  color: white;
+}
+
+li:hover::after {
+  padding-left: 1rem;
+  width: .5rem;
+  color: white;
+}
+
+.active::after, .active::before {
+  color: var(--accent-color);
+  text-shadow: var(--accent-shadow);
+}
+
+
