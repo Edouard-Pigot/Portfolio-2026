@@ -1,113 +1,82 @@
 import './ColorSamples.scss';
+import Button from '../Button/Button';
+import Dot from '../Dot/Dot';
 
 export default function ColorSamples() {
+  let colors = ['white', 'black', 'apricot', 'orange', 'strawberry', 'sky', 'quartz', /*'limestone',*/ 'flint', 'dolomite', /*'granite',*/ 'obsidian'];
+
+  let bgColors = ['quartz', /*'limestone',*/ 'flint', 'dolomite', /*'granite',*/ 'obsidian'];
+  let fgColors = ['apricot', 'orange', 'strawberry', 'sky'];
+
   return (
     <>
     <div style={{ display: 'flex', gap: '20px' }}>
-        <div className="color-greys">
-          <div className="color-square quartz">QUARTZ</div>
-          <div className="color-square limestone">LIMESTONE</div>
-          <div className="color-square flint">FLINT</div>
-          <div className="color-square dolomite">DOLOMITE</div>
-          <div className="color-square granite">GRANITE</div>
-          <div className="color-square obsidian">OBSIDIAN</div>
+        <div id="color-greys">
+          {
+            bgColors.map(color => (
+              <div key={color} className={`color-square ${color}`}>
+                {color.toUpperCase()}
+              </div>
+            ))
+          }
         </div>
-        <div className="color-colors">
-          <div className="color-square orange">ORANGE</div>
-          <div className="color-square peach">PEACH</div>
-          <div className="color-square strawberry">STRAWBERRY</div>
-          <div className="color-square sky">SKY</div>
+        <div id="color-colors">
+          {fgColors.map(color => (
+            <div key={color} className={`color-square ${color}`}>
+              {color.toUpperCase()}
+            </div>
+          ))}
         </div>
-        <div className="dots">
-          <div className="dot orange"></div>
-          <div className="dot peach"></div>
-          <div className="dot strawberry"></div>
-          <div className="dot sky"></div>
-          <div className="dot quartz"></div>
-          <div className="dot limestone"></div>
-          <div className="dot flint"></div>
-          <div className="dot dolomite"></div>
-          <div className="dot granite"></div>
-          <div className="dot obsidian"></div>
+        <div id="dots">
+          {colors.map(color => (
+            <Dot key={color} backgroundColor="white" color={color}></Dot>
+          ))}
         </div>
         <div id="buttons">
           <div className="buttons">
-            <button className="button orange">
-              ORANGE
-            </button>
-            <button className="button peach">
-              PEACH
-            </button>
-            <button className="button strawberry">
-              STRAWBERRY
-            </button>
-            <button className="button sky">
-              SKY
-            </button>
-            <button className="button quartz">
-              QUARTZ
-            </button>
-            <button className="button limestone">
-              LIMESTONE
-            </button>
-            <button className="button flint">
-              FLINT
-            </button>
-            <button className="button dolomite">
-              DOLOMITE
-            </button>
-            <button className="button granite white-text">
-              GRANITE
-            </button>
-            <button className="button obsidian white-text">
-              OBSIDIAN
-            </button>
+            {colors.map(color => (
+              <Button key={color} color={color}>
+                {color.toUpperCase()}
+              </Button>
+            ))}
           </div>
           <div id="buttons-hover" className="buttons">
-            <button className="button hover orange">
-              ORANGE
-            </button>
-            <button className="button hover peach">
-              PEACH
-            </button>
-            <button className="button hover strawberry">
-              STRAWBERRY
-            </button>
-            <button className="button hover sky">
-              SKY
-            </button>
-            <button className="button hover quartz">
-              QUARTZ
-            </button>
-            <button className="button hover limestone">
-              LIMESTONE
-            </button>
-            <button className="button hover flint">
-              FLINT
-            </button>
-            <button className="button hover dolomite">
-              DOLOMITE
-            </button>
-            <button className="button hover granite white-text">
-              GRANITE
-            </button>
-            <button className="button hover obsidian white-text">
-              OBSIDIAN
-            </button>
+            {colors.map(color => (
+              <button key={color} className={`button hover ${color}`}>
+                {color.toUpperCase()}
+              </button>
+            ))}
           </div>
         </div>
+      </div>
+      <div id="text-tests">
+        <table>
+          {colors.map(bgColor => (
+            <tr key={bgColor}>
+              {colors.map(elementColor => (
+                <td key={elementColor}>
+                  <div className={`color-square ${bgColor}`}>
+                    <p className={`${elementColor}-text ${['dolomite', 'granite', 'obsidian'].includes(elementColor) ? ' white-text' : ''}`}>
+                      Test Text
+                    </p>
+                  </div>
+                </td>
+              ))}
+            </tr>
+          ))}
+        </table>
       </div>
       <div id="background-tests">
         <div className="buttons-tests">
           <table>
-            {['orange', 'peach', 'strawberry', 'sky', 'quartz', 'limestone', 'flint', 'dolomite', 'granite', 'obsidian'].map(bgColor => (
+            {colors.map(bgColor => (
               <tr key={bgColor}>
-                {['orange', 'peach', 'strawberry', 'sky', 'quartz', 'limestone', 'flint', 'dolomite', 'granite', 'obsidian'].map(elementColor => (
+                {colors.map(elementColor => (
                   <td key={elementColor}>
                     <div className={`color-square ${bgColor}`}>
-                      <button className={`button ${elementColor}${['dolomite', 'granite', 'obsidian'].includes(elementColor) ? ' white-text' : ''}`}>
+                      <Button key={elementColor} color={elementColor} className={['dolomite', 'granite', 'obsidian'].includes(elementColor) ? ' white-text' : ''}>
                         PUSH
-                      </button>
+                      </Button>
                     </div>
                   </td>
                 ))}
@@ -117,13 +86,12 @@ export default function ColorSamples() {
         </div>
         <div className="dots-tests">
           <table>
-            {['orange', 'peach', 'strawberry', 'sky', 'quartz', 'limestone', 'flint', 'dolomite', 'granite', 'obsidian'].map(bgColor => (
+            {colors.map(bgColor => (
               <tr key={bgColor}>
-                {['orange', 'peach', 'strawberry', 'sky', 'quartz', 'limestone', 'flint', 'dolomite', 'granite', 'obsidian'].map(elementColor => (
+                {colors.map(elementColor => (
                   <td key={elementColor}>
                     <div className={`color-square ${bgColor}`}>
-                      <div className={`dot bg${bgColor} ${elementColor}`}>
-                      </div>
+                      <Dot key={bgColor} backgroundColor={bgColor} color={elementColor}></Dot>
                     </div>
                   </td>
                 ))}

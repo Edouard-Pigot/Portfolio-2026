@@ -1,0 +1,14 @@
+@use '../colors';
+
+.dot {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin: 42.5px;
+}
+
+@each $name, $color in colors.$colors {
+  .dot.bg-#{$name} {
+    box-shadow: 5px 5px 9px 3px $color, -2px -2px 8px 2px rgba(0,0,0,0.25), inset 2px 2px 5px rgba(0,0,0,0.25);
+  }
+}
