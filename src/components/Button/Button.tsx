@@ -1,9 +1,55 @@
-import './Button.scss';
+import styles from './Button.module.scss';
 
-export default function Button (prop: {color?: string, children?: React.ReactNode, className?: string}) {
+import type { ReactElement } from 'react';
+
+interface BaseProps extends React.ButtonHTMLAttributes<HTMLDivElement> {
+  isActive?: boolean;
+  ref?: React.Ref<HTMLDivElement>;
+};
+
+type Button = BaseProps & {
+  shape?: 'rectangle' | 'rounded';
+  children: React.ReactNode; // Allows text, numbers, elements, etc.
+};
+
+type RoundButton = BaseProps & {
+  shape: 'round';
+  children: ReactElement; // Strictly requires a React element (SVG, img, etc.), NOT raw text
+  'aria-label': string; // Force a label for icon-only buttons
+};
+
+type ButtonProps = Button | RoundButton;
+
+function Button(props: ButtonProps) {
+  const { className, children, isActive, 'aria-label': ariaLabel, ref, ...rest } = props;
+
+  const shape = props.shape || 'rectangle';
+
+  let combinedClassName = styles.base;
+
+  if (isActive) combinedClassName += ` ${styles.active}`;
+
+  if (shape == 'round') combinedClassName += ` ${styles.round}`;
+  else if( shape == 'rounded') combinedClassName += ` ${styles.rounded}`;
+  
+  if (className) combinedClassName += ` ${className}`;
+
   return (
-    <button className={`button ${prop.color || ''} ${prop.className || ''}`}>
-      {prop.children}
-    </button>
-  );
-}
+    <>
+      <div 
+        className={combinedClassName} 
+        aria-label={ariaLabel} // Accessibility
+        title={ariaLabel}      // Visual Tooltip (matches label)
+        ref={ref}
+        data-active={isActive}
+        {...rest}              // Spread remaining props (onClick, type, etc.)
+      >
+        <div className={styles["button-text"]}>
+          {children}
+        </div>
+      </div>
+    </>
+  )
+};
+
+export default Button;

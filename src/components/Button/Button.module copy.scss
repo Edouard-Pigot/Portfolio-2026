@@ -1,0 +1,103 @@
+@use '../../styles/_themes';
+
+$size: 1rem;
+$icon-size: 17px;
+
+.base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--main-text-color);
+    fill: var(--main-text-color);
+    stroke: var(--main-text-color);
+
+    border: none;
+    background: none;
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    padding: .5rem 1rem;
+    
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+        
+    pointer-events: all;
+
+    position: relative;
+
+    .button-text {
+        line-height: 1;
+
+        font-weight: 500;
+        font-family: 'Oxanium';
+
+        font-size: $size;
+
+        margin-top: .1rem;
+        margin-bottom: -.1rem;
+
+        svg, img {
+            height: $icon-size;
+            width: $icon-size;
+        }
+    }
+}
+
+.active {
+    body[data-theme='dark'] & {
+        color: var(--main-text-color);
+        fill: var(--main-text-color);
+        stroke: var(--main-text-color);
+    }
+
+    &.round, &.rounded {
+        & span svg, img {
+            color: var(--contrast-text-color);
+            fill: var(--contrast-text-color);
+            stroke: var(--contrast-text-color);
+            body[data-theme='dark'] & {
+                color: var(--main-text-color);
+                fill: var(--main-text-color);
+                stroke: var(--main-text-color);
+            }
+        }
+    }
+}
+
+
+.round {
+    composes: base;
+    padding: 0.6rem;
+    border-radius: 50%;
+
+    & span {
+        margin: 0;
+        & svg, img {
+            width: $icon-size;
+            height: $icon-size;
+            object-fit: contain;
+            color: var(--text-color);
+            fill: var(--text-color);
+            stroke: var(--text-color);
+        }
+    }
+}
+
+.rounded {
+    composes: base;
+    border-radius: $icon-size;
+
+    & span {
+        & svg, img {
+            width: $icon-size;
+            height: $icon-size;
+            object-fit: contain;
+            color: var(--text-color);
+            fill: var(--text-color);
+            stroke: var(--text-color);
+        };
+    }
+}

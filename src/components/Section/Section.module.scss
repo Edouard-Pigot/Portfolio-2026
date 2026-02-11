@@ -1,0 +1,20 @@
+@use '../../styles/_themes';
+
+.base {
+  color: var(--text-color);
+
+  font-family: 'Oxanium';
+
+  display: grid;
+  grid-template-columns: 1fr 80vw 1fr;
+  grid-gap: 1rem;
+
+  & .container {
+    grid-column: 2 / 3;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+body {
+  background: #f0f0f0; /* Light gray background to see the "page" */
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.cv {
+  background: white;
+  width: 210mm;
+  height: 297mm;
+  padding: 20mm; /* Standard margins */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: none;
+    padding: 0;
+  }
+  .page {
+    box-shadow: none;
+    margin: 0;
+    width: 100%; /* Ensures it fills the paper */
+    height: auto;
+  }
+}

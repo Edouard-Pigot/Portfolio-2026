@@ -1,0 +1,63 @@
+@use "../styles/colors";
+@use "sass:color";
+
+:root {
+    --main-text-color: #{colors.$dark};
+    --hover-text-color: #{color.scale(colors.$dark, $lightness: 20%)};
+    --active-text-color: #{color.scale(colors.$dark, $lightness: 40%)};
+
+    --contrast-text-color: #{colors.$white};
+    --hover-contrast-text-color: #{color.scale(colors.$white, $lightness: -20%)};
+    --active-contrast-text-color: #{color.scale(colors.$white, $lightness: -40%)};
+
+    --decorator-color: #{color.scale(colors.$dark, $alpha: -90%)};
+
+    --main-bg-color: #{colors.$white};
+    --contrast-bg-color: #{colors.$dark};
+    --hover-bg-color: #{color.scale(colors.$white, $lightness: -5%)};
+    --active-bg-color: #{color.scale(colors.$white, $lightness: -10%)};
+
+    --highlight-color: #{colors.$orange};
+    --hover-highlight-color: #{color.scale(colors.$orange, $lightness: 10%)};
+    --active-highlight-color: #{color.scale(colors.$orange, $lightness: -10%)};
+
+    --bg-dots: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' width='24' height='24' fill='none'%3e%3ccircle fill='rgb(0 0 0 / 0.2)' id='pattern-circle' cx='10' cy='10' r='1.6257413380501518'%3e%3c/circle%3e%3c/svg%3e");
+    --bg-hash: repeating-linear-gradient(315deg, #{color.scale(colors.$dark, $alpha: -90%)} 0, #{color.scale(colors.$dark, $alpha: -90%)} 1px, transparent 0, transparent 50%);
+}
+
+[data-theme='dark'] {
+    --main-text-color: #{colors.$white};
+    --hover-text-color: #{color.scale(colors.$white, $lightness: -20%)};
+    --active-text-color: #{color.scale(colors.$white, $lightness: -40%)};
+
+    --contrast-text-color: #{colors.$dark};
+    --hover-contrast-text-color: #{color.scale(colors.$dark, $lightness: 20%)};
+    --active-contrast-text-color: #{color.scale(colors.$dark, $lightness: 40%)};
+
+    --decorator-color: #{color.scale(colors.$white, $alpha: -90%)};
+
+    --main-bg-color: #{colors.$dark};
+    --contrast-bg-color: #{colors.$white};
+    --hover-bg-color: #{color.scale(colors.$dark, $lightness: 5%)};
+    --active-bg-color: #{color.scale(colors.$dark, $lightness: 10%)};
+
+    --highlight-color: #{colors.$orange};
+    --hover-highlight-color: #{color.scale(colors.$orange, $lightness: -10%)};
+    --active-highlight-color: #{color.scale(colors.$orange, $lightness: 10%)};
+
+    --bg-dots: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' width='24' height='24' fill='none'%3e%3ccircle fill='rgb(255 255 255 / 0.2)' id='pattern-circle' cx='10' cy='10' r='1.6257413380501518'%3e%3c/circle%3e%3c/svg%3e");
+    --bg-hash: repeating-linear-gradient(315deg, #{color.scale(colors.$light-grey, $alpha: -90%)} 0, #{color.scale(colors.$light-grey, $alpha: -90%)} 1px, transparent 0, transparent 50%);
+}
+
+.dotted-background {
+    background-image: var(--bg-dots);
+}
+
+.full-background {
+    background-color: var(--bg-color);
+}
+
+.hashed-background {
+    background-image: var(--bg-hash);
+    background-size: 10px 10px;
+}
