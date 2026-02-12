@@ -1,22 +1,52 @@
 .experience {
   display: grid;
-  grid-template-columns: 5rem 1fr;
+  grid-template-columns: 60px 1fr;
   grid-template-rows: auto auto auto auto;
   column-gap: 5px;
 
   .date {
-    margin-right: .2rem;
+    margin-top: 3px;
+    margin-right: 11px;
     color: #666;
+    position: relative;
     grid-column: 1 / 2;
     grid-row: 1 / 5;
     list-style: none;
     text-align: right;
+
+    &::before {
+      background-color: hsl(17, 89%, 48%);
+      left: 63px;
+      content: "";
+      top: 5px;
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      display: block;
+      border: white 2px solid;
+      border-radius: 50%;
+      box-sizing: border-box;
+    }
+
+    li {
+        font-size: 0.9em;
+    }
+  }
+
+  .content {
+    padding-top: 3px;
+    padding-left: 11px;
+    padding-bottom: 12px;
+    border-left: #ccc 4px solid;
+  }
+
+  &:last-child .content {
+    padding-bottom: 5px;
   }
 
   .title {
     grid-column: 2 / 3;
     &, .contractType {
-      font-size: 14px;
       font-weight: bold;
     }
   }
@@ -26,9 +56,7 @@
   }
 
   .companyInfo, .companyName {
-    font-size: 14px;
-    font-weight: 400;
-    color: #333;
+    color: #444;
   }
 
   .companyName {
@@ -36,13 +64,13 @@
   }
 
   .description {
-    padding-left: 20px;
-    margin-block: 5px;
+    margin-top: 5px;
     grid-column: 2 / 3;
     list-style: square;
 
     li {
-      margin-bottom: 5px;
+      margin-bottom: 2px;
+      margin-left: 20px;
     }
   }
 
@@ -50,5 +78,6 @@
     font-size: 12px;
     font-weight: bold;
     grid-column: 2 / 3;
+    color: #555;
   }
 }

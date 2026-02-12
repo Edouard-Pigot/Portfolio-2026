@@ -10,6 +10,7 @@ function CV() {
       <article className={styles.a4Page}>
         <div className={styles.mainContainer}>
           <div className={styles.header}>
+            <div className={styles.headerBackground}></div>
             <h1 className={styles.title}>Technicien informatique</h1>
             <h2 className={styles.name}>Edouard <span className={styles.surname}>Pigot</span></h2>
             <p className={styles.intro}>Développeur avec une expérience significative chez Dassault Systèmes en tant qu’ingénieur logiciel à la recherche d’une nouvelle opportunité.
@@ -21,7 +22,7 @@ Mes compétences clés incluent la programmation web et la programmation objet n
                 <h3 className={styles.sectionTitle}>Expériences professionnelles</h3>
                 <Experience 
                   date={["jan. 2022", "oct. 2025"]}
-                  title="Software engineering associate/specialist"
+                  title="Ingénieur logiciel"
                   contractType="CDI"
                   company="Dassault Systèmes"
                   location="Vélizy-Villacoublay, France"
@@ -35,7 +36,7 @@ Mes compétences clés incluent la programmation web et la programmation objet n
                 />
                 <Experience
                   date={["avr. 2021", "sept. 2021"]}
-                  title="Software engineering intern"
+                  title="Ingénieur logiciel"
                   contractType="Stage"
                   company="Dassault Systèmes"
                   location="Vélizy-Villacoublay, France"

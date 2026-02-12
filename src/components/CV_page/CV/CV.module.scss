@@ -27,13 +27,20 @@
 
   * {
     box-sizing: border-box;
-    font-family: 'lato', sans-serif;
+    font-family: 'lato';
+    line-height: 15px;
+    font-size: 12px;
+    font-weight: 500;
   }
 }
 
 .header {
-  padding: 20px;
-  background-color: rgb(250, 250, 250);
+  padding: 20px;  
+  position: relative;
+
+  * {
+    z-index: 1;
+  }
 
   .title {
     font-size: 28px;
@@ -41,15 +48,17 @@
     text-transform: uppercase;
     letter-spacing: 3px;
     color: hsl(17, 89%, 48%);
+    line-height: normal;
   }
 
   .name, .surname {
     font-size: 24px;
     font-weight: normal;
+    line-height: normal;
   }
 
   .surname {
-    font-variant-caps: small-caps;
+    text-transform: uppercase;
   }
 
   .intro {
@@ -58,15 +67,35 @@
   }
 }
 
+.headerBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  opacity: .2;
+  background: url(https://cvdesignr.com/site/template/views/templates/template_20/templatesbg/Background1.jpg);
+  background-size: cover;
+  z-index: 0;
+}
+
 .body {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto 175px;
   padding: 10px 20px 20px 20px;
   column-gap: 20px;
 
   .experienceSection, .diplomaSection, .skillsSection {
     display: flex;
     flex-direction: column;
+
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+  }
+
+  .skillsSection {
     gap: 10px;
   }
 
@@ -75,6 +104,7 @@
     font-weight: 400;
     font-family: $font-bebas;
     text-transform: uppercase;
+    padding-bottom: 5px;
   }
 
   .leftColumn {
