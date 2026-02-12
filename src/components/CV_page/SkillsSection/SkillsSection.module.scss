@@ -1,0 +1,18 @@
+.skillsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  h4 {
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  ul {
+    padding-left: 20px;
+    list-style: square;
+    li {
+      margin-bottom: 3px;
+    }
+  }
+}

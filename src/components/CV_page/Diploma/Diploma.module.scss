@@ -1,0 +1,42 @@
+.diploma {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  grid-template-rows: auto auto auto;
+  column-gap: 5px;
+
+  .date {
+    margin-right: .2rem;
+    color: #666;
+    grid-column: 1 / 2;
+    grid-row: 1 / 5;
+    list-style: none;
+    text-align: right;
+  }
+
+  .title {
+    grid-column: 2 / 3;
+    &, .contractType {
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+
+  .institutionInfo {
+    grid-column: 2 / 3;
+  }
+
+  .institutionInfo, .institutionName {
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+  }
+
+  .institutionName {
+    color: hsl(17, 89%, 48%);
+  }
+
+  .description {
+    margin-block: 5px;
+    grid-column: 2 / 3;
+  }
+}

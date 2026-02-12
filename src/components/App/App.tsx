@@ -1,19 +1,24 @@
-import './App.module.scss'
+import './App.module.scss';
 
-import MainDecorator from '../MainDecorator/MainDecorator'
-import Section from '../Section/Section'
-import Skills from '../Skills/Skills'
+import MainDecorator from '../MainDecorator/MainDecorator';
+import CV from '../CV_page/CV/CV';
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 
 function App() {
 
   return (
-    <>
-      <MainDecorator />
-      {/*<Section />
-      <Section className="full-background" title="Compétences">
-        <Skills />
-      </Section>*/}
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={
+            <MainDecorator />
+        } />
+        <Route path="/cv" element={
+          <CV />
+        } />
+      </Routes>
+    </Router>
   )
 }
 

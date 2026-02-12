@@ -1,0 +1,54 @@
+.experience {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  grid-template-rows: auto auto auto auto;
+  column-gap: 5px;
+
+  .date {
+    margin-right: .2rem;
+    color: #666;
+    grid-column: 1 / 2;
+    grid-row: 1 / 5;
+    list-style: none;
+    text-align: right;
+  }
+
+  .title {
+    grid-column: 2 / 3;
+    &, .contractType {
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+
+  .companyInfo {
+    grid-column: 2 / 3;
+  }
+
+  .companyInfo, .companyName {
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+  }
+
+  .companyName {
+    color: hsl(17, 89%, 48%);
+  }
+
+  .description {
+    padding-left: 20px;
+    margin-block: 5px;
+    grid-column: 2 / 3;
+    list-style: square;
+
+    li {
+      margin-bottom: 5px;
+    }
+  }
+
+  .environment {
+    font-size: 12px;
+    font-weight: bold;
+    grid-column: 2 / 3;
+  }
+}
