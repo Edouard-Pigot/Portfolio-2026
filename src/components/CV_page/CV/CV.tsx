@@ -11,10 +11,10 @@ function CV() {
         <div className={styles.mainContainer}>
           <div className={styles.header}>
             <div className={styles.headerBackground}></div>
-            <h1 className={styles.title}>Technicien informatique</h1>
+            <h1 className={styles.title}>Développeur informatique</h1>
             <h2 className={styles.name}>Edouard <span className={styles.surname}>Pigot</span></h2>
-            <p className={styles.intro}>Développeur avec une expérience significative chez Dassault Systèmes en tant qu’ingénieur logiciel à la recherche d’une nouvelle opportunité.
-Mes compétences clés incluent la programmation web et la programmation objet native , avec un accent sur le travail d'équipe et la communication</p>
+            <p className={styles.intro}>Avec une expérience significative chez Dassault Systèmes en tant qu’ingénieur logiciel, 
+              je suis à la recherche d’une nouvelle opportunité alliant travail d'équipe, informatique et communication.</p>
           </div>
           <div className={styles.body}>
             <section className={styles.leftColumn}>
@@ -27,12 +27,13 @@ Mes compétences clés incluent la programmation web et la programmation objet n
                   company="Dassault Systèmes"
                   location="Vélizy-Villacoublay, France"
                   description={[
-                    "Maintenance et développement de fonctionnalités sur les composants de l’infrastructure d’UI en Javascript et C++.",
-                    "Support personnalisé aux clients internes.",
-                    "Écriture des tests et de la documentation liés aux développements.",
+                    "Dans une équipe Agile de développeurs fournissant une infrastructure d'UI pour les développeurs Dassault Systèmes à l'international.",
+                    "Maintenance et développement de fonctionnalités sur les composants de l’infrastructure d’UI en web avec Javascript et natif avec C++.",
+                    "Support aux clients sur l'utilisation des API et les bonnes pratiques.",
+                    "Écriture des tests et des documentations pour les développeurs et les équipes clientes.",
                     "Définition des spécifications avec les équipes UX."
                   ]}
-                  environment="JavaScript, TypeScript, C++, HTML, CSS, SASS, Jasmine, VS Code VS 2019, Agile Scrum"
+                  environment="JavaScript, TypeScript, C++, HTML, CSS, SASS, Jasmine, VS Code, VS 2019, Agile Scrum"
                 />
                 <Experience
                   date={["avr. 2021", "sept. 2021"]}
@@ -41,10 +42,9 @@ Mes compétences clés incluent la programmation web et la programmation objet n
                   company="Dassault Systèmes"
                   location="Vélizy-Villacoublay, France"
                   description={[
-                    "Spécification de méthodes d’interaction avec les UI en réalité virtuelle.",
-                    "Développement de ces méthodes dans l’environnement Dassault Systèmes.",
-                    "Mise en place d'une infrastructure évolutive permettant l'ajout de boîtes de collision personnalisables.",
-                    "Création de layouts immersifs pour la réalité virtuelle."
+                    "Spécification et développement de méthodes d’interaction avec les UI en réalité virtuelle pour tirer au mieux profit de l'environnement 3D.",
+                    "Architecture évolutive par héritage sur les types d'interaction et les boîtes de collision.",
+                    "Création de layouts immersifs pensés pour la VR."
                   ]}
                   environment="C++, Jasmine, VS 2019, Agile Scrum"
                 />
@@ -55,9 +55,9 @@ Mes compétences clés incluent la programmation web et la programmation objet n
                   company="Institut de Prévention des Risques Urbains Marseille"
                   location="Marseille, France"
                   description={[
-                    "Amélioration d’un simulateur d'inondation de musée sur le moteur Unity.",
+                    "Reprise d’un simulateur d'inondation de musée sur le moteur Unity.",
                     "Refonte du système de simulation de l’eau en incluant un modèle physique, remplaçant les plans d’eau statiques utilisés par l’équipe de développement précédente.",
-                    "Utilisation de la méthode des Marching Cubes pour la modélisation 3D de l’eau."
+                    "Travail préliminaire sur l'amélioration du rendu de l'eau grâce aux Marching Cubes."
                   ]}
                   environment="C#, Unity, 100% télé-travail"
                 />
@@ -68,7 +68,7 @@ Mes compétences clés incluent la programmation web et la programmation objet n
                   company="Fiducial Cloud Aix-en-Provence"
                   location="Aix-en-Provence, France"
                   description={[
-                    "Amélioration de l’outil de gestion de projet basé sur SOPlanning en ajoutant des informations de la base de données interne."
+                    "Amélioration de l’outil de gestion de projet basé sur SOPlanning en incluant des informations de la base de données interne."
                   ]}
                   environment="PHP, SQL"
                 />
@@ -79,11 +79,9 @@ Mes compétences clés incluent la programmation web et la programmation objet n
                   company="Crédit Mutuel"
                   location="Marseille, France"
                   description={[
-                    "Juillet 2016 : agence de la Joliette.",
-                    "Etés 2018, 2019, 2020 : plateforme téléphonique Méditerranée.",
-                    "Gestion et prise de rendez-vous, remise de carte et chéquiers.",
-                    "Gestion des comptes, prêts, moyens de paiement, assurances.",
-                    "Assistance à l’utilisation des espaces personnels sur web et application Crédit Mutuel."
+                    "Juillet 2016 en agence à la Joliette. Etés 2018, 2019 et 2020 à la plateforme téléphonique Méditerranée",
+                    "Gestion et prise de rendez-vous, remise de carte et chéquiers, gestion des comptes, prêts, moyens de paiement, assurances.",
+                    "Assistance à l’utilisation des espaces personnels sur le site web et l'application Crédit Mutuel."
                   ]}
                 />
               </div>
@@ -92,21 +90,21 @@ Mes compétences clés incluent la programmation web et la programmation objet n
                 <Diploma
                   date="2021"
                   title="Master informatique"
-                  institution="Faculté des sciences Marseille Luminy, Aix-Marseille Université"
+                  institution="Faculté des sciences Marseille Luminy"
                   location="Marseille, France"
                   description="Parcours Géométrie et Informatique Graphique (GIG)"
                 />
                 <Diploma
                   date="2019"
                   title="Licence informatique"
-                  institution="Faculté des sciences Marseille Luminy, Aix-Marseille Université"
+                  institution="Faculté des sciences Marseille Luminy"
                   location="Marseille, France"
                   description="Option modélisation 3D"
                 />
                 <Diploma
                   date="2018"
                   title="DUT informatique"
-                  institution="IUT d’Aix-Marseille, Aix-Marseille Université"
+                  institution="IUT d’Aix-Marseille"
                   location="Aix-en-Provence, France"
                 />
               </div>
@@ -146,19 +144,19 @@ Mes compétences clés incluent la programmation web et la programmation objet n
                   title="Programmation"
                   skills={[
                     "HTML, CSS, SASS",
-                    "JavaScript, TypeScript, Jquery",
-                    "React, PHP",
+                    "JavaScript, TypeScript, Jquery, React, PHP",
                     "SQL, MySQL",
-                    "C++, C# (Unity)",
-                    "Java"
+                    "C++, C# (Unity)"
                   ]}
                 />
                 <SkillsSection 
                   title="Outils"
                   skills={[
+                    "Windows 8/10/11, Linux",
                     "Git, Github",
-                    "Visual Studio Code",
-                    "Visual Studio 2019",
+                    "Vite",
+                    "Visual Studio Code, Visual Studio 2019",
+                    "Microsoft Office"
                   ]}
                 />
                 <h3 className={styles.sectionTitle}>Activités annexes</h3>

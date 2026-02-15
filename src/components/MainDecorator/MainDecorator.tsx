@@ -58,7 +58,6 @@ function MainDecorator() {
             </div>
         </div>
         <div id={styles["main-content-container"]}>
-          <VolumetricContainer modelPath="/models/tank.gltf"/>
         </div>
       </div>
     </>
