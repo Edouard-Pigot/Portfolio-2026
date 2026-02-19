@@ -88,7 +88,7 @@ function VolumetricContainer(props: VolumetricProps) {
   const themeColors = useThemeColors();
 
   return (
-    <div className={styles.base}>
+    <div className={styles.volumetricContainer}>
       <Canvas gl={{ 
           antialias: true, 
           toneMapping: THREE.NoToneMapping,

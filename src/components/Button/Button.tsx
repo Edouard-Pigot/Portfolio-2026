@@ -25,7 +25,7 @@ function Button(props: ButtonProps) {
 
   const shape = props.shape || 'rectangle';
 
-  let combinedClassName = styles.base;
+  let combinedClassName = styles.button;
 
   if (isActive) combinedClassName += ` ${styles.active}`;
 

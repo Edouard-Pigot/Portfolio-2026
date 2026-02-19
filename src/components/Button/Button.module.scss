@@ -3,7 +3,7 @@
 $size: 1rem;
 $icon-size: 17px;
 
-.base {
+.button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -36,8 +36,9 @@ $icon-size: 17px;
 
         font-size: $size;
 
-        margin-top: .1rem;
-        margin-bottom: -.1rem;
+        margin-top: 2px;
+
+        text-transform: uppercase;
 
         svg, img {
             height: $icon-size;
@@ -69,7 +70,7 @@ $icon-size: 17px;
 
 
 .round {
-    composes: base;
+    composes: button;
     padding: 0.6rem;
     border-radius: 50%;
 
@@ -87,7 +88,7 @@ $icon-size: 17px;
 }
 
 .rounded {
-    composes: base;
+    composes: button;
     border-radius: $icon-size;
 
     & span {

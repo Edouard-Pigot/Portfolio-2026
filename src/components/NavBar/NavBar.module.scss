@@ -1,4 +1,4 @@
-.base {
+.navBar {
     display: flex;
     gap: 1rem;
     align-items: center;
@@ -25,8 +25,7 @@
             height: 100%;
 
             &:hover {
-                color: var(--hover-text-color);
-
+                color: var(--highlight-color);
                 &::before, &::after {
                     width: 100%;
                     opacity: 1;
@@ -56,22 +55,28 @@
         
             & div::before, & div::after {
                 content: '';
-                height: .5rem;
-                width: .5rem;
+                height: 6px;
+                width: 6px;
+                display: inline-block;
             }
 
             & div::before {
                 background: var(--main-text-color);
-                margin-right: 9px; 
-                display: inline-block;
+                margin-right: 9px;
+                margin-bottom: 1px;
                 opacity: 0;
                 transform: scale(0);
-                transition: opacity 0.2s, transform 0.2s;
+                transition: opacity 0.2s, transform 0.2s, background-color 0.2s;
+            }
+
+            &:hover div::before {
+                background: var(--highlight-color);
             }
 
             & div::after {
                 background: transparent;
                 margin-left: 9px; 
+                width: 6px;
             }
 
             &[data-active="true"] div::before {

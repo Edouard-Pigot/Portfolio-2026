@@ -80,7 +80,7 @@ function Dropdown(props: DropdownProps) {
         aria-haspopup="true"
         aria-label={props['aria-label'] || ''}
         aria-expanded={isOpen}
-        className={styles.base} 
+        className={styles.dropdown} 
         ref={dropdownButton}
       >
           {props.children}

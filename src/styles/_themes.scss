@@ -49,6 +49,11 @@
     --bg-hash: repeating-linear-gradient(315deg, #{color.scale(colors.$light-grey, $alpha: -90%)} 0, #{color.scale(colors.$light-grey, $alpha: -90%)} 1px, transparent 0, transparent 50%);
 }
 
+::selection {
+    background-color: var(--highlight-color);
+    color: var(--contrast-text-color);
+}
+
 .dotted-background {
     background-image: var(--bg-dots);
 }

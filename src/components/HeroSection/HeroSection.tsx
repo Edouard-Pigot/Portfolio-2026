@@ -1,16 +1,36 @@
-import './HeroSection.module.scss'
+import styles from './HeroSection.module.scss'
+
+import Section from '../Section/Section';
 
 function HeroSection() {
 
+  let decoratorSVG = (
+    <svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 37 50 H 63 37 M 50 37 V 50 63" fill='none' />
+    </svg>
+  )
+
   return (
     <>
-      <section id="home">
-        <div id="title">
-          <h1>EDOUARD PIGOT</h1>
-          <hr className="colored-border colored-background"/>
-          <h3>DEVELOPPEUR FRONT-END</h3>
+      <Section className={styles.heroSection} index="home">
+        <div className={styles.heroDecorator}>
+          {decoratorSVG}
         </div>
-      </section>
+        <div className={styles.heroDecorator}>
+          {decoratorSVG}
+        </div>
+        <div id={styles.title}>
+          <h1>EDOUARD PIGOT</h1>
+          <hr></hr>
+          <h2>Développeur </h2>
+        </div>
+        <div className={styles.heroDecorator}>
+          {decoratorSVG}
+        </div>
+        <div className={styles.heroDecorator}>
+          {decoratorSVG}
+        </div>
+      </Section>
     </>
   )
 }

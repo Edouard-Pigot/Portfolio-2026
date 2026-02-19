@@ -27,7 +27,7 @@
 
   * {
     box-sizing: border-box;
-    font-family: 'lato';
+    font-family: var(--font-lato);
     line-height: 15px;
     font-size: 12px;
     font-weight: 500;
@@ -102,7 +102,7 @@
   .sectionTitle {
     font-size: 18px;
     font-weight: 400;
-    font-family: $font-bebas;
+    font-family: var(--font-bebas);
     text-transform: uppercase;
     padding-bottom: 5px;
   }

@@ -12,7 +12,7 @@ function NavBar() {
 
   return (
     <>
-      <nav id={styles["nav-bar-content"]} className={styles.base}>
+      <nav id={styles["nav-bar-content"]} className={styles.navBar}>
         <div id={styles["nav-items"]}>
           <Button 
             className={styles['nav-button']}
@@ -33,7 +33,7 @@ function NavBar() {
             className={styles['nav-button']}
             isActive={activeTab === 'experience'} 
             onClick={() => setActiveTab('experience')}>
-            EXPERIENCE</Button>
+            EXPÉRIENCE</Button>
           <Button 
             className={styles['nav-button']}
             isActive={activeTab === 'education'} 

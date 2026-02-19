@@ -2,7 +2,7 @@ import styles from './MainDecorator.module.scss';
 import NavBar from '../NavBar/NavBar';
 import Button from '../Button/Button';
 import Dropdown from '../Dropdown/Dropdown';
-import VolumetricContainer from '../VolumetricContainer/VolumetricContainer';
+import MainContent from '../MainContent/MainContent';
 
 import { useRef } from 'react';
 
@@ -26,14 +26,16 @@ function MainDecorator() {
 
   return (
     <>
-      <div className={styles.base}>
-        <div id={styles["top-left-corner"]} className="hashed-background">
-          <button>=</button>
+      <div className={styles.mainDecorator}>
+        <div id={styles["top-left-corner"]} >
+          <div>EP</div>
         </div>
         <div id={styles["top-navbar"]}>
           <NavBar />
         </div>
         <div id={styles["left-toolbar"]}>
+          <div id={styles["scroll-area"]} className='hashed-background'>
+          </div>
           <div id={styles["nav-utilities"]}>
               <Button aria-label="Switch to dark theme"
                 onClick={toggleTheme}
@@ -57,7 +59,8 @@ function MainDecorator() {
               </Dropdown>
             </div>
         </div>
-        <div id={styles["main-content-container"]}>
+        <div id={styles["main-content-container"]} className="dotted-background">
+          <MainContent />
         </div>
       </div>
     </>

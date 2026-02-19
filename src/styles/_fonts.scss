@@ -2,16 +2,19 @@
   font-family: 'Bebas Neue';
   src: url('/fonts/BebasNeue-Regular.ttf') format('truetype');
 }
-$font-bebas: 'Bebas Neue', sans-serif;
 
 @font-face {
   font-family: "Oxanium";
   src: url("/fonts/Oxanium-Medium.ttf");
 }
-$font-Oxanium: 'Oxanium', sans-serif;
 
 @font-face {
   font-family: "Lato";
   src: url("/fonts/Lato-Regular.ttf");
 }
-$font-Lato: 'Lato', sans-serif;
+
+:root {
+  --font-bebas: 'Bebas Neue', sans-serif;
+  --font-oxanium: Oxanium, sans-serif;
+  --font-lato: Lato, sans-serif;
+}

@@ -11,7 +11,7 @@ function CV() {
         <div className={styles.mainContainer}>
           <div className={styles.header}>
             <div className={styles.headerBackground}></div>
-            <h1 className={styles.title}>Développeur informatique</h1>
+            <h1 className={styles.title}>Développeur Full-stack</h1>
             <h2 className={styles.name}>Edouard <span className={styles.surname}>Pigot</span></h2>
             <p className={styles.intro}>Avec une expérience significative chez Dassault Systèmes en tant qu’ingénieur logiciel, 
               je suis à la recherche d’une nouvelle opportunité alliant travail d'équipe, informatique et communication.</p>

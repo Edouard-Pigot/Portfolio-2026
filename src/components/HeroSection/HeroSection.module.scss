@@ -1,0 +1,59 @@
+@use '../../styles/_themes';
+
+.heroSection {
+  height: 100vh;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+  grid-template-rows: 100px 1fr 100px;
+
+  .heroDecorator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    stroke: var(--main-text-color);
+
+    &:nth-child(1) {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    &:nth-child(2) {
+      grid-column: 3;
+      grid-row: 1;
+    }
+    &:nth-child(4) {
+      grid-column: 1;
+      grid-row: 3;
+    }
+    &:nth-child(5) {
+      grid-column: 3;
+      grid-row: 3;
+    }
+  }
+
+  #title {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    text-align: left;
+
+    h1 {
+      font-size: 10rem;
+      margin-bottom: 0.5rem;
+    }
+
+    hr {
+      width: 50%;
+      border: 1px solid var(--highlight-color);
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 5rem;
+      color: var(--primary-color);
+    }
+  }
+}

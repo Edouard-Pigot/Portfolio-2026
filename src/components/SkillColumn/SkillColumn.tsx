@@ -12,7 +12,7 @@ function SkillColumn(props: {skill: SkillGroup}) {
 
   return (
     <>
-      <div className={styles.base}>
+      <div className={styles.skillColumn}>
         <h3>{props.skill.name}</h3>
         {props.skill.skills.map((skill, index) => (
           <div key={index} className={`${styles.skill} ${styles[skill.level]}`}>
