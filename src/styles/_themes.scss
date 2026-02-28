@@ -2,6 +2,9 @@
 @use "sass:color";
 
 :root {
+    --decorator-margin: 20px;
+    --navbar-height: 51px;
+
     --main-text-color: #{colors.$dark};
     --hover-text-color: #{color.scale(colors.$dark, $lightness: 20%)};
     --active-text-color: #{color.scale(colors.$dark, $lightness: 40%)};
@@ -59,7 +62,7 @@
 }
 
 .full-background {
-    background-color: var(--bg-color);
+    background-color: var(--main-bg-color);
 }
 
 .hashed-background {

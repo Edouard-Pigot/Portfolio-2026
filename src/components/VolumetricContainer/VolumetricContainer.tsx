@@ -1,19 +1,20 @@
 import styles from './VolumetricContainer.module.scss';
+
 import React, { useState, useEffect, useRef, useLayoutEffect, Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { useGLTF, Center, Edges } from '@react-three/drei';
 import * as THREE from 'three';
 
 function useThemeColors() {
-  const [theme, setTheme] = useState(document.body.getAttribute('data-theme') || 'light');
+  const [theme, setTheme] = useState(document.documentElement.getAttribute('data-theme') || 'light');
 
   useEffect(() => {
     const observer = new MutationObserver(() => {
-      const currentTheme = document.body.getAttribute('data-theme') || 'light';
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
       setTheme(currentTheme);
     });
 
-    observer.observe(document.body, { attributes: true, attributeFilter: ['data-theme'] });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
     return () => observer.disconnect();
   }, []);
 

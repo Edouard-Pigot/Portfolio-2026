@@ -36,7 +36,7 @@
   .content {
     padding-top: 3px;
     padding-left: 11px;
-    padding-bottom: 12px;
+    padding-bottom: 5px;
     border-left: #ccc 4px solid;
   }
 
@@ -45,7 +45,9 @@
   }
 
   .title {
+    font-family: var(--font-oxanium);
     grid-column: 2 / 3;
+    font-size: 14px;
     &, .contractType {
       font-weight: bold;
     }
@@ -57,6 +59,7 @@
 
   .companyInfo, .companyName {
     color: #444;
+    font-family: var(--font-oxanium);
   }
 
   .companyName {
@@ -64,7 +67,6 @@
   }
 
   .description {
-    margin-top: 5px;
     grid-column: 2 / 3;
     list-style: square;
 

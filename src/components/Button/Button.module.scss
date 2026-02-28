@@ -48,7 +48,7 @@ $icon-size: 17px;
 }
 
 .active {
-    body[data-theme='dark'] & {
+    :root[data-theme='dark'] & {
         color: var(--main-text-color);
         fill: var(--main-text-color);
         stroke: var(--main-text-color);
@@ -59,7 +59,7 @@ $icon-size: 17px;
             color: var(--contrast-text-color);
             fill: var(--contrast-text-color);
             stroke: var(--contrast-text-color);
-            body[data-theme='dark'] & {
+            :root[data-theme='dark'] & {
                 color: var(--main-text-color);
                 fill: var(--main-text-color);
                 stroke: var(--main-text-color);

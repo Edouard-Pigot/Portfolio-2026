@@ -1,7 +1,7 @@
 import './App.module.scss';
 
-import MainDecorator from '../MainDecorator/MainDecorator';
-import CV from '../CV_page/CV/CV';
+import MainDecorator from '@components/MainDecorator/MainDecorator';
+import CV from '@components/CV_page/CV/CV';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 

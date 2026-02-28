@@ -1,52 +1,37 @@
 import styles from './NavBar.module.scss';
 
-import Button from '../Button/Button';
+import Button from '@components/Button/Button';
+
 import { useState } from 'react';
 
 function NavBar() {
   const [activeTab, setActiveTab] = useState('home');
 
-  let navButtonOnClick = (label: HTMLButtonElement) => {
-    console.log(`Navigating to ${label}`);
-  }
+  const navItems = [
+    { id: 'home', label: 'ACCUEIL' },
+    { id: 'about', label: 'À PROPOS' },
+    { id: 'projects', label: 'PROJETS' },
+    { id: 'skills', label: 'COMPÉTENCES' },
+    { id: 'experience', label: 'EXPÉRIENCE' },
+    { id: 'education', label: 'PARCOURS' },
+    { id: 'contact', label: 'CONTACT' }
+  ];
 
   return (
-    <>
-      <nav id={styles["nav-bar-content"]} className={styles.navBar}>
-        <div id={styles["nav-items"]}>
+    <nav id={styles["nav-bar-content"]} className={styles.navBar}>
+      <div id={styles["nav-items"]}>
+        {navItems.map(item => (
           <Button 
+            key={item.id}
             className={styles['nav-button']}
-            isActive={activeTab === 'home'} 
-            onClick={() => setActiveTab('home')}>
-            ACCUEIL</Button>
-          <Button 
-            className={styles['nav-button']}
-            isActive={activeTab === 'about'} 
-            onClick={() => setActiveTab('about')}>
-            À&nbsp;PROPOS</Button>
-          <Button 
-            className={styles['nav-button']}
-            isActive={activeTab === 'projects'} 
-            onClick={() => setActiveTab('projects')}>
-            PROJETS</Button>
-          <Button 
-            className={styles['nav-button']}
-            isActive={activeTab === 'experience'} 
-            onClick={() => setActiveTab('experience')}>
-            EXPÉRIENCE</Button>
-          <Button 
-            className={styles['nav-button']}
-            isActive={activeTab === 'education'} 
-            onClick={() => setActiveTab('education')}>
-            PARCOURS</Button>
-          <Button 
-            className={styles['nav-button']}
-            isActive={activeTab === 'contact'} 
-            onClick={() => setActiveTab('contact')}>
-            CONTACT</Button>
-        </div>
-			</nav>
-    </>
+            isActive={activeTab === item.id}
+            onClick={() => setActiveTab(item.id)}
+          >
+            {item.label}
+          </Button>
+        ))}
+      </div>
+    </nav>
   )
 }
 

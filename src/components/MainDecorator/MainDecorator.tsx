@@ -1,10 +1,11 @@
 import styles from './MainDecorator.module.scss';
-import NavBar from '../NavBar/NavBar';
-import Button from '../Button/Button';
-import Dropdown from '../Dropdown/Dropdown';
-import MainContent from '../MainContent/MainContent';
 
-import { useRef } from 'react';
+import NavBar from '@components/NavBar/NavBar';
+import Button from '@components/Button/Button';
+import Dropdown from '@components/Dropdown/Dropdown';
+import MainContent from '@components/MainContent/MainContent';
+
+import { useCallback, useEffect, useRef } from 'react';
 
 
 function MainDecorator() {
@@ -15,13 +16,41 @@ function MainDecorator() {
 
   let themeToggleSVGPath = useRef<SVGPathElement>(null);
 
-  const toggleTheme = () => {
-    let currentTheme = document.body.getAttribute("data-theme");
-    let switchToTheme = currentTheme === "dark" ? "light" : "dark";
-    document.body.setAttribute("data-theme", switchToTheme);
-    if (themeToggleSVGPath.current) {
-      themeToggleSVGPath.current.setAttribute("d", switchToTheme === "dark" ? sunSVG : moonSVG);
+  const applyTheme = useCallback((theme : string, save : boolean = false) => {
+    document.documentElement.setAttribute("data-theme", theme);
+
+    if (save) {
+      localStorage.setItem("user-theme", theme);
     }
+
+    if (themeToggleSVGPath.current) {
+      themeToggleSVGPath.current.setAttribute("d", theme === "dark" ? sunSVG : moonSVG);
+    }
+  }, []);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    const savedTheme = localStorage.getItem("user-theme");
+    const systemTheme = mediaQuery.matches ? "dark" : "light";
+    
+    applyTheme(savedTheme || systemTheme);
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      if (!localStorage.getItem("user-theme")) {
+        applyTheme(e.matches ? "dark" : "light");
+      }
+    };
+
+    mediaQuery.addEventListener('change', handleChange);
+    
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, [applyTheme]);
+
+  const toggleTheme = () => {
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+    const switchToTheme = currentTheme === "dark" ? "light" : "dark";
+    applyTheme(switchToTheme, true);
   };
 
   return (
@@ -34,7 +63,7 @@ function MainDecorator() {
           <NavBar />
         </div>
         <div id={styles["left-toolbar"]}>
-          <div id={styles["scroll-area"]} className='hashed-background'>
+          <div id={styles["spacer"]} className='hashed-background'>
           </div>
           <div id={styles["nav-utilities"]}>
               <Button aria-label="Switch to dark theme"

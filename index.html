@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
+    <script>
+      (function() {
+        const saved = localStorage.getItem('user-theme');
+        const theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+        
+        document.documentElement.style.backgroundColor = theme === 'dark' ? '#000000' : '#ffffff';
+      })();
+    </script>
     <meta charset="UTF-8" />
     <meta name="description" content="Portfolio d'Edouard PIGOT, software engineering associate chez Dassault Systèmes">
     <meta name="keywords" content="Edouard, Pigot, portfolio, site, personnel, projets, ingénieur, informatique">
@@ -8,8 +17,6 @@
     <link rel="icon" type="image/png" href="/src/assets/favicon/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edouard Pigot - Portfolio</title>
-
-    <script src="https://kit.fontawesome.com/fea9b294eb.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div id="root"></div>

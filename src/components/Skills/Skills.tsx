@@ -1,6 +1,7 @@
 import styles from './Skills.module.scss';
-import type { SkillGroup } from '../SkillColumn/SkillColumn';
-import SkillColumn from '../SkillColumn/SkillColumn';
+
+import type { SkillGroup } from '@components/SkillColumn/SkillColumn';
+import SkillColumn from '@components/SkillColumn/SkillColumn';
 
 const frontWebSkills: SkillGroup = {name: "Front-end", skills:[
   { name: 'HTML', level: 'primary' },

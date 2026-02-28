@@ -9,12 +9,9 @@ function CV() {
     <div className={styles.pageWrapper}>
       <article className={styles.a4Page}>
         <div className={styles.mainContainer}>
-          <div className={styles.header}>
-            <div className={styles.headerBackground}></div>
-            <h1 className={styles.title}>Développeur Full-stack</h1>
+          <div className={styles.header + " dotted-background"}>
+            <h1 className={styles.title}>Développeur C++</h1>
             <h2 className={styles.name}>Edouard <span className={styles.surname}>Pigot</span></h2>
-            <p className={styles.intro}>Avec une expérience significative chez Dassault Systèmes en tant qu’ingénieur logiciel, 
-              je suis à la recherche d’une nouvelle opportunité alliant travail d'équipe, informatique et communication.</p>
           </div>
           <div className={styles.body}>
             <section className={styles.leftColumn}>
@@ -27,13 +24,19 @@ function CV() {
                   company="Dassault Systèmes"
                   location="Vélizy-Villacoublay, France"
                   description={[
-                    "Dans une équipe Agile de développeurs fournissant une infrastructure d'UI pour les développeurs Dassault Systèmes à l'international.",
-                    "Maintenance et développement de fonctionnalités sur les composants de l’infrastructure d’UI en web avec Javascript et natif avec C++.",
+                    "Dans la même équipe que le stage de 2021. En méthodologie Agile Scrum.",
+                    "Fourniture d'une infrastructure de composants d'interface utilisateur (UI) pour les développeurs de Dassault Systèmes à l'international.",
+                    "Maintenance et évolution des composants en C++ et JavaScript.",
+                    "En C++ : calcul de contraste entre les textes et les fonds pour ajuster automatiquement les couleurs des textes, correction et amélioration \
+                    de la fenêtre de color picker pour gérer les status de couleurs et transparence undefined, conversion des couleurs legacy en RGB (int) en HSV \
+                    (double) afin d'améliorer la précision des couleurs, migration du code vers C++ 20 pour profiter des nouvelles fonctionnalités du langage et \
+                    corriger les erreurs de compilation, définition des données envoyées entre le serveur et le client pour le mirroring des UI du natif vers le web, \
+                    support au stage VR de 2022...",
                     "Support aux clients sur l'utilisation des API et les bonnes pratiques.",
                     "Écriture des tests et des documentations pour les développeurs et les équipes clientes.",
                     "Définition des spécifications avec les équipes UX."
                   ]}
-                  environment="JavaScript, TypeScript, C++, HTML, CSS, SASS, Jasmine, VS Code, VS 2019, Agile Scrum"
+                  environment="C++ 20, JavaScript, TypeScript, HTML, CSS, SASS, Jasmine, Visual Studio Code, Visual Studio 2019, Agile Scrum"
                 />
                 <Experience
                   date={["avr. 2021", "sept. 2021"]}
@@ -42,11 +45,12 @@ function CV() {
                   company="Dassault Systèmes"
                   location="Vélizy-Villacoublay, France"
                   description={[
-                    "Spécification et développement de méthodes d’interaction avec les UI en réalité virtuelle pour tirer au mieux profit de l'environnement 3D.",
-                    "Architecture évolutive par héritage sur les types d'interaction et les boîtes de collision.",
-                    "Création de layouts immersifs pensés pour la VR."
+                    "Intégré dans l'environnement de rendu 3D VR existant, analyse de l'existant et spécification de nouvelles méthodes d'interaction avec les UI en VR.",
+                    "Développement de trois nouvelles manières d'interagir avec les UI en VR : par collision entre la manette et les éléments de l'UI, par pointage avec un rayon court émis par la manette, et par liaison automatique entre la manette et l'élément de l'UI le plus proche.",
+                    "Création de classes de base contenant les algorithmes de calcul de colission (sphère, boîte) pouvant être associées aux éléments de l'UI et les manettes. Extensibles pour permettre aux utilisateurs de créer leurs propres formes via héritage d'une classe abstraite.",
+                    "Ecriture de tests unitaires pour assurer la stabilité du code et faciliter les futures évolutions.",
                   ]}
-                  environment="C++, Jasmine, VS 2019, Agile Scrum"
+                  environment="C++ 17, Jasmine, Visual Studio 2019, Agile Scrum"
                 />
                 <Experience
                   date={["juin 2020", "juil. 2020"]}
@@ -55,9 +59,8 @@ function CV() {
                   company="Institut de Prévention des Risques Urbains Marseille"
                   location="Marseille, France"
                   description={[
-                    "Reprise d’un simulateur d'inondation de musée sur le moteur Unity.",
-                    "Refonte du système de simulation de l’eau en incluant un modèle physique, remplaçant les plans d’eau statiques utilisés par l’équipe de développement précédente.",
-                    "Travail préliminaire sur l'amélioration du rendu de l'eau grâce aux Marching Cubes."
+                    "Reprise d’un projet de simulateur d'inondation de musée sur le moteur Unity en C#.",
+                    "Refonte du système de simulation de l’eau en incluant un modèle physique et travail préliminaire sur l'amélioration du rendu.",
                   ]}
                   environment="C#, Unity, 100% télé-travail"
                 />
@@ -79,9 +82,8 @@ function CV() {
                   company="Crédit Mutuel"
                   location="Marseille, France"
                   description={[
-                    "Juillet 2016 en agence à la Joliette. Etés 2018, 2019 et 2020 à la plateforme téléphonique Méditerranée",
-                    "Gestion et prise de rendez-vous, remise de carte et chéquiers, gestion des comptes, prêts, moyens de paiement, assurances.",
-                    "Assistance à l’utilisation des espaces personnels sur le site web et l'application Crédit Mutuel."
+                    "Accueil et archivage à l'agence de la Joliette.",
+                    "Accueil téléphonique au centre d'appels du Prado.",
                   ]}
                 />
               </div>
@@ -132,21 +134,12 @@ function CV() {
                 />
                 <h3 className={styles.sectionTitle}>Compétences</h3>
                 <SkillsSection 
-                  title="Savoir-être"
-                  skills={[
-                    "Travail d'équipe",
-                    "Communication",
-                    "Relation client",
-                    "Organisation du temps de travail"
-                  ]}
-                />
-                <SkillsSection 
                   title="Programmation"
                   skills={[
-                    "HTML, CSS, SASS",
-                    "JavaScript, TypeScript, Jquery, React, PHP",
+                    "C++ 20, C# (Unity)",
                     "SQL, MySQL",
-                    "C++, C# (Unity)"
+                    "JavaScript, TypeScript, Jquery, React, PHP",
+                    "HTML, CSS, SASS",
                   ]}
                 />
                 <SkillsSection 
@@ -157,6 +150,15 @@ function CV() {
                     "Vite",
                     "Visual Studio Code, Visual Studio 2019",
                     "Microsoft Office"
+                  ]}
+                />
+                <SkillsSection 
+                  title="Savoir-être"
+                  skills={[
+                    "Travail d'équipe",
+                    "Communication",
+                    "Relation client",
+                    "Organisation du temps de travail"
                   ]}
                 />
                 <h3 className={styles.sectionTitle}>Activités annexes</h3>

@@ -5,9 +5,7 @@
   margin: 20px;
   height: calc(100% - 40px);
   width: calc(100% - 40px);
-  position: absolute;
-  left: 0;
-  top: 0;
+  position: fixed;
   display: grid;
   grid-template-columns: 67px 1fr;
   grid-template-rows: 51px 1fr;
@@ -53,7 +51,7 @@
     justify-content: end;
     border-right: solid 1px var(--decorator-color);
 
-    #scroll-area {
+    #spacer {
       width: 100%;
       height: 100%;
     }
@@ -118,6 +116,6 @@
     position: relative;
     height: 100%;
     width: 100%;
-    overflow-y: scroll;
+    overflow: hidden;
   }
 }

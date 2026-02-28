@@ -1,28 +1,19 @@
-import { useState, useRef, useEffect, type ReactElement } from 'react';
-import Button from '../Button/Button'; // Your existing component
 import styles from './Dropdown.module.scss';
+
+import Button from '@components/Button/Button';
+
+import { useState, useRef, useEffect, type ReactElement } from 'react';
 
 type Item = {
   label: string;
   icon: string;
 }
 
-interface BaseProps extends React.ButtonHTMLAttributes<HTMLButtonElement>{
+interface DropdownProps extends React.ButtonHTMLAttributes<HTMLButtonElement>{
   items: Item[]; 
   onItemSelect?: (item: Item) => void;
   displayArrow?: boolean;
 }
-
-type RectangleDropdown = BaseProps & {
-  shape?: 'rectangle';
-};
-
-type RoundDropdown = BaseProps & {
-  shape: 'round';
-  'aria-label': string; // Force a label for icon-only buttons
-};
-
-type DropdownProps = RectangleDropdown | RoundDropdown;
 
 function Dropdown(props: DropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -70,7 +61,6 @@ function Dropdown(props: DropdownProps) {
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" viewBox="0 -960 960 960" ><path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z"/></svg> 
           : <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" viewBox="0 -960 960 960" ><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>;
   }
-
 
   return (
     <>
