@@ -1,6 +1,6 @@
 import styles from './ProjectsSectionContent.module.scss';
 
-import ProjectDisplay from '@/components/Project/ProjectDisplay';
+import ProjectDisplay from '@/components/ProjectDisplay/ProjectDisplay';
 
 import { projects } from '@data/projects';
 

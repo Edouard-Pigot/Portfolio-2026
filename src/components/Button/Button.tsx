@@ -1,10 +1,10 @@
 import styles from './Button.module.scss';
 
-import type { ReactElement } from 'react';
+import type { ReactElement, ReactNode, ForwardedRef } from 'react';
+import { forwardRef } from 'react';
 
 interface BaseProps extends React.ButtonHTMLAttributes<HTMLDivElement> {
   isActive?: boolean;
-  ref?: React.Ref<HTMLDivElement>;
 };
 
 type Button = BaseProps & {
@@ -20,8 +20,8 @@ type RoundButton = BaseProps & {
 
 type ButtonProps = Button | RoundButton;
 
-function Button(props: ButtonProps) {
-  const { className, children, isActive, 'aria-label': ariaLabel, ref, ...rest } = props;
+function ButtonComponent(props: ButtonProps, ref: ForwardedRef<HTMLDivElement>) {
+  const { className, children, isActive, 'aria-label': ariaLabel, ...rest } = props;
 
   const shape = props.shape || 'rectangle';
 
@@ -51,5 +51,7 @@ function Button(props: ButtonProps) {
     </>
   )
 };
+
+const Button = forwardRef(ButtonComponent);
 
 export default Button;

@@ -3,16 +3,23 @@ import styles from './Dropdown.module.scss';
 import Button from '@components/Button/Button';
 
 import { useState, useRef, useEffect, type ReactElement } from 'react';
+import { createPortal } from 'react-dom';
 
-type Item = {
+export type Item = {
   label: string;
-  icon: string;
+  value: string;
+  icon?: string;
 }
+
+type MenuPosition = 'below' | 'right' | 'left' | 'top';
+type DropDirection = 'down' | 'up';
 
 interface DropdownProps extends React.ButtonHTMLAttributes<HTMLButtonElement>{
   items: Item[]; 
   onItemSelect?: (item: Item) => void;
   displayArrow?: boolean;
+  forcedMenuPosition?: MenuPosition;
+  dropDirection?: DropDirection;
 }
 
 function Dropdown(props: DropdownProps) {
@@ -34,25 +41,71 @@ function Dropdown(props: DropdownProps) {
   };
 
   useEffect(() => {
-    if (isOpen && dropdownMenu.current && dropdownButton.current) {
-      const buttonRect = dropdownButton.current.getBoundingClientRect();
-      const menuRect = dropdownMenu.current.getBoundingClientRect();
+    const updatePosition = () => {
+      if (isOpen && dropdownMenu.current && dropdownButton.current) {
+        dropdownButton.current.classList.add('active');
 
-      dropdownButton.current.classList.add('active');
+        const buttonRect = dropdownButton.current.getBoundingClientRect();
+        const menuRect = dropdownMenu.current.getBoundingClientRect();
 
-      if (buttonRect) {
-        dropdownMenu.current.style.top = `${buttonRect.bottom + window.scrollY}px`;
-        dropdownMenu.current.style.left = `${buttonRect.right - buttonRect.width/2 - menuRect.width/2}px`;
+        const viewportHeight = window.innerHeight;
+        const viewportWidth = window.innerWidth;
+
+        let top = 0, left = buttonRect.left;
+
+        let finalPos: MenuPosition;
+        const direction = props.dropDirection || 'down';
+
+        if (props.forcedMenuPosition) {
+          finalPos = props.forcedMenuPosition;
+        } else {
+          if (buttonRect.bottom + menuRect.height <= viewportHeight) finalPos = 'below';
+          else if (buttonRect.right + menuRect.width <= viewportWidth) finalPos = 'right';
+          else if (buttonRect.left - menuRect.width >= 0) finalPos = 'left';
+          else finalPos = 'top';
+        }
+
+        switch (finalPos) {
+          case 'below':
+            top = buttonRect.bottom + scrollY;
+            break;
+          case 'top':
+            top = buttonRect.top + scrollY - menuRect.height;
+            break;
+          case 'right':
+          case 'left':
+            left = finalPos === 'right' ? buttonRect.right : buttonRect.left - menuRect.width;
+        
+            if (direction === 'down') {
+              top = buttonRect.top + scrollY; 
+            } else {
+              top = buttonRect.bottom - menuRect.height + scrollY;
+            }
+            break;
+          default:
+            top = Math.max(0, (viewportHeight - menuRect.height) / 2) + scrollY;
+            left = Math.max(0, (viewportWidth - menuRect.width) / 2);
+            break;
+        }
+
+        dropdownMenu.current.style.top = `${top}px`;
+        dropdownMenu.current.style.left = `${left}px`;
       }
-
-      dropdownMenu.current.addEventListener('blur', handleClickOutside);
-      return () => { 
-        if(dropdownMenu.current)
-          dropdownMenu.current.removeEventListener('blur', handleClickOutside);
-        if(dropdownButton.current)
-          dropdownButton.current.classList.remove('active');
-      };
     }
+
+    if(isOpen && dropdownMenu.current) {
+      updatePosition();
+      dropdownMenu.current.addEventListener('blur', handleClickOutside);
+      window.addEventListener('scroll', updatePosition, true);
+      window.addEventListener('resize', updatePosition);
+    }
+
+    return () => { 
+      if(dropdownMenu.current)
+        dropdownMenu.current.removeEventListener('blur', handleClickOutside);
+      if(dropdownButton.current)
+        dropdownButton.current.classList.remove('active');
+    };
   }, [isOpen]);
 
   let arrowIcon;
@@ -77,17 +130,20 @@ function Dropdown(props: DropdownProps) {
           {arrowIcon}
       </Button>
       {isOpen && (
-        <div ref={dropdownMenu} className={styles.menu}>
-          {props.items.map((item, index) => (
-            <button 
-              key={index} 
-              className={styles.menuItem} 
-              onClick={() => handleItemClick(item)}
-            >
-              {item.label}
-            </button>
-          ))}
-        </div>
+        createPortal(
+          <div ref={dropdownMenu} className={styles.menu}>
+            {props.items.map((item, index) => (
+              <button 
+                key={index} 
+                className={styles.menuItem} 
+                onClick={() => handleItemClick(item)}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>,
+          document.body
+        )
       )}
     </>
   );

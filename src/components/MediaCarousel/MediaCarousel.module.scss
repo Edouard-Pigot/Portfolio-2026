@@ -20,62 +20,65 @@
     }
   }
 
-  .arrow, .position-indicators {
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    pointer-events: none;
-  }
-
-  .arrow {
+  .carouselControls {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: var(--main-bg-color);
-    border: none;
-    font-size: 2rem;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 2;
-    stroke: var(--main-text-color);
-    stroke-width: 20px;
-
-     transition: stroke 0.2s ease, background-color 0.2s ease, opacity 0.3s ease, visibility 0.3s ease;
-
-    svg {
-      display: block;
-    }
-
-    &:hover {
-      background: var(--highlight-color);
-      stroke: var(--contrast-text-color);
-    }
-
-    &.prev { left: 10px; }
-    &.next { right: 10px; }
-  }
-
-  .position-indicators {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 0;
+    right: 0;
+    height: 100%;
     display: flex;
-    gap: 8px;
-    z-index: 2;
-    padding: 5px;
+    flex-direction: column;
     background-color: var(--main-bg-color);
 
-    .position-indicator {
-      width: 8px;
-      height: 8px;
-      border: none;
-      background: var(--contrast-bg-color);
-      cursor: pointer;
-      transition: width 0.2s ease, background-color 0.2s ease;
+    .arrow, .position-indicators {
+      transition: opacity 0.2s ease;
+      pointer-events: none;
+    }
 
-      &.active { 
+    .arrow {
+      background: var(--main-bg-color);
+      border: none;
+      font-size: 2rem;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 2;
+      stroke: var(--main-text-color);
+      stroke-width: 20px;
+
+      transition: stroke 0.2s ease, background-color 0.2s ease, opacity 0.3s ease, visibility 0.3s ease;
+
+      svg {
+        display: block;
+      }
+
+      &:hover {
         background: var(--highlight-color);
+        stroke: var(--contrast-text-color);
+      }
+
+      &.prev { left: 10px; }
+      &.next { right: 10px; }
+    }
+
+    .position-indicators {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 2;
+      padding: 6px;
+      background-color: var(--main-bg-color);
+
+      .position-indicator {
         width: 20px;
+        height: 20px;
+        border: none;
+        background: var(--contrast-bg-color);
+        cursor: pointer;
+        transition: width 0.2s ease, background-color 0.2s ease;
+
+        &.active { 
+          background: var(--highlight-color);
+          width: 20px;
+        }
       }
     }
   }

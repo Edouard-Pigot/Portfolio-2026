@@ -27,8 +27,11 @@ export const projects: Project[] = [
     vitesse du char.",
     techStack: ["C#", "Unity", "Blender"],
     media: [
-      { url: getMediaUrl(1, 1, 'webp'), type: 'image' },
-      { url: getMediaUrl(1, 2, 'webp'), type: 'image' }
+      { url: getMediaUrl(1, 1, 'webm'), type: 'video' },
+      { url: getMediaUrl(1, 2, 'webm'), type: 'video' },
+      { url: getMediaUrl(1, 3, 'webm'), type: 'video' },
+      { url: getMediaUrl(1, 4, 'webp'), type: 'image' },
+      { url: getMediaUrl(1, 5, 'webp'), type: 'image' }
     ],
     link: "https://github.com/Edouard-Pigot/Tank-Physics"
   },
@@ -96,8 +99,9 @@ export const projects: Project[] = [
     plus grande simplicité d'utilisation. L'interface est intuitive et incorpore une fonction de chat lors d'une partie.",
     techStack: ["HTML", "CSS", "JavaScript", "NodeJS"],
     media: [
-      { url: getMediaUrl(7, 1, 'webp'), type: 'image' },
-      { url: getMediaUrl(7, 2, 'webp'), type: 'image' }
+      { url: getMediaUrl(7, 1, 'webm'), type: 'video' },
+      { url: getMediaUrl(7, 2, 'webp'), type: 'image' },
+      { url: getMediaUrl(7, 3, 'webp'), type: 'image' }
     ],
     link: "https://github.com/Edouard-Pigot/Blitz"
   },
@@ -157,7 +161,8 @@ export const projects: Project[] = [
     Développé en binôme, ce projet a été continué en dehors du cadre scolaire sous la forme d'un stage de juin à juillet 2020.",
     techStack: ["Unity", "C#", "Blender"],
     media: [
-      { url: getMediaUrl(11, 1, 'webp'), type: 'image' }
+      { url: getMediaUrl(11, 1, 'webp'), type: 'image' },
+      { url: getMediaUrl(11, 2, 'webp'), type: 'image' },
     ],
     link: "https://github.com/Edouard-Pigot/TER"
   },
@@ -220,6 +225,7 @@ export const projects: Project[] = [
     media: [
       { url: getMediaUrl(16, 1, 'webm'), type: 'video' }
     ],
+    link: "https://www.shadertoy.com/view/wdVfRw"
   },
   {
     id: 17,

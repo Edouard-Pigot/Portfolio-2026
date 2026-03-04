@@ -2,13 +2,16 @@ import styles from './MainDecorator.module.scss';
 
 import NavBar from '@components/NavBar/NavBar';
 import Button from '@components/Button/Button';
-import Dropdown from '@components/Dropdown/Dropdown';
+import Dropdown, { type Item } from '@components/Dropdown/Dropdown';
 import MainContent from '@components/MainContent/MainContent';
 
 import { useCallback, useEffect, useRef } from 'react';
-
+import { useTranslation } from 'react-i18next';
 
 function MainDecorator() {
+
+  const { i18n } = useTranslation();
+
   let moonSVG = "M12 1A11 11 0 1 0 23 12A7.78 7.78 0 0 1 12 1Z";
   let sunSVG = "M12 7C14.761 7 17 9.239 17 12C17 14.761 14.761 17 12 17C9.239 17 7 14.761 7 12C7 9.239 9.239 7 12 7Z M12 1V4 M12 20V23 M4 12H1 M23 12H20 M19.78 4.22L17.66 6.34 M6.34 17.66L4.22 19.78 M19.78 19.78L17.66 17.66 M6.34 6.34L4.22 4.22";
 
@@ -53,6 +56,16 @@ function MainDecorator() {
     applyTheme(switchToTheme, true);
   };
 
+  const languageOptions = [
+    { label: 'English', value: 'en', icon: '🇺🇸' },
+    { label: 'Français', value: 'fr', icon: '🇫🇷' },
+  ];
+
+  const handleSelect = (item: Item) => {
+    i18n.changeLanguage(item.value);
+    console.log(`System language updated to: ${item.value}`);
+  };
+
   return (
     <>
       <div className={styles.mainDecorator}>
@@ -66,7 +79,8 @@ function MainDecorator() {
           <div id={styles["spacer"]} className='hashed-background'>
           </div>
           <div id={styles["nav-utilities"]}>
-              <Button aria-label="Switch to dark theme"
+              <Button 
+                aria-label="Switch to dark theme"
                 onClick={toggleTheme}
                 id={styles["theme-toggle"]}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" >
@@ -78,10 +92,13 @@ function MainDecorator() {
                     strokeLinejoin="round"/>
                 </svg>
               </Button>
-              <Dropdown items={[
-                  { label: "Français", onClick: () => toggleLanguage() },
-                  { label: "English", onClick: () => toggleLanguage() }
-                ]} id={styles["language-dropdown"]} aria-label="Choose language" displayArrow={false}>
+              <Dropdown 
+                items={languageOptions} 
+                onItemSelect={handleSelect} 
+                id={styles["language-dropdown"]} aria-label="Choose language" displayArrow={false}
+                forcedMenuPosition='right'
+                dropDirection='up'
+              >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
                   <path d={planetSVG} fill="none"/>
                 </svg>

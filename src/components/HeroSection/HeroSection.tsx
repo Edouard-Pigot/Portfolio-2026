@@ -2,7 +2,11 @@ import styles from './HeroSection.module.scss'
 
 import Section from '@components/Section/Section';
 
+import { useTranslation } from 'react-i18next';
+
 function HeroSection() {
+
+  const { t } = useTranslation();
 
   let decoratorSVG = (
     <svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -27,8 +31,7 @@ function HeroSection() {
         </div>
         <div id={styles.title}>
           <h1>EDOUARD PIGOT</h1>
-          <hr></hr>
-          <h2>Développeur full-stack et 3D</h2>
+          <h2>{t('hero_subtitle')}</h2>
         </div>
         <div className={styles.heroDecorator}>
           {decoratorSVG}
