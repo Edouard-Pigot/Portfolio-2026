@@ -1,5 +1,3 @@
-@use '../../styles/_themes';
-
 $size: 1rem;
 $icon-size: 17px;
 
@@ -45,60 +43,11 @@ $icon-size: 17px;
             width: $icon-size;
         }
     }
-}
 
-.active {
-    :root[data-theme='dark'] & {
+    &.active {
         color: var(--main-text-color);
         fill: var(--main-text-color);
         stroke: var(--main-text-color);
-    }
-
-    &.round, &.rounded {
-        & span svg, img {
-            color: var(--contrast-text-color);
-            fill: var(--contrast-text-color);
-            stroke: var(--contrast-text-color);
-            :root[data-theme='dark'] & {
-                color: var(--main-text-color);
-                fill: var(--main-text-color);
-                stroke: var(--main-text-color);
-            }
-        }
-    }
-}
-
-
-.round {
-    composes: button;
-    padding: 0.6rem;
-    border-radius: 50%;
-
-    & span {
-        margin: 0;
-        & svg, img {
-            width: $icon-size;
-            height: $icon-size;
-            object-fit: contain;
-            color: var(--text-color);
-            fill: var(--text-color);
-            stroke: var(--text-color);
-        }
-    }
-}
-
-.rounded {
-    composes: button;
-    border-radius: $icon-size;
-
-    & span {
-        & svg, img {
-            width: $icon-size;
-            height: $icon-size;
-            object-fit: contain;
-            color: var(--text-color);
-            fill: var(--text-color);
-            stroke: var(--text-color);
-        };
+        background-color: var(--main-bg-color);
     }
 }

@@ -1,4 +1,126 @@
 {
-  "hero_subtitle": "Full-stack and 3D developper",
-  "about": "Hello! I'm a software developer with a passion for creating innovative solutions and learning new technologies. With experience in full-stack development, I enjoy working on projects that challenge me to grow and expand my skill set. In my free time, I love exploring the outdoors, playing video games, and experimenting with new recipes in the kitchen."
+  "home": {
+    "section_name": "home",
+    "subtitle": "Full-stack and 3D developper"
+  },
+  "about": {
+    "section_name": "about",
+    "description": "Software Engineer at Dassault Systèmes, I specialize in developing User Interface (UI) infrastructures. My expertise combines the power of C++20 for native development with the flexibility of JavaScript and TypeScript for web environments. With a Master’s degree in Computer Science (specializing in Geometry and Computer Graphics), I have extensive experience solving complex technical challenges, ranging from VR collision algorithms to 3D rendering optimization. Driven by technological innovation, I thrive in Agile Scrum environments where I combine technical precision, effective teamwork, and a strong focus on client satisfaction."
+  },
+  "projects": {
+    "section_name": "projects",
+    "details_button": "See the project",
+    "details" : {
+      "tank_physics": {
+        "title": "Tank Physics",
+        "description": "My first major Unity project, focused on creating a complete tank control system. Key features include realistic wheel rotation, suspension movement, and tread animation, as well as horizontal and vertical turret controls and firing mechanics. Tank movement is handled by Unity's physics engine. Treads were rigged with bones in Blender and synced to wheel positions, using a texture offset that varies based on the vehicle's speed."
+      },
+      "modeling_3d": {
+        "title": "3D Modeling",
+        "description": "School projects introducing modeling in Blender. Features a katana created using a template and an octopus modeled with Bézier curves."
+      },
+      "tank_shooter": {
+        "title": "Tank Shooter",
+        "description": "A top-down shooter prototype in Unity featuring a projectile physics system with ricochets. The keyboard controls tank movement while the turret tracks the mouse cursor. A mesh generator creates dynamic tread marks on the ground, and the tank chassis automatically rotates to follow the player's intended direction."
+      },
+      "procedural_swords": {
+        "title": "Procedural Swords",
+        "description": "A Python script for Blender that automatically generates weapon models (swords, daggers, spears, etc.) based on user-defined parameters such as blade length and thickness, handle length, and guard width."
+      },
+      "face_detector": {
+        "title": "Face Detector",
+        "description": "Python scripts for Blender that traverse a 3D object's mesh and color faces based on various geometric parameters."
+      },
+      "scripted_animation": {
+        "title": "Scripted Animation",
+        "description": "A Python script designed to automate vehicle animation."
+      },
+      "blitz": {
+        "title": "Blitz",
+        "description": "A final-year undergraduate project developed in a team of four. Blitz is a card game available in the browser, featuring real-time multiplayer, a lobby system for creating/joining games, and account management. Built 100% with HTML, CSS, and NodeJS for cross-device compatibility and ease of use. The interface is intuitive and includes an integrated chat function."
+      },
+      "elevator_controller": {
+        "title": "Elevator Controller",
+        "description": "A software engineering project involving the implementation of a modular interface and management system for an elevator car."
+      },
+      "pacman": {
+        "title": "Pacman",
+        "description": "A software engineering project focused on recreating the 1980s Pacman. It features original graphics, the classic map, and authentic AI logic for the ghosts. The project heavily utilizes Design Patterns to decouple gameplay mechanics from the engine logic."
+      },
+      "lumipic": {
+        "title": "Lumipic",
+        "description": "Photo album creation software developed for a Human-Computer Interaction course. The interface follows the Windows 10 File Explorer theme and includes both light and dark modes. It allows users to browse local folders, filtering for image files only. Users can create albums by selecting and grouping images into named collections."
+      },
+      "flood_simulator": {
+        "title": "Flood Simulator",
+        "description": "A research project (TER) in partnership with the IPGR. The goal was to create a museum flood simulator as an educational tool for training museum staff in disaster scenarios like floods or pipe bursts. Developed in Unity for web deployment, the major challenge was balancing performance and visual quality to provide a realistic simulation capable of running on low-end hardware. Developed as a duo, this project continued as an internship from June to July 2020."
+      },
+      "portfolio_v1": {
+        "title": "Portfolio V1",
+        "description": "Creation of this website to centralize and showcase my projects during my 2021 internship search."
+      },
+      "particle_emitter": {
+        "title": "Particle Emitter",
+        "description": "An Animation and Rendering project featuring a smoke particle system. The system allows for customization of parameters like texture color, lifespan, and emission frequency. The texture is animated via an atlas handled within a custom shader."
+      },
+      "boids": {
+        "title": "Boids",
+        "description": "An Animation and Rendering project focused on creating fish AI using boid algorithms. Includes obstacle avoidance and predator evasion mechanics using spherical colliders."
+      },
+      "drone_choreography": {
+        "title": "Drone Choreography",
+        "description": "A WebGL-based drone choreography visualizer. It reads a keyframe file to animate drone models with user-controlled playback. Features include toggles for a ground grid, axis markers, flight paths, ground-drop lines, and drone labels. It also includes collision detection and speed monitoring."
+      },
+      "shader_intro": {
+        "title": "Introduction to Shaders",
+        "description": "An introductory course on GLSL and shader writing using Shadertoy. Includes a fragment shader depicting a day/night cycle over the ocean."
+      },
+      "portfolio_v2": {
+        "title": "Portfolio V2",
+        "description": "An updated design and content refresh for my portfolio, notably adding light and dark mode support."
+      },
+      "catan": {
+        "title": "Catan",
+        "description": "An experiment in recreating the board game Catan in 3D. Includes procedural generation of a hexagonal game board, resource management, and turn-based gameplay logic."
+      },
+      "portfolio_v3": {
+        "title": "Portfolio V3",
+        "description": "In progress."
+      },
+      "visit_paris": {
+        "title": "Visit Paris",
+        "description": "In progress."
+      }
+    }
+  },
+  "skills": {
+    "section_name": "skills",
+    "legend": {
+      "high": "Expertise",
+      "medium": "Proficient",
+      "low": "Fundamentals"
+    },
+    "groups": {
+      "frontend": "Front-end",
+      "backend": "Back-end & database",
+      "software": "Software & game dev",
+      "tools": "Tools & workflow"
+    }
+  },
+  "experience": {
+    "section_name": "experience"
+  },
+  "schooling": {
+    "section_name": "schooling"
+  },
+  "contact": {
+    "section_name": "contact"
+  },
+  "theme": {
+    "toggle_aria_dark": "Switch to dark theme",
+    "toggle_aria_light": "Switch to light theme"
+  },
+  "language": {
+    "dropdown_aria": "Change the language"
+  }
 }

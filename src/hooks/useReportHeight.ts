@@ -11,12 +11,6 @@ export const useReportHeight = <T extends HTMLElement>(id: string) => {
   const { reportHeight } = context;
   const elementRef = useRef<T>(null);
 
-  const idRef = useRef(id);
-
-  useLayoutEffect(() => {
-    idRef.current = id;
-  }, [id]);
-
   useLayoutEffect(() => {
     const element = elementRef.current;
     if (!element) return;
@@ -24,7 +18,7 @@ export const useReportHeight = <T extends HTMLElement>(id: string) => {
     const observer = new ResizeObserver((entries) => {
       for (const entry of entries) {
         const height = entry.borderBoxSize?.[0]?.blockSize ?? entry.contentRect.height;
-        reportHeight(idRef.current, height);
+        reportHeight(id, height);
       }
     });
 
@@ -32,14 +26,12 @@ export const useReportHeight = <T extends HTMLElement>(id: string) => {
 
     // Initial height report
     const height = element.getBoundingClientRect().height;
-    reportHeight(idRef.current, height);
+    reportHeight(id, height);
 
     return () => {
       observer.disconnect();
-      // Don't clear height on cleanup to avoid issues with React Strict Mode re-mounting
-      // The height will be updated when the observer reports changes
     };
-  }, [reportHeight]);
+  }, [id, reportHeight]);
 
   return elementRef;
 };

@@ -31,7 +31,7 @@ function HeroSection() {
         </div>
         <div id={styles.title}>
           <h1>EDOUARD PIGOT</h1>
-          <h2>{t('hero_subtitle')}</h2>
+          <h2>{t('home.subtitle')}</h2>
         </div>
         <div className={styles.heroDecorator}>
           {decoratorSVG}

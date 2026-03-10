@@ -8,10 +8,30 @@
 }
 
 :root {
+    --decorator-margin: 20px;
+    --navbar-height: 51px;
     font-size: 12px;
+}
+
+::selection {
+    background-color: var(--highlight-color);
+    color: var(--contrast-text-color);
 }
 
 body, html {
     min-height: 100%;
     background-color: var(--main-bg-color);
+}
+
+.dotted-background {
+    background-image: var(--bg-dots);
+}
+
+.full-background {
+    background-color: var(--main-bg-color);
+}
+
+.hashed-background {
+    background-image: var(--bg-hash);
+    background-size: 10px 10px;
 }

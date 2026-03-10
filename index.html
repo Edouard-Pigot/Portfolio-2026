@@ -6,8 +6,6 @@
         const saved = localStorage.getItem('user-theme');
         const theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         document.documentElement.setAttribute('data-theme', theme);
-        
-        document.documentElement.style.backgroundColor = theme === 'dark' ? '#000000' : '#ffffff';
       })();
     </script>
     <meta charset="UTF-8" />

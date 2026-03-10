@@ -1,15 +1,13 @@
-import React, { 
-  createContext, 
-  useContext, 
-  useState, 
-  useMemo, 
-  useCallback, 
-  useEffect 
-} from 'react';
+import React, { createContext, useState, useMemo, useCallback, useEffect } from 'react';
 import { createPortal } from 'react-dom';
+
+const SECTION_ORDER = ['home', 'about', 'projects', 'skills', 'experience', 'education', 'contact'];
 
 interface ScrollHeightContextType {
   reportHeight: (id: string, height: number) => void;
+  scrollToSection: (id: string) => void;
+  activeSection: string;
+  scrollY: number;
 }
 
 export const ScrollHeightContext = createContext<ScrollHeightContextType | undefined>(undefined);
@@ -24,13 +22,10 @@ function ScrollBridge({ children }: { children: React.ReactNode }) {
 
   const totalHeight = useMemo(() => {
     const sectionsHeight = Object.values(heights).reduce((acc, curr) => acc + curr, 0);
-    
     const root = getComputedStyle(document.documentElement);
     const margin = parseInt(root.getPropertyValue('--decorator-margin')) || 0;
     const navbarHeight = parseInt(root.getPropertyValue('--navbar-height')) || 0;
-    const decoratorHeight = margin * 2 + navbarHeight;
-    
-    return sectionsHeight + decoratorHeight;
+    return sectionsHeight + (margin * 2) + navbarHeight;
   }, [heights]);
 
   useEffect(() => {
@@ -39,28 +34,57 @@ function ScrollBridge({ children }: { children: React.ReactNode }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToSection = useCallback((id: string) => {
+    const targetIndex = SECTION_ORDER.indexOf(id);
+    if (targetIndex === -1) return;
+
+    const offset = SECTION_ORDER
+      .slice(0, targetIndex)
+      .reduce((acc, curr) => acc + (heights[curr] || 0), 0);
+
+    window.scrollTo({ top: offset, behavior: 'smooth' });
+  }, [heights]);
+
+  const activeSection = useMemo(() => {
+    const root = getComputedStyle(document.documentElement);
+    const margin = parseInt(root.getPropertyValue('--decorator-margin')) || 0;
+    const navbarHeight = parseInt(root.getPropertyValue('--navbar-height')) || 0;
+
+    const viewportTop = scrollY + margin + navbarHeight;
+    const viewportMiddle = scrollY + margin + navbarHeight + (window.innerHeight / 2);
+
+    let accumulatedTop = 0;
+
+    for (const id of SECTION_ORDER) {
+      const sectionHeight = heights[id] || 0;
+      const sectionBottom = accumulatedTop + sectionHeight;
+
+      // RULE: 
+      // 1. The middle of the screen must be past the section's top (viewportMiddle >= accumulatedTop)
+      // 2. The top of the screen must NOT have passed the section's bottom (viewportTop < sectionBottom)
+      if (viewportMiddle >= accumulatedTop && viewportTop < sectionBottom) {
+        return id;
+      }
+
+      accumulatedTop = sectionBottom;
+    }
+
+    return SECTION_ORDER[0];
+  }, [scrollY, heights]);
+
   return (
-    <ScrollHeightContext.Provider value={{ reportHeight }}>
+    <ScrollHeightContext.Provider value={{ reportHeight, scrollToSection, activeSection, scrollY }}>
       {createPortal(
         <div 
-          id="scroll-ghost"
           style={{ 
             height: `${totalHeight}px`, 
-            width: '1px',
-            pointerEvents: 'none',
-            visibility: 'hidden'
+            position: 'absolute', top: 0, left: 0, width: '1px', 
+            pointerEvents: 'none', visibility: 'hidden' 
           }} 
         />,
         document.body
       )}
-
-      <div style={{ 
-        height: '100%',
-        transform: `translateY(-${scrollY}px)`,
-        willChange: 'transform' 
-      }}>
-        {children}
-      </div>
+      {children}
     </ScrollHeightContext.Provider>
   );
 };

@@ -1,0 +1,12 @@
+#about-section {
+  display: flex;
+  #about-section-wrapper {
+    flex: 0 0 60%;
+
+    #about-section-content {
+      text-align: justify;
+      padding: 0 2rem 2rem 2rem;
+    }
+  }
+
+}

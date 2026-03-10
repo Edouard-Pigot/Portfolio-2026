@@ -1,14 +1,11 @@
-@use '../../styles/_themes';
-@use '../../styles/_fonts';
-
 .mainDecorator {
-  margin: 20px;
+  margin: var(--decorator-margin);
   height: calc(100% - 40px);
   width: calc(100% - 40px);
   position: fixed;
   display: grid;
   grid-template-columns: 67px 1fr;
-  grid-template-rows: 51px 1fr;
+  grid-template-rows: var(--navbar-height) 1fr;
   border: 1px solid var(--decorator-color);
 
   #top-left-corner {

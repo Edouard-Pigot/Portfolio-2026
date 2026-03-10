@@ -1,21 +1,31 @@
 import styles from './NavBar.module.scss';
 
-import Button from '@components/Button/Button';
+import { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import { useState } from 'react';
+import Button from '@components/Button/Button';
+import { ScrollHeightContext } from '@components/ScrollBridge/ScrollBridge';
 
 function NavBar() {
-  const [activeTab, setActiveTab] = useState('home');
+  const { t } = useTranslation();
+
+  const scrollContext = useContext(ScrollHeightContext);
+
+  const activeTab = scrollContext?.activeSection || 'home';
 
   const navItems = [
-    { id: 'home', label: 'ACCUEIL' },
-    { id: 'about', label: 'À PROPOS' },
-    { id: 'projects', label: 'PROJETS' },
-    { id: 'skills', label: 'COMPÉTENCES' },
-    { id: 'experience', label: 'EXPÉRIENCE' },
-    { id: 'education', label: 'PARCOURS' },
-    { id: 'contact', label: 'CONTACT' }
+    { id: 'home', label: t('home.section_name') },
+    { id: 'about', label: t('about.section_name') },
+    { id: 'projects', label: t('projects.section_name') },
+    { id: 'skills', label: t('skills.section_name') },
+    { id: 'experience', label: t('experience.section_name') },
+    { id: 'education', label: t('schooling.section_name') },
+    { id: 'contact', label: t('contact.section_name') }
   ];
+
+  const handleNavClick = (id: string) => {
+    scrollContext?.scrollToSection(id);
+  };
 
   return (
     <nav id={styles["nav-bar-content"]} className={styles.navBar}>
@@ -25,14 +35,14 @@ function NavBar() {
             key={item.id}
             className={styles['nav-button']}
             isActive={activeTab === item.id}
-            onClick={() => setActiveTab(item.id)}
+            onClick={() => handleNavClick(item.id)}
           >
             {item.label}
           </Button>
         ))}
       </div>
     </nav>
-  )
+  );
 }
 
-export default NavBar
+export default NavBar;

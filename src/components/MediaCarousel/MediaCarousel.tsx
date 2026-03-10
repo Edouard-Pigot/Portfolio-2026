@@ -64,20 +64,11 @@ function MediaCarousel({ media }: { media: ProjectMedia[] }) {
         ))}
       </div>
       <div className={styles['carouselControls']}>
-        {showLeft && (
-          <button className={`${styles['arrow']} ${styles['prev']}`} onClick={() => slide('prev')}>
-            <svg className={styles.chevron} width="1rem" height="1rem" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
-              <path d="M 100 0 L 0 100 L 100 200" fill='none' />
-            </svg>
-          </button>
-        )}
-        {showRight && (
-          <button className={`${styles['arrow']} ${styles['next']}`} onClick={() => slide('next')}>
-            <svg className={styles.chevron} width="1rem" height="1rem" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
-              <path d="M 0 0 L 100 100 L 0 200" fill='none' />
-            </svg>
-          </button>
-        )}
+        <button className={`${styles['arrow']} ${styles['prev']} ${showLeft && styles['shown']}`} onClick={() => slide('prev')}>
+          <svg className={styles.chevron} width="1rem" height="1rem" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 100 0 L 0 100 L 100 200" fill='none' />
+          </svg>
+        </button>
 
         <div className={styles['position-indicators']}>
           {media.map((_, i) => (
@@ -88,6 +79,12 @@ function MediaCarousel({ media }: { media: ProjectMedia[] }) {
             />
           ))}
         </div>
+
+        <button className={`${styles['arrow']} ${styles['next']} ${showRight && styles['shown']}`} onClick={() => slide('next')}>
+          <svg className={styles.chevron} width="1rem" height="1rem" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 0 0 L 100 100 L 0 200" fill='none' />
+          </svg>
+        </button>
       </div>
     </div>
   );

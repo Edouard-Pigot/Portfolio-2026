@@ -24,20 +24,17 @@ interface DropdownProps extends React.ButtonHTMLAttributes<HTMLButtonElement>{
 
 function Dropdown(props: DropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState<Item | null>(null);
+  const [activeIndex, setActiveIndex] = useState(-1);
   const dropdownMenu = useRef<HTMLDivElement>(null);
   const dropdownButton = useRef<HTMLDivElement>(null);
 
-  const handleClickOutside = (event: FocusEvent) => {
-    if (dropdownMenu.current && !dropdownMenu.current.contains(event.target as Node)) {
+  const handleClickOutside = (event: MouseEvent) => {
+    if (isOpen &&
+        dropdownMenu.current && !dropdownMenu.current.contains(event.target as Node) &&
+        dropdownButton.current && !dropdownButton.current.contains(event.target as Node)
+    ) {
       setIsOpen(false);
     }
-  };
-
-  const handleItemClick = (item: Item) => {
-    setSelectedItem(item);
-    setIsOpen(false);
-    props.onItemSelect?.(item);
   };
 
   useEffect(() => {
@@ -95,18 +92,53 @@ function Dropdown(props: DropdownProps) {
 
     if(isOpen && dropdownMenu.current) {
       updatePosition();
-      dropdownMenu.current.addEventListener('blur', handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside);
       window.addEventListener('scroll', updatePosition, true);
       window.addEventListener('resize', updatePosition);
     }
 
     return () => { 
-      if(dropdownMenu.current)
-        dropdownMenu.current.removeEventListener('blur', handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
+      window.removeEventListener('scroll', updatePosition, true);
+      window.removeEventListener('resize', updatePosition);
       if(dropdownButton.current)
         dropdownButton.current.classList.remove('active');
     };
   }, [isOpen]);
+
+  const handleItemClick = (item: Item, index: number) => {
+    setIsOpen(false);
+    setActiveIndex(index)
+    props.onItemSelect?.(item);
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      switch (e.key) {
+        case 'ArrowDown':
+          e.preventDefault();
+          setActiveIndex(prev => (prev < props.items.length - 1 ? prev + 1 : 0));
+          break;
+        case 'ArrowUp':
+          e.preventDefault();
+          setActiveIndex(prev => (prev > 0 ? prev - 1 : props.items.length - 1));
+          break;
+        case 'Enter':
+          if (activeIndex >= 0) {
+            handleItemClick(props.items[activeIndex], activeIndex);
+          }
+          break;
+        case 'Escape':
+          setIsOpen(false);
+          break;
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.addEventListener('keydown', handleKeyDown);
+    }
+  }, [isOpen, props.items]);
 
   let arrowIcon;
   if(props.displayArrow) {
@@ -123,24 +155,33 @@ function Dropdown(props: DropdownProps) {
         aria-haspopup="true"
         aria-label={props['aria-label'] || ''}
         aria-expanded={isOpen}
-        className={styles.dropdown} 
+        className={`${styles.dropdown} ${isOpen ? styles.active : ''}`}
         ref={dropdownButton}
       >
-          {props.children}
-          {arrowIcon}
+        {props.children}
+        {arrowIcon}
       </Button>
       {isOpen && (
         createPortal(
-          <div ref={dropdownMenu} className={styles.menu}>
-            {props.items.map((item, index) => (
-              <button 
-                key={index} 
-                className={styles.menuItem} 
-                onClick={() => handleItemClick(item)}
-              >
-                {item.label}
-              </button>
-            ))}
+          <div ref={dropdownMenu} className={styles.menu} role="listbox">
+            {props.items.map((item, index) => {
+              const isSelected = activeIndex === index;
+
+              return (
+                <button 
+                  key={item.value} 
+                  role="option"
+                  aria-selected={isSelected}
+                  className={`${styles.menuItem} ${isSelected ? styles.selected : ''}`}
+                  onClick={() => handleItemClick(item, index)}
+                >
+                  <div className={styles.itemContent}>
+                    {item.icon && <span className={styles.icon}>{item.icon}</span>}
+                    <span>{item.label}</span>
+                  </div>
+                </button>
+              )
+            })}
           </div>,
           document.body
         )

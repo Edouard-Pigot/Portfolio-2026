@@ -1,4 +1,126 @@
 {
-  "hero_subtitle": "Développeur full-stack et 3D",
-  "about": "Bonjour ! Je suis développeur logiciel et passionné par la création de solutions innovantes et l'apprentissage de nouvelles technologies. Fort d'une expérience en développement full-stack, j'apprécie les projets stimulants qui me permettent de développer et d'enrichir mes compétences. Pendant mon temps libre, j'aime explorer la nature, jouer aux jeux vidéo et expérimenter de nouvelles recettes en cuisine."
+  "home": {
+    "section_name": "accueil",
+    "subtitle": "Développeur full-stack et 3D"
+  },
+  "about": {
+    "section_name": "à propos",
+    "description": "Ingénieur Logiciel chez Dassault Systèmes, je me spécialise dans le développement d'infrastructures d'interface utilisateur (UI). Mon expertise combine la puissance du C++20 pour le développement natif et la flexibilité de JavaScript/TypeScript pour les environnements Web. \n\nDiplômé d'un Master en Informatique Graphique (GIG), j'ai une solide expérience dans la résolution de problématiques complexes, allant des algorithmes de collision en réalité virtuelle à l'optimisation de rendus 3D.\n\nPassionné par l'innovation technologique, j'évolue dans des environnements Agile Scrum où j'allie rigueur technique, travail d'équipe et sens du service client."
+  },
+  "projects": {
+    "section_name": "projets",
+    "details_button": "Voir le projet",
+    "details" : {
+      "tank_physics": {
+        "title": "Tank physics",
+        "description": "Premier véritable projet sous Unity qui consistait a créé un système complet de contrôle de char avec principalement les rotations des roues, le déplacement des suspensions et des chenilles, ainsi que les contrôles horizontaux et verticaux du canon et le tir. Les déplacements du char sont gérés par le moteur physique d'Unity. Les chenilles sont animées avec des os, rajoutés avec Blender, raccordés aux positions des roues et une texture dont l'offset varie en fonction de la vitesse du char."
+      },
+      "modeling_3d": {
+        "title": "Modélisation 3D",
+        "description": "Projets scolaires d'introduction à la modélisation sous Blender. Réalisation d'un katana avec un patron et d'un poulpe grâce aux courbes de Bézier."
+      },
+      "tank_shooter": {
+        "title": "Tank shooter",
+        "description": "Prototype de top shooter sous Unity avec une gestion de la physique des projectiles pour avoir un système de ricochets sur les obstacles. Le clavier contrôle les déplacements du tank tandis que la tourelle est dirigée vers le curseur de la souris. Un générateur de maillage permet de laisser la trace du passage des chenilles sur le sol et le châssis du char se tourne automatiquement pour suivre la direction demandée par le joueur."
+      },
+      "procedural_swords": {
+        "title": "Epées procédurales",
+        "description": "Écriture d'un script Python sous Blender permettant la génération automatique d'armes (épées, poignards, lances, ...) en fonction de paramètres indiqués par l'utilisateur comme la longueur et l'épaisseur de la lame, la longueur du manche, la largeur de la garde, ..."
+      },
+      "face_detector": {
+        "title": "Détecteur de faces",
+        "description": "Scripts Python sous Blender qui parcours le maillage d'un objet 3D et va colorer les faces en fonction de différents paramètres."
+      },
+      "scripted_animation": {
+        "title": "Animation scriptée",
+        "description": "Script Python permettant l'animation d'un véhicule."
+      },
+      "blitz": {
+        "title": "Blitz",
+        "description": "Projet de fin de L3 Informatique réalisé à 4. Il s'agit du jeu de carte Blitz. Disponible sur navigateur il permet de jouer en multijoueur en temps réel avec un lobby pour créer et rejoindre des parties, se connecter ou créer un compte. Le site et le jeu sont 100 % en HTML/CSS/NodeJS ce qui permet une compatibilité avec tous les appareils et une plus grande simplicité d'utilisation. L'interface est intuitive et incorpore une fonction de chat lors d'une partie."
+      },
+      "elevator_controller": {
+        "title": "Controleur d'ascenseur",
+        "description": "Projet de génie logiciel demandant d'implémenter une interface et un système modulaire de gestion d'une cage d'ascenseur."
+      },
+      "pacman": {
+        "title": "Pacman",
+        "description": "Second projet de génie logiciel. Il fallait créer un jeu de type Pacman. Nous avons recréé le Pacman de 1980 avec les mêmes graphismes, la même carte et les mêmes IA pour les fantômes. Le jeu est codé en utilisant massivement les Design Patterns afin de séparer chaque fonctionnalité et séparer la partie gameplay de la partie moteur."
+      },
+      "lumipic": {
+        "title": "Lumipic",
+        "description": "Logiciel de création d'albums photo réalisé dans le cadre d'un cours d'Interface Homme-Machine. L'interface reprend la thématique de l'explorateur de fichier de Windows 10 et possède un thème sombre et un thème clair. Le programme permet d'explorer les dossiers contenus sur l'ordinateur et affiche seulement les fichiers image dans le répertoire courant. La création d'un album passe par la sélection puis l'ajout de plusieurs images dans un groupe que l'utilisateur peut nommer et supprimer."
+      },
+      "flood_simulator": {
+        "title": "Simulateur d'inondation",
+        "description": "Projet de TER (Travail en Environnement de Recherche) en lien avec l'IPGR. Le projet consiste à créer un simulateur d'inondation de musée afin d'apporter un élément pédagogique à la formation du personnel de musées dans le cadre de catastrophes comme une crue, une infiltration d'eau ou une rupture de canalisation. Développé sous Unity afin d'avoir une bonne compatibilité et la possibilité de déploiement de l'application sur le web. Le défi majeur est l'équilibre entre performance et qualité de rendu afin d'avoir une simulation la plus proche du réel tout en pouvant la faire fonctionner sur les machines les moins véloces. Développé en binôme, ce projet a été continué en dehors du cadre scolaire sous la forme d'un stage de juin à juillet 2020."
+      },
+      "portfolio_v1": {
+        "title": "Portfolio",
+        "description": "Création de ce site afin de regrouper et présenter mes projets en un seul endroit dans le cadre de ma recherche de stage pour l'année 2021."
+      },
+      "particle_emitter": {
+        "title": "Emetteur de particules",
+        "description": "Projet d'Animation et Rendu. Création d'un système de particules qui émet de la fumée. Cette fumée peut recevoir des paramètres comme la couleur de la texture, le temps de vie et la fréquence d'émission d'une nouvelle particule. La texture est animée grâce à un atlas qui est découpé dans un shader qui y rajoute la couleur passée en paramètre."
+      },
+      "boids": {
+        "title": "Boids",
+        "description": "Second projet d'Animation et Rendu consistant à créer une IA de poisson grâce aux boids. Intégration d'obstacles et de prédateurs sous la forme de sphères que les poissons évitent."
+      },
+      "drone_choreography": {
+        "title": "Chorégraphie de drones",
+        "description": "Projet d'Animation et Rendu. Réalisation d'un visualisateur de Chorégraphie de drones en WebGL. Un fichier de keyframes est lu et permet de mettre en place des modèles de drones dont la lecture de l'animation est contrôlée par l'utilisateur. Il peut choisir d'afficher ou non une grille, les repères des axes, les trajectoires des drones, une ligne qui va du drone au sol, le nom de chaque drones, et il peut jouer ou stopper l'animation. Le programme permet également de détecter les collisions et les vitesses trop élevées des drones."
+      },
+      "shader_intro": {
+        "title": "Introduction aux shaders",
+        "description": "Cours d'introduction au langage GLSL et à l'écritre de shaders sur le site shadertoy.com. Réalisation d'un fragment shader permettant l'affichage d'un cycle jour/nuit au dessus de la mer."
+      },
+      "portfolio_v2": {
+        "title": "Portfolio V2",
+        "description": "Mise à jour du design et du contenu de mon portfolio, avec notamment l'ajout d'un mode jour/nuit."
+      },
+      "catan": {
+        "title": "Catan",
+        "description": "Expérimentation pour la recréation du jeu de société Catan en 3D. Inclus la génération procédurales du plateau de jeu en hexagonale, la gestion des ressources, et de la boucle de jeu au tour par tour."
+      },
+      "portfolio_v3": {
+        "title": "Portfolio V3",
+        "description": "En cours."
+      },
+      "visit_paris": {
+        "title": "Visit Paris",
+        "description": "En cours."
+      }
+    }
+  },
+  "skills": {
+    "section_name": "compétences",
+    "legend": {
+      "high": "Maîtrise",
+      "medium": "Pratique",
+      "low": "Notions"
+    },
+    "groups": {
+      "frontend": "Front-end",
+      "backend": "Back-end & base de données",
+      "software": "Logiciel & jeu vidéo",
+      "tools": "Outils & workflow"
+    }
+  },
+  "experience": {
+    "section_name": "expérience"
+  },
+  "schooling": {
+    "section_name": "parcours"
+  },
+  "contact": {
+    "section_name": "contact"
+  },
+  "theme": {
+    "toggle_aria_dark": "Passer au thème sombre",
+    "toggle_aria_light": "Passer au thème clair"
+  },
+  "language": {
+    "dropdown_aria": "Changer la langue"
+  }
 }
