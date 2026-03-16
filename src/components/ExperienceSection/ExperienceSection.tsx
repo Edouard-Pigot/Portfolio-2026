@@ -51,8 +51,22 @@ function ExperienceSection() {
         <div className={styles.experience}>
           <h4>{t(experience.positionName)}</h4>
           <h5>{t(experience.companyName) + " - " + t("experiences.contract_types." + experience.contractType)}</h5>
-          <h5>{experience.location + " | " + computeDateString(experience.periods)}</h5>
+          <h5>{experience.location}</h5>
+          <h5>{computeDateString(experience.periods)}</h5>
           <p>{t(experience.description)}</p>
+          {(experience.techStack && experience.techStack.length > 0) && (
+          <div className={styles['project-details']}>
+            {experience.techStack.length > 0 && (
+              <div className={styles['project-techStack']}>
+                <ul>
+                  {experience.techStack.map((tech) => (
+                    <li key={tech}>{tech}</li>
+                  ))}
+                </ul>  
+              </div>
+            )}
+          </div>
+        )}
         </div>
       ))}
     </div>

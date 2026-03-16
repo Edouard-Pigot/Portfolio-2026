@@ -28,15 +28,29 @@
       }
     }
 
-    .sectionNumberDecorator {
-      height: 3rem;
-      width: 1.5rem;
-      background-color: var(--decorator-color);
-    }
-
     h3 {
       font-size: 5rem;
       text-transform: uppercase;
     }
   }  
+}
+
+@media (max-width: 850px) {
+  .section .sectionHeader {
+    padding-left: 1rem;
+
+    .sectionNumber {
+      font-size: 1.5rem;
+
+      &::before {
+        width: .8rem;
+        height: .8rem;
+        margin: .41rem;
+      }
+    }
+
+    h3 {
+      font-size: 3rem;
+    }
+  }
 }

@@ -46,6 +46,7 @@
 
       &:hover:not(:disabled) {
         background-color: var(--highlight-color);
+        color: var(--contrast-text-color);
       }
 
       &:disabled {
@@ -63,5 +64,12 @@
         color: #ef4444;
       }
     }
+  }
+}
+
+@media (max-width: 850px) {
+  .contact .form {
+    max-width: 100%;
+    flex: 0 0 100%;
   }
 }

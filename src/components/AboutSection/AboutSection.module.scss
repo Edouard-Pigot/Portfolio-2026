@@ -9,3 +9,9 @@
     }
   }
 }
+
+@media (max-width: 850px) {
+  #about-section #about-section-wrapper {
+    flex: 0 0 100%;
+  }
+}

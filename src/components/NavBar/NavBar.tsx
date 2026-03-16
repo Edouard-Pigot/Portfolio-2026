@@ -1,15 +1,19 @@
 import styles from './NavBar.module.scss';
 
-import { useContext } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Button from '@components/Button/Button';
 import { ScrollHeightContext } from '@components/ScrollBridge/ScrollBridge';
+import UtilityButtons from '../UtilityButtons/UtilityButtons';
 
 function NavBar() {
   const { t } = useTranslation();
 
   const scrollContext = useContext(ScrollHeightContext);
+
+  const burgerPopupRef = useRef<HTMLDivElement>(null);
+  const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
 
   const activeTab = scrollContext?.activeSection || 'home';
 
@@ -27,9 +31,33 @@ function NavBar() {
     scrollContext?.scrollToSection(id);
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpened(prev => !prev);
+  };
+
   return (
     <nav id={styles["nav-bar-content"]} className={styles.navBar}>
       <div id={styles["nav-items"]}>
+        {navItems.map(item => (
+          <Button 
+            key={item.id}
+            className={styles['nav-button']}
+            isActive={activeTab === item.id}
+            onClick={() => handleNavClick(item.id)}
+          >
+            {item.label}
+          </Button>
+        ))}
+      </div>
+      <div id={styles["mobile-nav-bar"]}>
+        <Button id={styles["mobile-burger"]} onClick={toggleMenu}>=</Button>
+        <UtilityButtons id={styles["mobile-utility"]}/>
+      </div>
+      <div 
+        id={styles["mobile-popup"]} 
+        ref={burgerPopupRef} 
+        className={isMenuOpened ? styles.open : ''}
+      >
         {navItems.map(item => (
           <Button 
             key={item.id}

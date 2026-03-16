@@ -59,51 +59,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-
-      & > div {
-        height: 43px;
-        width: 100%;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-
-        &:nth-child(1) {
-          margin-top: 13px;
-        }
-
-        &:nth-child(2) {
-          margin-bottom: 13px;
-        }
-
-        &::before, &::after {
-          content: '';
-          width: 1px;
-          height: 0;
-          background: var(--highlight-color);
-          position: absolute;
-          transition: height 0.2s;
-        }
-
-        &::before {
-            left: -1px;
-        }
-        &::after {
-            right: -1px;
-        }
-
-        &:hover {
-          
-          svg {
-            stroke: var(--highlight-color);
-          }
-
-          &::before, &::after {
-              height: 100%;
-          }
-        }
-      }
     }
   }
 
@@ -114,5 +69,24 @@
     height: 100%;
     width: 100%;
     overflow: hidden;
+  }
+}
+
+@media (max-width: 850px) {
+  .mainDecorator {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: var(--navbar-height) 1fr;
+    border: none;
+
+    #top-left-corner {
+      display: none;
+    }
+
+    #left-toolbar {
+      display: none;
+    }
   }
 }

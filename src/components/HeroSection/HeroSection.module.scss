@@ -112,3 +112,11 @@
     }
   }
 }
+
+@media (max-width: 850px) {
+  .heroSection {
+    height: calc(100vh - 51px);
+    grid-template-columns: 75px 1fr 75px;
+    grid-template-rows: 75px 1fr 75px;
+  }
+}
