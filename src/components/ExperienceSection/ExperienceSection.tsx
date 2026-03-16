@@ -52,7 +52,9 @@ function ExperienceSection() {
           <h4>{t(experience.positionName)}</h4>
           <h5>{t(experience.companyName) + " - " + t("experiences.contract_types." + experience.contractType)}</h5>
           <h5>{experience.location}</h5>
-          <h5>{computeDateString(experience.periods)}</h5>
+          {experience.periods && experience.periods.map((period) => (
+            <h5>{computeDateString(period)}</h5>
+          ))}
           <p>{t(experience.description)}</p>
           {(experience.techStack && experience.techStack.length > 0) && (
           <div className={styles['project-details']}>
