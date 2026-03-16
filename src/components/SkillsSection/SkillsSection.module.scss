@@ -2,6 +2,7 @@
   display: flex;
   gap: 1rem;
   margin-left: 4rem;
+  padding-top: 3rem;
 
   span::before {
     content: '';
@@ -29,13 +30,14 @@
 .skillsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: auto 1fr;
   margin-top: 2rem;
+  padding: 0 3rem 5rem 3rem;
 
   .skillColumn {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 5rem;
-    border-right: 1px solid var(--decorator-color);
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 2;
     padding-inline: 2rem;
 
     .groupTitle {
@@ -70,12 +72,6 @@
         }
       }
     }
-  }
-}
-
-@media (max-width: 1599px) {
-  .skillColumn:last-child {
-    border-right: none;
   }
 }
 

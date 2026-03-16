@@ -20,12 +20,11 @@
 
   .carouselControls {
     margin: .5rem;
-    padding: .5rem;
     position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
-    height: calc(3rem);
+    height: 3rem;
     display: flex;
     justify-content: space-between;
     background-color: var(--main-bg-color);
@@ -34,10 +33,10 @@
 
     .arrow {
       opacity: 0;
-      width: calc(2rem);
-      height: calc(2rem);
+      width: 3rem;
+      height: 3rem;
       
-      border: none;
+      border: 1px solid var(--highlight-color);
       background: var(--main-bg-color);
       font-size: 1.5rem;
       cursor: pointer;

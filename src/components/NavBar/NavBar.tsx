@@ -18,7 +18,7 @@ function NavBar() {
     { id: 'about', label: t('about.section_name') },
     { id: 'projects', label: t('projects.section_name') },
     { id: 'skills', label: t('skills.section_name') },
-    { id: 'experience', label: t('experience.section_name') },
+    { id: 'experience', label: t('experiences.section_name') },
     { id: 'education', label: t('schooling.section_name') },
     { id: 'contact', label: t('contact.section_name') }
   ];

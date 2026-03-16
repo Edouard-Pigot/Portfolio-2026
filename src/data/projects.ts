@@ -10,6 +10,7 @@ export interface ProjectMedia {
 export interface Project {
   id: number;
   title: string;
+  dates?: number[];
   description: string;
   techStack: string[];
   media: ProjectMedia[];
@@ -20,6 +21,7 @@ export const projects: Project[] = [
   {
     id: 1,
     title: "projects.details.tank_physics.title",
+    dates: [1488326400, 1501545599],
     description: "projects.details.tank_physics.description",
     techStack: ["C#", "Unity", "Blender"],
     media: [
@@ -34,13 +36,15 @@ export const projects: Project[] = [
   {
     id: 2,
     title: "projects.details.modeling_3d.title",
+    dates: [1546300800, 1548979199],
     description: "projects.details.modeling_3d.description",
     techStack: ["Blender"],
-    media: [{ url: getMediaUrl(2, 1, 'webp'), type: 'image' }],
+    media: [{ url: getMediaUrl(2, 1, 'webp'), type: 'image' }]
   },
   {
     id: 3,
     title: "projects.details.tank_shooter.title",
+    dates: [1548979200, 1551398399],
     description: "projects.details.tank_shooter.description",
     techStack: ["C#", "Unity", "Blender"],
     media: [
@@ -52,30 +56,34 @@ export const projects: Project[] = [
   {
     id: 4,
     title: "projects.details.procedural_swords.title",
+    dates: [1551398400, 1554076799],
     description: "projects.details.procedural_swords.description",
     techStack: ["Python", "Blender"],
-    media: [{ url: getMediaUrl(4, 1, 'webp'), type: 'image' }],
+    media: [{ url: getMediaUrl(4, 1, 'webp'), type: 'image' }]
   },
   {
     id: 5,
     title: "projects.details.face_detector.title",
+    dates: [1551398400, 1554076799],
     description: "projects.details.face_detector.description",
     techStack: ["Python", "Blender"],
     media: [
       { url: getMediaUrl(5, 1, 'webp'), type: 'image' },
       { url: getMediaUrl(5, 2, 'webp'), type: 'image' }
-    ],
+    ]
   },
   {
     id: 6,
     title: "projects.details.scripted_animation.title",
+    dates: [1554076800, 1556668799],
     description: "projects.details.scripted_animation.description",
     techStack: ["Python", "Blender"],
-    media: [{ url: getMediaUrl(6, 1, 'webm'), type: 'video' }],
+    media: [{ url: getMediaUrl(6, 1, 'webm'), type: 'video' }]
   },
   {
     id: 7,
     title: "projects.details.blitz.title",
+    dates: [1556668800, 1559347199],
     description: "projects.details.blitz.description",
     techStack: ["HTML", "CSS", "JavaScript", "NodeJS"],
     media: [
@@ -88,6 +96,7 @@ export const projects: Project[] = [
   {
     id: 8,
     title: "projects.details.elevator_controller.title",
+    dates: [1569888000, 1572566399],
     description: "projects.details.elevator_controller.description",
     techStack: ["Java", "JavaFX"],
     media: [
@@ -99,6 +108,7 @@ export const projects: Project[] = [
   {
     id: 9,
     title: "projects.details.pacman.title",
+    dates: [1575158400, 1577836799],
     description: "projects.details.pacman.description",
     techStack: ["Java", "JavaFX"],
     media: [
@@ -111,6 +121,7 @@ export const projects: Project[] = [
   {
     id: 10,
     title: "projects.details.lumipic.title",
+    dates: [1580515200, 1583020799],
     description: "projects.details.lumipic.description",
     techStack: ["C++", "Qt", "CSS"],
     media: [
@@ -125,6 +136,7 @@ export const projects: Project[] = [
   {
     id: 11,
     title: "projects.details.flood_simulator.title",
+    dates: [1588291200, 1596239999],
     description: "projects.details.flood_simulator.description",
     techStack: ["Unity", "C#", "Blender"],
     media: [
@@ -136,13 +148,19 @@ export const projects: Project[] = [
   {
     id: 12,
     title: "projects.details.portfolio_v1.title",
+    dates: [1601510400, 1604188799],
     description: "projects.details.portfolio_v1.description",
     techStack: ["HTML", "CSS", "Javascript", "JQuery"],
-    media: [{ url: getMediaUrl(12, 1, 'webp'), type: 'image' }],
+    media: [
+      { url: getMediaUrl(12, 1, 'webp'), type: 'image' },
+      { url: getMediaUrl(12, 2, 'webp'), type: 'image' }
+    ],
+    link: "https://github.com/Edouard-Pigot/Edouard-Pigot.github.io/tree/630f56b0bc9efb7f7297c872552b830c1e809202"
   },
   {
     id: 13,
     title: "projects.details.particle_emitter.title",
+    dates: [1601510400, 1604188799],
     description: "projects.details.particle_emitter.description",
     techStack: ["C++", "OpenGL", "GLSL", "Qt"],
     media: [
@@ -154,6 +172,7 @@ export const projects: Project[] = [
   {
     id: 14,
     title: "projects.details.boids.title",
+    dates: [1601510400, 1606780799],
     description: "projects.details.boids.description",
     techStack: ["C++", "OpenGL", "GLSL", "Qt"],
     media: [
@@ -165,13 +184,15 @@ export const projects: Project[] = [
   {
     id: 15,
     title: "projects.details.drone_choreography.title",
+    dates: [1606780800, 1609459199],
     description: "projects.details.drone_choreography.description",
     techStack: ["WebGL", "JavaScript", "JQuery", "HTML", "CSS"],
-    media: [{ url: getMediaUrl(15, 1, 'webp'), type: 'image' }],
+    media: [{ url: getMediaUrl(15, 1, 'webp'), type: 'image' }]
   },
   {
     id: 16,
     title: "projects.details.shader_intro.title",
+    dates: [1606780800, 1609459199],
     description: "projects.details.shader_intro.description",
     techStack: ["GLSL"],
     media: [{ url: getMediaUrl(16, 1, 'webm'), type: 'video' }],
@@ -180,29 +201,41 @@ export const projects: Project[] = [
   {
     id: 17,
     title: "projects.details.portfolio_v2.title",
+    dates: [1619827200, 1622505599],
     description: "projects.details.portfolio_v2.description",
     techStack: ["HTML", "CSS", "JavaScript", "JQuery"],
-    media: [{ url: getMediaUrl(17, 1, 'webp'), type: 'image' }],
+    media: [
+      { url: getMediaUrl(17, 1, 'webp'), type: 'image' },
+      { url: getMediaUrl(17, 2, 'webp'), type: 'image' },
+      { url: getMediaUrl(17, 3, 'webp'), type: 'image' },
+      { url: getMediaUrl(17, 4, 'webp'), type: 'image' },
+      { url: getMediaUrl(17, 5, 'webp'), type: 'image' },
+      { url: getMediaUrl(17, 6, 'webp'), type: 'image' }
+    ],
+    link: "https://github.com/Edouard-Pigot/Edouard-Pigot.github.io/tree/f2ba30f74355a3f9dd1cc49ccc7263d53053f0f9"
   },
   {
     id: 18,
     title: "projects.details.catan.title",
     description: "projects.details.catan.description",
+    dates: [1614556800, 1617235199],
     techStack: ["Unity", "C#"],
-    media: [{ url: getMediaUrl(18, 1, 'webp'), type: 'image' }],
+    media: [{ url: getMediaUrl(18, 1, 'webp'), type: 'image' }]
   },
   {
     id: 19,
     title: "projects.details.portfolio_v3.title",
+    dates: [1767225600, 1775001599],
     description: "projects.details.portfolio_v3.description",
     techStack: ["React", "TypeScript", "Vite", "SASS"],
-    media: [{ url: getMediaUrl(19, 1, 'webp'), type: 'image' }],
+    media: [{ url: getMediaUrl(19, 1, 'webp'), type: 'image' }]
   },
   {
     id: 20,
     title: "projects.details.visit_paris.title",
+    dates: [1761955200, -1],
     description: "projects.details.visit_paris.description",
     techStack: ["React", "TypeScript", "Vite", "SASS", "PostGreSQL", "ExpressJS", "NodeJS"],
-    media: [{ url: getMediaUrl(20, 1, 'webp'), type: 'image' }],
+    media: [{ url: getMediaUrl(20, 1, 'webp'), type: 'image' }]
   }
 ];

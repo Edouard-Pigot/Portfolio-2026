@@ -9,6 +9,7 @@ export type Item = {
   label: string;
   value: string;
   icon?: string;
+  isActive?: boolean;
 }
 
 type MenuPosition = 'below' | 'right' | 'left' | 'top';
@@ -36,6 +37,13 @@ function Dropdown(props: DropdownProps) {
       setIsOpen(false);
     }
   };
+
+  useEffect(() => {
+    for(let i = 0; i < props.items.length; i++) {
+      if(props.items[i].isActive)
+        setActiveIndex(i);
+    }
+  }, []);
 
   useEffect(() => {
     const updatePosition = () => {
@@ -108,7 +116,7 @@ function Dropdown(props: DropdownProps) {
 
   const handleItemClick = (item: Item, index: number) => {
     setIsOpen(false);
-    setActiveIndex(index)
+    setActiveIndex(index);
     props.onItemSelect?.(item);
   };
 

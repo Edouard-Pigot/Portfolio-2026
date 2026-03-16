@@ -10,6 +10,7 @@
   "projects": {
     "section_name": "projects",
     "details_button": "See the project",
+    "work_in_progress": "WIP",
     "details" : {
       "tank_physics": {
         "title": "Tank Physics",
@@ -107,14 +108,84 @@
       "tools": "Tools & workflow"
     }
   },
-  "experience": {
-    "section_name": "experience"
+  "experiences": {
+    "section_name": "experience",
+    "contract_types": {
+      "internship": "Internship",
+      "temporary": "Fixed-term contract",
+      "permanent": "Permanent position"
+    },
+    "current_position": "Now",
+    "details": {
+      "credit_mutuel": {
+        "position": "Seasonal bank clerk",
+        "company": "Crédit Mutuel"
+      },
+      "credit_mutuel_1": {
+        "description": "Marseille La Joliette branch. Archive management and sorting, customer reception (guidance, credit card and check collection), and data entry of corporate financial statements into the IT system."
+      },
+      "fiducial_cloud": {
+        "position": "Full-Stack developer",
+        "company": "Fiducial Cloud",
+        "description": "Enhanced an open-source project management tool by integrating communication features with the company's internal software."
+      },
+      "credit_mutuel_2": {
+        "description": "Telephone customer service: handling transfers, credit cards, and checks; managing accounts and savings plans; scheduling appointments; providing pricing information; and processing loan drawdowns."
+      },
+      "ipgr": {
+       "position": "Unity 3D developer",
+        "company": "Institut de Prévention et de Gestion des Risques Urbains",
+        "description": "Taking over a museum flood simulator on the Unity engine.\nOverhaul of the water simulation system by including a physical model, replacing the static water planes used by the previous development team.\nPreliminary work on improving water rendering using Marching Cubes."
+      },
+      "dassault_systemes": {
+        "position": "Software engineer",
+        "company": "Dassault Systèmes"
+      },
+      "dassault_systemes_1": {
+        "description": "Specification and development of interaction methods with UIs in virtual reality to make the most of the 3D environment.\nScalable architecture by inheritance on interaction types and collision boxes.\nCreation of immersive layouts designed for VR."
+      },
+      "dassault_systemes_2": {
+        "description": "In an Agile team of developers providing a UI infrastructure for Dassault Systèmes developers internationally.\nMaintenance and development of features on the UI infrastructure components in web with Javascript and native with C++.\nSupport to clients on the use of APIs and best practices.\nWriting of tests and documentations for developers and client teams.\nDefinition of specifications with UX teams."
+      }
+    }
   },
   "schooling": {
-    "section_name": "schooling"
+    "section_name": "schooling",
+    "details": {
+      "bac": {
+        "name": "High School Diploma in Science and Technology of Industry and Sustainable Development (STI2D)",
+        "school": "Lycée Pierre-Gilles de Gennes",
+        "description": "Specialization in Information Systems and Digital Technology (SIN)."
+      },
+      "dut": {
+        "name": "Two-year University Degree in Technology (DUT) in Computer Science",
+        "school": "IUT of Aix-en-Provence",
+        "description": ""
+      },
+      "licence": {
+        "name": "Bachelor's Degree in Computer Science",
+        "school": "Aix-Marseille University - Luminy Faculty of Science",
+        "description": "Specialization in 3D Modeling[cite: 3, 53]."
+      },
+      "master": {
+        "name": "Master's Degree in Computer Science - Geometry and Computer Graphics",
+        "school": "Aix-Marseille University - Luminy Faculty of Science",
+        "description": "Specialized in Geometry and Computer Graphics (GIG)[cite: 3, 53]."
+      }
+    }
   },
   "contact": {
-    "section_name": "contact"
+    "section_name": "contact",
+    "name": "Name",
+    "mail": "Mail",
+    "message": "Message",
+    "send": "Send",
+    "fail": "Error will sending, try again",
+    "success": "Message sent",
+    "sending": "Sending..."
+  },
+  "footer": {
+    "copyright": ", Edouard PIGOT, All rights reserved"
   },
   "theme": {
     "toggle_aria_dark": "Switch to dark theme",
@@ -122,5 +193,21 @@
   },
   "language": {
     "dropdown_aria": "Change the language"
+  },
+  "dates": {
+    "months": {
+      "1": "January",
+      "2": "February",
+      "3": "March",
+      "4": "April",
+      "5": "May",
+      "6": "June",
+      "7": "July",
+      "8": "August",
+      "9": "September",
+      "10": "October",
+      "11": "November",
+      "12": "December"
+    }
   }
 }

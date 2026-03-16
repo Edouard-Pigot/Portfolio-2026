@@ -6,7 +6,7 @@ import Dropdown, { type Item } from '@components/Dropdown/Dropdown';
 import MainContent from '@components/MainContent/MainContent';
 import ScrollBridge from '@components/ScrollBridge/ScrollBridge';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 
@@ -67,13 +67,12 @@ function MainDecorator() {
   };
 
   const languageOptions = [
-    { label: 'English', value: 'en'},
-    { label: 'Français', value: 'fr'},
+    { label: 'English', value: 'en', isActive: (i18n.language === 'en')},
+    { label: 'Français', value: 'fr', isActive: (i18n.language === 'fr')}
   ];
 
   const handleSelect = (item: Item) => {
     i18n.changeLanguage(item.value);
-    console.log(`System language updated to: ${item.value}`);
   };
 
   return (

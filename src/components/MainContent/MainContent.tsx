@@ -5,6 +5,11 @@ import Section from '@components/Section/Section';
 import AboutSection from '@/components/AboutSection/AboutSection';
 import ProjectsSection from '@components/ProjectsSection/ProjectsSection';
 import SkillsSection from '@components/SkillsSection/SkillsSection';
+import ExperienceSection from '../ExperienceSection/ExperienceSection';
+import SchoolingSection from '../SchoolingSection/SchoolingSection';
+import ContactSection from '../ContactSection/ContactSection';
+import FooterSection from '../FooterSection/FooterSection';
+
 import ScrollTrack from '@components/ScrollTrack/ScrollTrack';
 
 import { useTranslation } from 'react-i18next';
@@ -16,9 +21,9 @@ function MainContent() {
     { index: 'about', title: t("about.section_name"), content: <AboutSection /> },
     { index: 'projects', title: t("projects.section_name"), content: <ProjectsSection /> },
     { index: 'skills', title: t("skills.section_name"), content: <SkillsSection /> },
-    { index: 'experience', title: t("experience.section_name"), content: null },
-    { index: 'schooling', title: t("schooling.section_name"), content: null },
-    { index: 'contact', title: t("contact.section_name"), content: null }
+    { index: 'experience', title: t("experiences.section_name"), content: <ExperienceSection /> },
+    { index: 'schooling', title: t("schooling.section_name"), content: <SchoolingSection /> },
+    { index: 'contact', title: t("contact.section_name"), content: <ContactSection /> }
   ];
 
   return (
@@ -35,6 +40,7 @@ function MainContent() {
             {section.content}
           </Section>
         ))}
+        <FooterSection />
       </ScrollTrack>
   );
 }

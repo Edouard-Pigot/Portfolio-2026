@@ -10,6 +10,7 @@
   "projects": {
     "section_name": "projets",
     "details_button": "Voir le projet",
+    "work_in_progress": "En_cours",
     "details" : {
       "tank_physics": {
         "title": "Tank physics",
@@ -107,14 +108,84 @@
       "tools": "Outils & workflow"
     }
   },
-  "experience": {
-    "section_name": "expérience"
+  "experiences": {
+    "section_name": "expérience",
+    "contract_types": {
+      "internship": "Stage",
+      "temporary": "CDD",
+      "permanent": "CDI"
+    },
+    "current_position": "Actuellement",
+    "details": {
+      "credit_mutuel": {
+        "position": "Auxiliaire de vacances",
+        "company": "Crédit Mutuel"
+      },
+      "credit_mutuel_1": {
+        "description": "Agence Marseille La Joliette. Déplacement et tri des archives, accueil clientèle (orientation, remises CB et chèques), entrée des bilans d'entreprises sur l'outil informatique."
+      },
+      "fiducial_cloud": {
+        "position": "Développeur Full-Stack",
+        "company": "Fiducial Cloud",
+        "description": "Amélioration de l'outil de gestion de projet open source en ajoutant la communication avec l'outil interne de l'entreprise."
+      },
+      "credit_mutuel_2": {
+        "description": "Accueil téléphonique : virements, CB, chèques, gestion de comptes et livrets, prise de rendez-vous, information sur les tarifications, déblocages de prêts,..."
+      },
+      "ipgr": {
+        "position": "Développeur Unity 3D",
+        "company": "Institut de Prévention et de Gestion des Risques Urbains",
+        "description": "Reprise d’un simulateur d'inondation de musée sur le moteur Unity.\nRefonte du système de simulation de l’eau en incluant un modèle physique, remplaçant les plans d’eau statiques utilisés par l’équipe de développement précédente.\nTravail préliminaire sur l'amélioration du rendu de l'eau grâce aux Marching Cubes."
+      },
+      "dassault_systemes": {
+        "position": "Ingénieur logiciel",
+        "company": "Dassault Systèmes"
+      },
+      "dassault_systemes_1": {
+        "description": "Spécification et développement de méthodes d’interaction avec les UI en réalité virtuelle pour tirer au mieux profit de l'environnement 3D.\nArchitecture évolutive par héritage sur les types d'interaction et les boîtes de collision.\nCréation de layouts immersifs pensés pour la VR."
+      },
+      "dassault_systemes_2": {
+        "description": "Dans une équipe Agile de développeurs fournissant une infrastructure d'UI pour les développeurs Dassault Systèmes à l'international.\nMaintenance et développement de fonctionnalités sur les composants de l’infrastructure d’UI en web avec Javascript et natif avec C++.\nSupport aux clients sur l'utilisation des API et les bonnes pratiques.\nÉcriture des tests et des documentations pour les développeurs et les équipes clientes.\nDéfinition des spécifications avec les équipes UX."
+      }
+    }
   },
   "schooling": {
-    "section_name": "parcours"
+    "section_name": "parcours",
+    "details": {
+      "bac": {
+        "name": "Baccalauréat STI2D SIN",
+        "school": "Lycée Pierre-Gilles de Gennes",
+        "description": ""
+      },
+      "dut": {
+        "name": "DUT informatique",
+        "school": "IUT d'Aix-en-Provence",
+        "description": ""
+      },
+      "licence": {
+        "name": "Licence informatique",
+        "school": "Faculté des Sciences Marseille Luminy",
+        "description": ""
+      },
+      "master": {
+        "name": "Master informatique - Géométrie et Informatique Graphique",
+        "school": "Faculté des Sciences Marseille Luminy",
+        "description": ""
+      }
+    }
   },
   "contact": {
-    "section_name": "contact"
+    "section_name": "contact",
+    "name": "Nom",
+    "mail": "Email",
+    "message": "Message",
+    "send": "Envoyer",
+    "fail": "Erreur lors de l'envoi, réessayer",
+    "success": "Message envoyé",
+    "sending": "Envoi en cours..."
+  },
+  "footer": {
+    "copyright": ", Edouard PIGOT, Tous droits réservés"
   },
   "theme": {
     "toggle_aria_dark": "Passer au thème sombre",
@@ -122,5 +193,21 @@
   },
   "language": {
     "dropdown_aria": "Changer la langue"
+  },
+  "dates": {
+    "months": {
+      "1": "Janvier",
+      "2": "Février",
+      "3": "Mars",
+      "4": "Avril",
+      "5": "Mai",
+      "6": "Juin",
+      "7": "Juillet",
+      "8": "Août",
+      "9": "Septembre",
+      "10": "Octobre",
+      "11": "Novembre",
+      "12": "Décembre"
+    }
   }
 }

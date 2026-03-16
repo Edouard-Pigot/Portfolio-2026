@@ -40,13 +40,24 @@
     text-align: left;
 
     h1 {
-      font-size: 11vw;
-      margin-bottom: 0.5rem;
+      font-size: 9vw;
       text-transform: uppercase;
     }
 
+    div span {
+      width: 1rem;
+      height: 1rem;
+      background-color: var(--highlight-color);
+      display: inline-block;
+      margin: 0 1.5rem 2rem 2rem;
+
+      &:first-child {
+        margin-left: .5rem;
+      }
+    }
+
     h2 {
-      font-size: 4vw;
+      font-size: 3vw;
       color: var(--primary-color);
       text-transform: uppercase;
     }
