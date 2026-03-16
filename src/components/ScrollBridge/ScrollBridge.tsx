@@ -1,7 +1,7 @@
 import React, { createContext, useState, useMemo, useCallback, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
-const SECTION_ORDER = ['home', 'about', 'projects', 'skills', 'experience', 'education', 'contact'];
+const SECTION_ORDER = ['home', 'about', 'projects', 'skills', 'experience', 'schooling', 'contact'];
 
 interface ScrollHeightContextType {
   reportHeight: (id: string, height: number) => void;

@@ -1,6 +1,7 @@
 import styles from './HeroSection.module.scss'
 
 import Section from '@components/Section/Section';
+import VolumetricContainer from '../VolumetricContainer/VolumetricContainer';
 
 import { useTranslation } from 'react-i18next';
 
@@ -22,6 +23,7 @@ function HeroSection() {
 
   return (
     <>
+      <VolumetricContainer className={styles.backgroundCanvas} modelPath='models/tank.gltf'/>
       <Section className={styles.heroSection} index="home">
         <div className={styles.heroDecorator}>
           {decoratorSVG}

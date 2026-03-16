@@ -19,11 +19,11 @@ function useThemeColors() {
   }, []);
 
   return theme === 'dark' 
-    ? { wireframe: '#ffffff', background: '#080808' }
-    : { wireframe: '#000000', background: '#ffffff' };
+    ? { wireframe: '#585858', background: '#000000' }
+    : { wireframe: '#c9c9c9', background: '#ffffff' };
 }
 
-interface VolumetricProps {
+interface VolumetricProps extends React.HTMLAttributes<HTMLDivElement> {
   modelPath?: string;
   geometryNode?: React.ReactNode;
   color?: string;
@@ -64,7 +64,7 @@ function Object({ modelPath, geometryNode, color="#000000", bgColor="#ffffff" }:
 
   useFrame((state, delta) => {
     if (groupRef.current) {
-      groupRef.current.rotation.y += delta * 0.2;
+      groupRef.current.rotation.y += delta * 0.1;
     }
   });
 
@@ -89,13 +89,13 @@ function VolumetricContainer(props: VolumetricProps) {
   const themeColors = useThemeColors();
 
   return (
-    <div className={styles.volumetricContainer}>
+    <div className={props.className + " " + styles.volumetricContainer}>
       <Canvas gl={{ 
           antialias: true, 
           toneMapping: THREE.NoToneMapping,
           outputColorSpace: THREE.SRGBColorSpace 
         }}
-        camera={{ position: [0, 0, 15], fov: 40 }}>
+        camera={{ position: [0, 0, 20], fov: 20 }}>
         <Suspense fallback={null}>
           <Object 
             {...props} 
