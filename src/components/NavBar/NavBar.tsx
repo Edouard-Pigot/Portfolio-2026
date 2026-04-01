@@ -1,6 +1,6 @@
 import styles from './NavBar.module.scss';
 
-import { useContext, useRef, useState } from 'react';
+import { useContext, useRef, useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Button from '@components/Button/Button';
@@ -12,7 +12,8 @@ function NavBar() {
 
   const scrollContext = useContext(ScrollHeightContext);
 
-  const burgerPopupRef = useRef<HTMLDivElement>(null);
+  const burgerRef = useRef<HTMLDivElement>(null);
+  const menuPopupRef = useRef<HTMLDivElement>(null);
   const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
 
   const activeTab = scrollContext?.activeSection || 'home';
@@ -31,9 +32,27 @@ function NavBar() {
     scrollContext?.scrollToSection(id);
   };
 
-  const toggleMenu = () => {
-    setIsMenuOpened(prev => !prev);
+  const handleClickOutside = (event: MouseEvent) => {
+    if (isMenuOpened &&
+        menuPopupRef.current && !menuPopupRef.current.contains(event.target as Node) &&
+        burgerRef.current && !burgerRef.current.contains(event.target as Node)
+    ) {
+      setIsMenuOpened(false);
+    }
   };
+
+  useEffect(() => {  
+      if(isMenuOpened && burgerRef.current) {
+        burgerRef.current.classList.add(styles['active']);
+        document.addEventListener('mousedown', handleClickOutside);
+      }
+  
+      return () => { 
+        document.removeEventListener('mousedown', handleClickOutside);
+        if(burgerRef.current)
+          burgerRef.current.classList.remove(styles['active']);
+      };
+    }, [isMenuOpened]);
 
   return (
     <nav id={styles["nav-bar-content"]} className={styles.navBar}>
@@ -50,12 +69,19 @@ function NavBar() {
         ))}
       </div>
       <div id={styles["mobile-nav-bar"]}>
-        <Button id={styles["mobile-burger"]} onClick={toggleMenu}>=</Button>
+        <Button 
+          id={styles["mobile-burger"]} 
+          onClick={() => setIsMenuOpened(!isMenuOpened)}
+          ref={burgerRef} 
+        >
+          =
+        </Button>
+        <div id={styles["spacer"]} className='hashed-background'/>
         <UtilityButtons id={styles["mobile-utility"]}/>
       </div>
       <div 
         id={styles["mobile-popup"]} 
-        ref={burgerPopupRef} 
+        ref={menuPopupRef} 
         className={isMenuOpened ? styles.open : ''}
       >
         {navItems.map(item => (

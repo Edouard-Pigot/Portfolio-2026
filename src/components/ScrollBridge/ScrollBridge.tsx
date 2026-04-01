@@ -15,6 +15,7 @@ export const ScrollHeightContext = createContext<ScrollHeightContextType | undef
 function ScrollBridge({ children }: { children: React.ReactNode }) {
   const [heights, setHeights] = useState<Record<string, number>>({});
   const [scrollY, setScrollY] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const reportHeight = useCallback((id: string, h: number) => {
     setHeights((prev) => (prev[id] === h ? prev : { ...prev, [id]: h }));
@@ -22,6 +23,7 @@ function ScrollBridge({ children }: { children: React.ReactNode }) {
 
   const totalHeight = useMemo(() => {
     const sectionsHeight = Object.values(heights).reduce((acc, curr) => acc + curr, 0);
+
     const root = getComputedStyle(document.documentElement);
     const margin = parseInt(root.getPropertyValue('--decorator-margin')) || 0;
     const navbarHeight = parseInt(root.getPropertyValue('--navbar-height')) || 0;
@@ -30,8 +32,18 @@ function ScrollBridge({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
+
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('resize', handleResize)
+    }
   }, []);
 
   const scrollToSection = useCallback((id: string) => {
@@ -43,7 +55,7 @@ function ScrollBridge({ children }: { children: React.ReactNode }) {
       .reduce((acc, curr) => acc + (heights[curr] || 0), 0);
 
     window.scrollTo({ top: offset, behavior: 'smooth' });
-  }, [heights]);
+  }, [heights, windowWidth]);
 
   const activeSection = useMemo(() => {
     const root = getComputedStyle(document.documentElement);

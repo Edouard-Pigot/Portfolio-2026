@@ -68,23 +68,6 @@
       display: flex;
       justify-content: space-between;
 
-      .project-techStack ul {
-        list-style-type: none;
-        display: flex;
-        flex-wrap: wrap;
-
-        li {
-          border: 1px solid var(--decorator-color);
-          margin-right: -1px;
-          margin-top: -1px;
-          padding: 9px 10px 6px 10px;
-
-          &:last-child {
-            border-right: 1px solid var(--decorator-color);
-          }
-        }
-      }
-
       .project-link a {
         display: inline-flex;
         align-items: center;
@@ -118,14 +101,6 @@
       flex: 0 0 auto;
       min-height: auto;
       height: auto;
-    }
-  }
-}
-
-@container (width > 900px) {
-  .project:nth-child(odd){
-    .project-content {
-      border-right: 1px solid var(--decorator-color);
     }
   }
 }

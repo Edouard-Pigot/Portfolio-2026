@@ -1,33 +1,13 @@
 .schooling {
-  padding: 3rem 5rem 5rem 5rem;
+  padding: 0 5rem 5rem 3rem;
   display: flex;
   flex-direction: column;
-
-  .school {
-    margin-bottom: 2rem;
-
-    h4 {
-      font-size: 2rem;
-      color: var(--highlight-color);
-      margin-bottom: 1rem;
-    }
-
-    h5 {
-      font-size: 1.3rem;
-      font-weight: 200;
-      &:last-of-type {
-        margin-bottom: 1rem;
-      }
-    }
-
-    p {
-      text-align: justify;
-    }
-  }
+  border-left: 1px solid var(--decorator-color);
+  margin-left: 5rem;
 }
 
 @media (min-width: 1600px) {
-  .experience {
+  .schooling > div {
     max-width: 60%;
   }
 }

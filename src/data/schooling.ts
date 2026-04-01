@@ -1,6 +1,6 @@
-const getMediaUrl = (schoolingId: number) => {
+/*const getMediaUrl = (schoolingId: number) => {
   return new URL(`../assets/schooling_media/${schoolingId}.webp`, import.meta.url).href;
-};
+};*/
 
 export interface Schooling {
   diplomaName: string;

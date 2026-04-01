@@ -1,0 +1,26 @@
+.loader-wrapper {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #000000;
+  z-index: 1;
+
+  .loader-progress {
+    width: 20vw;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+
+    span {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 1px solid var(--highlight-color);
+    }
+  }
+}

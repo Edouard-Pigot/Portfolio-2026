@@ -23,6 +23,10 @@ body, html {
     background-color: var(--main-bg-color);
 }
 
+p {
+    font-size: 1.2rem;
+}
+
 .dotted-background {
     background-image: var(--bg-dots);
 }

@@ -1,51 +1,13 @@
 .experiences {
-  padding: 3rem 5rem 5rem 5rem;
+  padding: 0 5rem 5rem 3rem;
   display: flex;
   flex-direction: column;
-
-  .experience {
-    margin-bottom: 2rem;
-
-    h4 {
-      font-size: 2rem;
-      color: var(--highlight-color);
-      margin-bottom: 1rem;
-    }
-
-    h5 {
-      font-size: 1.3rem;
-      font-weight: 200;
-      &:last-of-type {
-        margin-bottom: 1rem;
-      }
-    }
-
-    p {
-      text-align: justify;
-    }
-
-    ul {
-      margin-top: 1rem;
-      list-style-type: none;
-      display: flex;
-      flex-wrap: wrap;
-
-      li {
-        border: 1px solid var(--decorator-color);
-        margin-top: -1px;
-        margin-bottom: -1px;
-        padding: 9px 10px 6px 10px;
-
-        &:last-child {
-          border-right: 1px solid var(--decorator-color);
-        }
-      }
-    }
-  }
+  border-left: 1px solid var(--decorator-color);
+  margin-left: 5rem;
 }
 
 @media (min-width: 1600px) {
-  .experience {
+  .experiences > div {
     max-width: 60%;
   }
 }

@@ -1,12 +1,13 @@
 import styles from './ProjectDisplay.module.scss';
 
 import MediaCarousel from '../MediaCarousel/MediaCarousel';
+import TechStack from '../TechStack/TechStack';
+
 import { type Project } from '@data/projects';
 
 import { useTranslation } from 'react-i18next';
-import { useEffect } from 'react';
 
-function ProjectDisplay({ id, title, dates, description, techStack, media, link }: Project) {
+function ProjectDisplay({ title, dates, description, techStack, media, link }: Project) {
 
   const { t } = useTranslation();
 
@@ -68,13 +69,7 @@ function ProjectDisplay({ id, title, dates, description, techStack, media, link 
         {(techStack.length > 0 || link) && (
           <div className={styles['project-details']}>
             {techStack.length > 0 && (
-              <div className={styles['project-techStack']}>
-                <ul>
-                  {techStack.map((tech) => (
-                    <li key={tech + '_' + title}>{tech}</li>
-                  ))}
-                </ul>  
-              </div>
+              <TechStack techStack={techStack} />
             )}
             {link && (
               <div className={styles['project-link']}>

@@ -8,7 +8,7 @@ function ProjectsSection() {
   return (
     <>
       <div id={styles['projects-grid']}>
-        {projects.map(project => (
+        {projects.slice().reverse().map(project => (
           <ProjectDisplay key={project.id} {...project} />
         ))}
       </div>

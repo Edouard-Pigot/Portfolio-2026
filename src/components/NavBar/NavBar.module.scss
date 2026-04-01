@@ -124,7 +124,7 @@
                     right: auto;
                 }
                 
-                &:hover {
+                &:hover, &.active {
                     color: var(--highlight-color);
 
                     &::after {
@@ -132,6 +132,11 @@
                         width: 100%;
                     }
                 }
+            }
+
+            #spacer {
+                flex: 1 1 auto;
+                height: 100%;
             }
 
             #mobile-utility {
@@ -151,43 +156,45 @@
             .nav-button {
                 display: flex;
                 padding-block: 2rem;
+                padding-left: 2rem;
                 border: 1px solid transparent;
                 transition: border-color .2s ease;
+                justify-content: start;
 
                 &:hover {
                     border: 1px solid var(--highlight-color);
                 }
 
                 & div::before, & div::after {
-                content: '';
-                height: 6px;
-                width: 6px;
-                display: inline-block;
-            }
+                    content: '';
+                    height: 6px;
+                    width: 6px;
+                    display: inline-block;
+                }
 
-            & div::before {
-                background: var(--main-text-color);
-                margin-right: 9px;
-                margin-bottom: 1px;
-                opacity: 0;
-                transform: scale(0);
-                transition: opacity 0.2s, transform 0.2s, background-color 0.2s;
-            }
+                & div::before {
+                    background: var(--main-text-color);
+                    margin-right: 9px;
+                    margin-bottom: 1px;
+                    opacity: 0;
+                    transform: scale(0);
+                    transition: opacity 0.2s, transform 0.2s, background-color 0.2s;
+                }
 
-            &:hover div::before {
-                background: var(--highlight-color);
-            }
+                &:hover div::before {
+                    background: var(--highlight-color);
+                }
 
-            & div::after {
-                background: transparent;
-                margin-left: 9px; 
-                width: 6px;
-            }
+                & div::after {
+                    background: transparent;
+                    margin-left: 9px; 
+                    width: 6px;
+                }
 
-            &[data-active="true"] div::before {
-                opacity: 1;
-                transform: scale(1);
-            }
+                &[data-active="true"] div::before {
+                    opacity: 1;
+                    transform: scale(1);
+                }
             }
 
             &.open {

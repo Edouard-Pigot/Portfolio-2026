@@ -7,7 +7,7 @@ interface Props {
 function ProjectMediaDisplay({ item }: Props) {
   if (item.type === 'video') {
     return (
-      <video src={item.url} autoPlay muted loop playsInline/>
+      <video src={item.url} autoPlay muted loop playsInline preload="none"/>
     );
   }
 

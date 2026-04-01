@@ -89,7 +89,6 @@ function UtilityButtons(props: React.HTMLAttributes<HTMLDivElement>) {
         items={languageOptions} 
         onItemSelect={handleSelect} 
         id={styles["language-dropdown"]} aria-label={t('language.dropdown_aria')} displayArrow={false}
-        forcedMenuPosition='right'
         dropDirection='up'
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >

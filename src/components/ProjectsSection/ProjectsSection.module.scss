@@ -1,6 +1,14 @@
 #projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(900px, 1fr));
+  container-type: inline-size;
+}
+
+
+@container (width > 1800px) {
+  #projects-grid > div:nth-child(odd){
+    border-right: 1px solid var(--decorator-color);
+  }
 }
 
 @media (max-width: 850px) {

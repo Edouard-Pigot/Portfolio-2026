@@ -7,13 +7,13 @@ import { useTranslation } from 'react-i18next';
 
 function HeroSection() {
 
-  const { t } = useTranslation();
+  const Squares = ({ position }: { position: string }) => (
+    <div className={styles.heroDecorator + ' ' + styles['square' + position]}>
+      <span /><span /><span /><span />
+    </div>
+  );
 
-  let decoratorSVG = (
-    <svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <path d="M 37 50 H 63 37 M 50 37 V 50 63" fill='none' />
-    </svg>
-  )
+  const { t } = useTranslation();
 
   let chevronSVG = (
     <svg className={styles.chevron} width="100%" height="100%" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
@@ -25,20 +25,14 @@ function HeroSection() {
     <>
       <VolumetricContainer className={styles.backgroundCanvas} modelPath='models/tank.gltf'/>
       <Section className={styles.heroSection} index="home">
-        <div className={styles.heroDecorator}>
-          {decoratorSVG}
-        </div>
-        <div className={styles.heroDecorator}>
-          {decoratorSVG}
-        </div>
+        <Squares position="TopLeft" />
+        <Squares position="TopRight" />
         <div id={styles.title}>
           <h1>EDOUARD PIGOT</h1>
           <div><span/><span/><span/><span/></div>
           <h2>{t('home.subtitle')}</h2>
         </div>
-        <div className={styles.heroDecorator}>
-          {decoratorSVG}
-        </div>
+        <Squares position="BottomLeft" />
         <div id={styles.chevronsContainer}>
           <div id={styles.chevrons}>
             {chevronSVG}
@@ -46,9 +40,7 @@ function HeroSection() {
             {chevronSVG}
           </div>
         </div>
-        <div className={styles.heroDecorator}>
-          {decoratorSVG}
-        </div>
+        <Squares position="BottomRight"/>
       </Section>
     </>
   )

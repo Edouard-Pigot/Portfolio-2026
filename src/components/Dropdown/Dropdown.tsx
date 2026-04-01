@@ -2,7 +2,7 @@ import styles from './Dropdown.module.scss';
 
 import Button from '@components/Button/Button';
 
-import { useState, useRef, useEffect, type ReactElement } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 export type Item = {
@@ -91,6 +91,12 @@ function Dropdown(props: DropdownProps) {
             top = Math.max(0, (viewportHeight - menuRect.height) / 2) + scrollY;
             left = Math.max(0, (viewportWidth - menuRect.width) / 2);
             break;
+        }
+
+        if(finalPos === 'below' || finalPos === 'top') {
+          if (buttonRect.left + menuRect.width >= viewportWidth) {
+            left = buttonRect.right - menuRect.width;
+          }
         }
 
         dropdownMenu.current.style.top = `${top}px`;

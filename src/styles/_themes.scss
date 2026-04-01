@@ -1,60 +1,58 @@
 @use "sass:color";
-@use "colors" as *;
+
+$main-color: hsl(17, 89%, 48%);
+
+$light: hsl(0, 0%, 95%);
+$light-grey: hsl(12, 3%, 70%);
+$dark-grey: hsl(0, 0%, 33%);
+$dark: hsl(0, 0%, 1%);
+$dark-decoration: hsla(0, 0%, 100%, 0.3);
+$light-decoration: hsl(0, 0%, 0%, .1);
 
 :root {
     color-scheme: light;
-    --main-text-color: #{$black};
-    --hover-text-color: #{color.scale($black, $lightness: 20%)};
-    --active-text-color: #{color.scale($black, $lightness: 40%)};
+    --main-text-color: #{$dark};
 
-    --contrast-text-color: #{$white};
-    --hover-contrast-text-color: #{color.scale($white, $lightness: -20%)};
-    --active-contrast-text-color: #{color.scale($white, $lightness: -40%)};
+    --contrast-text-color: #{$light};
 
-    --decorator-color: #{color.scale($black, $alpha: -90%)};
+    --decorator-color: #{$light-decoration};
 
-    --main-bg-color: #{$white};
-    --contrast-bg-color: #{$black};
-    --hover-bg-color: #{color.scale($white, $lightness: -5%)};
-    --active-bg-color: #{color.scale($white, $lightness: -10%)};
+    --main-bg-color: #{$light};
+    --contrast-bg-color: #{$dark};
 
-    --highlight-color: #{$orange};
-    --highlight-high-color: #{$orange};
-    --highlight-medium-color: #{$black};
-    --highlight-low-color: #{$grey};
-    --hover-highlight-color: #{color.scale($orange, $lightness: 10%)};
-    --active-highlight-color: #{color.scale($orange, $lightness: -10%)};
+    --highlight-color: #{$main-color};
+    --highlight-high-color: #{$main-color};
+    --highlight-medium-color: #{$dark};
+    --highlight-low-color: #{$light-grey};
 
-    $color: str-replace("" + var(----decorator-color), "#", "%23");
+    --3d-wireframe-color: #{$light-grey};
+    --3d-body-color: #{$light};
+
+    $color: str-replace("" + var(--decorator-color), "#", "%23");
     --bg-dots: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Ccircle cx='5' cy='5' r='5' fill='#{$color}'/%3E%3C/svg%3E");
-    --bg-hash: repeating-linear-gradient(315deg, #{color.scale($black, $alpha: -90%)} 0, #{color.scale($black, $alpha: -90%)} 1px, transparent 0, transparent 50%);
+    --bg-hash: repeating-linear-gradient(315deg, #{$light-decoration} 0, #{$light-decoration} 1px, transparent 0, transparent 50%);
 }
 
 [data-theme='dark'] {
     color-scheme: dark;
-    --main-text-color: #{$white};
-    --hover-text-color: #{color.scale($white, $lightness: -20%)};
-    --active-text-color: #{color.scale($white, $lightness: -40%)};
+    --main-text-color: #{$light};
 
-    --contrast-text-color: #{$black};
-    --hover-contrast-text-color: #{color.scale($black, $lightness: 20%)};
-    --active-contrast-text-color: #{color.scale($black, $lightness: 40%)};
+    --contrast-text-color: #{$dark};
 
-    --decorator-color: #{color.scale($white, $alpha: -70%)};
+    --decorator-color: #{$dark-decoration};
 
-    --main-bg-color: #{$black};
-    --contrast-bg-color: #{$white};
-    --hover-bg-color: #{color.scale($black, $lightness: 5%)};
-    --active-bg-color: #{color.scale($black, $lightness: 10%)};
+    --main-bg-color: #{$dark};
+    --contrast-bg-color: #{$light};
 
-    --highlight-color: #{$orange};
-    --highlight-high-color: #{$orange};
-    --highlight-medium-color: #{$white};
-    --highlight-low-color: #{$grey};
-    --hover-highlight-color: #{color.scale($orange, $lightness: -10%)};
-    --active-highlight-color: #{color.scale($orange, $lightness: 10%)};
+    --highlight-color: #{$main-color};
+    --highlight-high-color: #{$main-color};
+    --highlight-medium-color: #{$light-grey};
+    --highlight-low-color: #{$dark-grey};
 
-    $color: str-replace("" + #{color.scale($black, $alpha: -90%)}, "#", "%23");
+    --3d-wireframe-color: #{$dark-grey};
+    --3d-body-color: #{$dark};
+
+    $color: str-replace("" + var(--decorator-color), "#", "%23");
     --bg-dots: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Ccircle cx='5' cy='5' r='5' fill='#{$color}'/%3E%3C/svg%3E");
-    --bg-hash: repeating-linear-gradient(315deg, #{color.scale($light-grey, $alpha: -70%)} 0, #{color.scale($light-grey, $alpha: -70%)} 1px, transparent 0, transparent 50%);
+    --bg-hash: repeating-linear-gradient(315deg, #{$dark-decoration} 0, #{$dark-decoration} 1px, transparent 0, transparent 50%);
 }
