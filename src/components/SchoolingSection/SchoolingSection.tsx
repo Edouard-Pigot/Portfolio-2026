@@ -9,17 +9,6 @@ import { useTranslation } from 'react-i18next';
 function SchoolingSection() {
   const { t } = useTranslation();
 
-
-  let computeDateString = function(date: number) {
-
-    let diplomaDate;
-    if(date) {
-        diplomaDate = new Date(date*1000);
-    }
-
-    return diplomaDate?.getUTCFullYear();
-  }
-
   return (
     <div className={styles.schooling}>
       {[...schooling].reverse().map(school => (

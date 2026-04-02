@@ -7,7 +7,7 @@ import UtilityButtons from '../UtilityButtons/UtilityButtons';
 
 import { useState, useRef, useEffect } from 'react';
 
-import { gsap } from 'gsap';
+//import { gsap } from 'gsap';
 
 interface Props {
   startAnimation: boolean;
@@ -15,14 +15,14 @@ interface Props {
 
 function MainDecorator({ startAnimation }: Props) {
 
-  const [showLoader, setShowLoader] = useState(true);
-  const [percent, setPercent] = useState(0);
+  const [showLoader] = useState(true);
+  const [percent] = useState(0);
 
   const mainDecoratorRef = useRef<HTMLDivElement>(null);
   const loaderRef = useRef<HTMLDivElement>(null);
-  const loaderTextRef = useRef<HTMLDivElement>(null);
+  /*const loaderTextRef = useRef<HTMLDivElement>(null);
   const menusRef = useRef<HTMLDivElement>(null);
-  const mainContentRef = useRef<HTMLDivElement>(null);
+  const mainContentRef = useRef<HTMLDivElement>(null);*/
 
   useEffect(() => {
     if (startAnimation) {

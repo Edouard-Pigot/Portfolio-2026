@@ -169,7 +169,7 @@ const SceneObject = memo(({ modelPath, geometryNode, wireframeColor, bodyColor }
  * MAIN COMPONENT: VolumetricContainer
  * The parent component that sets up the Canvas and provides the theme data.
  */
-function VolumetricContainer({ className, modelPath, geometryNode, ...props }: VolumetricProps) {
+function VolumetricContainer({ className, modelPath, geometryNode }: VolumetricProps) {
   const themeColors = useThemeColors();
 
   return (

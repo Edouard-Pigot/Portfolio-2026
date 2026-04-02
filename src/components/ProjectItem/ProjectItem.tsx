@@ -1,4 +1,4 @@
-import styles from './ProjectDisplay.module.scss';
+import styles from './ProjectItem.module.scss';
 
 import MediaCarousel from '../MediaCarousel/MediaCarousel';
 import TechStack from '../TechStack/TechStack';

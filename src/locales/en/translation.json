@@ -155,7 +155,7 @@
       "bac": {
         "name": "High School Diploma in Science and Technology of Industry and Sustainable Development (STI2D)",
         "school": "Lycée Pierre-Gilles de Gennes",
-        "description": "Specialization in Information Systems and Digital Technology (SIN)."
+        "description": ""
       },
       "dut": {
         "name": "Two-year University Degree in Technology (DUT) in Computer Science",
@@ -165,12 +165,12 @@
       "licence": {
         "name": "Bachelor's Degree in Computer Science",
         "school": "Aix-Marseille University - Luminy Faculty of Science",
-        "description": "Specialization in 3D Modeling[cite: 3, 53]."
+        "description": ""
       },
       "master": {
         "name": "Master's Degree in Computer Science - Geometry and Computer Graphics",
         "school": "Aix-Marseille University - Luminy Faculty of Science",
-        "description": "Specialized in Geometry and Computer Graphics (GIG)[cite: 3, 53]."
+        "description": ""
       }
     }
   },

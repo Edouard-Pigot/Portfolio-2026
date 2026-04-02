@@ -11,13 +11,13 @@ const resources = {
 };
 
 i18n
-  .use(LanguageDetector) // Automatically detects user language
-  .use(initReactI18next) // Passes i18n down to react-i18next
+  .use(LanguageDetector)
+  .use(initReactI18next)
   .init({
     resources,
     fallbackLng: "en",
     interpolation: {
-      escapeValue: false // React already safes from xss
+      escapeValue: false
     }
   });
 

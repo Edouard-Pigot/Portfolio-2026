@@ -56,7 +56,7 @@ export const experiences: Experience[] = [
     location: "Vélizy-Villacoublay",
     periods: [1617235200, 1633046399],
     description: "experiences.details.dassault_systemes_1.description",
-    techStack: ["C++"]
+    techStack: ["C++", "Agile Scrum", "Jira"]
   },
   {
     positionName: "experiences.details.dassault_systemes.position",
@@ -65,6 +65,6 @@ export const experiences: Experience[] = [
     location: "Vélizy-Villacoublay",
     periods: [1640995200, -1],
     description: "experiences.details.dassault_systemes_2.description",
-    techStack: ["C++", "JavaScript", "TypeScript", "JSON Schema", "HTML", "CSS", "SASS"]
+    techStack: ["C++", "JavaScript", "TypeScript", "JSON Schema", "HTML", "CSS", "SASS", "Agile Scrum", "Jira"]
   }
 ];

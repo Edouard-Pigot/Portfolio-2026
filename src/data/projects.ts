@@ -87,9 +87,7 @@ export const projects: Project[] = [
     description: "projects.details.blitz.description",
     techStack: ["HTML", "CSS", "JavaScript", "NodeJS"],
     media: [
-      { url: getMediaUrl(7, 1, 'webm'), type: 'video' },
-      { url: getMediaUrl(7, 2, 'webp'), type: 'image' },
-      { url: getMediaUrl(7, 3, 'webp'), type: 'image' }
+      { url: getMediaUrl(7, 1, 'webm'), type: 'video' }
     ],
     link: "https://github.com/Edouard-Pigot/Blitz"
   },
@@ -112,9 +110,7 @@ export const projects: Project[] = [
     description: "projects.details.pacman.description",
     techStack: ["Java", "JavaFX"],
     media: [
-      { url: getMediaUrl(9, 1, 'webm'), type: 'video' },
-      { url: getMediaUrl(9, 2, 'webp'), type: 'image' },
-      { url: getMediaUrl(9, 3, 'webp'), type: 'image' }
+      { url: getMediaUrl(9, 1, 'webm'), type: 'video' }
     ],
     link: "https://github.com/Edouard-Pigot/Pacman"
   },
@@ -227,7 +223,7 @@ export const projects: Project[] = [
     title: "projects.details.portfolio_v3.title",
     dates: [1767225600, 1775001599],
     description: "projects.details.portfolio_v3.description",
-    techStack: ["React", "TypeScript", "Vite", "SASS"],
+    techStack: ["React", "TypeScript", "Vite", "SASS", "GSAP", "i18next"],
     media: [{ url: getMediaUrl(19, 1, 'webp'), type: 'image' }]
   },
   {
