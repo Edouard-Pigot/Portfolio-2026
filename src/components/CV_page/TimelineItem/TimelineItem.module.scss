@@ -1,0 +1,97 @@
+.timelineItem {
+  position: relative;
+
+  .separator {
+    width: 4px;
+    height: 4px;
+    margin-inline: 5px;
+  } 
+ 
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  .dates {
+    position: absolute;
+    left: -8rem;
+    top: -.1rem;
+    list-style: none;
+
+    li {
+      font-size: .9rem;
+      margin-bottom: .1rem;
+      font-weight: normal;
+      text-align: right;
+      width: 5rem;
+    }
+  }
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: .7rem;
+    height: .7rem;
+    background-color: white;
+    border: 1px solid var(--highlight-color);
+    position: absolute;
+    margin-left: calc(-2.35rem - 1px);
+    margin-top: 0.15rem;
+    transition: background-color .3s ease;
+  }
+
+  &:hover::before {
+    background-color: var(--highlight-color);
+  }
+
+  .separator {
+    display: inline-block;
+    background-color: var(--main-text-color);
+  }   
+  
+  .title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: var(--font-oxanium);
+
+    .separator {
+      margin-bottom: 2px;
+    } 
+
+    .titleInfo {
+      font-size: .9rem;
+      font-weight: 200;
+      font-family: var(--font-oxanium);
+    }
+  }
+
+  .subtitle {
+    font-size: 1.0rem;
+    font-weight: 200;
+    font-family: var(--font-oxanium);
+    color: var(--highlight-color);
+
+    .separator {
+      margin-bottom: 1px;
+    } 
+
+    .subtitleInfo {
+      font-size: .9rem;
+      font-weight: 200;
+      font-family: var(--font-oxanium);
+      color: var(--main-text-color);
+    }
+  }
+
+  p {
+    text-align: justify;
+  }
+
+  .description {
+    margin-bottom: .4rem;
+    list-style: square;
+
+    li {
+      margin-left: 15px;
+    }
+  }
+}

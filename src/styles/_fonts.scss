@@ -13,8 +13,15 @@
   src: url("/fonts/Lato-Regular.ttf");
 }
 
+@font-face {
+  font-family: "Kode Mono";
+  font-weight: 500;
+  src: url("/fonts/KodeMono-VariableFont_wght.ttf") format("truetype");
+}
+
 :root {
   --font-bebas: 'Bebas Neue', sans-serif;
   --font-oxanium: Oxanium, sans-serif;
+  --font-kode: "Kode Mono", sans-serif;
   --font-lato: Lato, sans-serif;
 }

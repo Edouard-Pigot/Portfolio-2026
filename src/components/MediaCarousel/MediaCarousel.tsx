@@ -1,67 +1,43 @@
 import styles from './MediaCarousel.module.scss';
 
-import { useRef, useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
 
 import MediaDisplay from '@/components/MediaDisplay/MediaDisplay';
 
 import { type ProjectMedia } from '@data/projects';
 
 function MediaCarousel({ media }: { media: ProjectMedia[] }) {
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const [emblaRef, emblaApi] = useEmblaCarousel({duration: 10});
+
   const [activeIndex, setActiveIndex] = useState(0);
-  const [userInteracted, setUserInteracted] = useState(false);
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(true);
 
-  const [showLeftArrow, setshowLeftArrow] = useState(false);
-  const [showRightArrow, setshowRightArrow] = useState(true);
+  const onSelect = useCallback((api: any) => {
+    setActiveIndex(api.selectedScrollSnap());
+    setCanScrollPrev(api.canScrollPrev());
+    setCanScrollNext(api.canScrollNext());
+  }, []);
 
-  const handleScroll = () => {
-    if (!userInteracted) setUserInteracted(true);
+  useEffect(() => {
+    if (!emblaApi) return;
 
-    if (scrollRef.current) {
-      const { scrollLeft, offsetWidth } = scrollRef.current;
-      const index = Math.round(scrollLeft / offsetWidth);
-      setActiveIndex(index);
-      setshowRightArrow(index !== media.length - 1);
-      setshowLeftArrow(index !== 0);
-    }
-  };
+    onSelect(emblaApi);
+    emblaApi.on('select', onSelect);
+    emblaApi.on('reInit', onSelect);
+  }, [emblaApi, onSelect]);
 
-  const slide = (direction: 'next' | 'prev') => {
-    if (!userInteracted) setUserInteracted(true);
-    if (scrollRef.current) {
-      const width = scrollRef.current?.offsetWidth || 0;
-      scrollRef.current.scrollBy({
-        left: direction === 'next' ? width : -width,
-        behavior: 'smooth',
-      });
-    }
-  };
-
-  const scrollTo = (index: number) => {
-  if (!userInteracted) setUserInteracted(true);
-    if (scrollRef.current) {
-      const width = scrollRef.current?.offsetWidth || 0;
-      scrollRef.current.scrollTo({
-        left: width * index,
-        behavior: 'smooth',
-      });
-    }
-  };
+  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
 
   if (media.length <= 1) return <MediaDisplay item={media[0]} isPrioritary={true} />;
 
   return (
-    <div className={styles['carouselWrapper']}>
-      <div 
-        className={styles['scrollContainer']} 
-        ref={scrollRef} 
-        onScroll={handleScroll}
-      >
+    <div className={styles['carouselWrapper']} ref={emblaRef}>
+      <div className={styles['scrollContainer']}>
         {media.map((item, i) => {
           const isFirst = i === 0;
-          if (!isFirst && !userInteracted) {
-            return <div key={i} className={styles['carouselItem']} />;
-          }
 
           return (
             <div key={i} className={styles['carouselItem']}>
@@ -70,32 +46,25 @@ function MediaCarousel({ media }: { media: ProjectMedia[] }) {
           );
         })}
       </div>
+
       <div className={styles['carouselControls']}>
         <button 
-          className={`${styles['arrow']} ${styles['prev']} ${showLeftArrow && styles['shown']}`} 
-          onClick={() => slide('prev')}>
+          className={`${styles['arrow']} ${styles['prev']} ${canScrollPrev && styles['shown']}`} 
+          onClick={scrollPrev}>
           <svg className={styles.chevron} width="1rem" height="1rem" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
             <path d="M 100 0 L 0 100 L 100 200" fill='none' />
           </svg>
         </button>
-
-        <div className={styles['position-indicators']}>
-          {media.map((_, i) => (
-            <button 
-              key={i} 
-              className={`${styles['position-indicator']} ${i === activeIndex ? styles['active'] : ''}`}
-              onClick={() => scrollTo(i)}
-            />
-          ))}
-        </div>
-
         <button 
-          className={`${styles['arrow']} ${styles['next']} ${showRightArrow && styles['shown']}`} 
-          onClick={() => slide('next')}>
+          className={`${styles['arrow']} ${styles['next']} ${canScrollNext && styles['shown']}`} 
+          onClick={scrollNext}>
           <svg className={styles.chevron} width="1rem" height="1rem" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
             <path d="M 0 0 L 100 100 L 0 200" fill='none' />
           </svg>
         </button>
+        <div className={styles['slide-counter']}>
+          <p> {activeIndex + 1} / {media.length} </p>
+        </div>
       </div>
     </div>
   );

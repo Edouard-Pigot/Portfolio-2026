@@ -6,7 +6,7 @@ $light: hsl(0, 0%, 95%);
 $light-grey: hsl(12, 3%, 70%);
 $dark-grey: hsl(0, 0%, 33%);
 $dark: hsl(0, 0%, 1%);
-$dark-decoration: hsla(0, 0%, 100%, 0.3);
+$dark-decoration: hsl(0, 0%, 42.54%);
 $light-decoration: hsl(0, 0%, 0%, .1);
 
 :root {
@@ -27,10 +27,6 @@ $light-decoration: hsl(0, 0%, 0%, .1);
 
     --3d-wireframe-color: #{$light-grey};
     --3d-body-color: #{$light};
-
-    $color: str-replace("" + var(--decorator-color), "#", "%23");
-    --bg-dots: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Ccircle cx='5' cy='5' r='5' fill='#{$color}'/%3E%3C/svg%3E");
-    --bg-hash: repeating-linear-gradient(315deg, #{$light-decoration} 0, #{$light-decoration} 1px, transparent 0, transparent 50%);
 }
 
 [data-theme='dark'] {
@@ -51,8 +47,4 @@ $light-decoration: hsl(0, 0%, 0%, .1);
 
     --3d-wireframe-color: #{$dark-grey};
     --3d-body-color: #{$dark};
-
-    $color: str-replace("" + var(--decorator-color), "#", "%23");
-    --bg-dots: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Ccircle cx='5' cy='5' r='5' fill='#{$color}'/%3E%3C/svg%3E");
-    --bg-hash: repeating-linear-gradient(315deg, #{$dark-decoration} 0, #{$dark-decoration} 1px, transparent 0, transparent 50%);
 }

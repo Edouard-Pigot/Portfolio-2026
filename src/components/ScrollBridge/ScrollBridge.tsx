@@ -17,25 +17,27 @@ function ScrollBridge({ children }: { children: React.ReactNode }) {
   const [scrollY, setScrollY] = useState(0);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
+  const isMobile = windowWidth < 850;
+
   const reportHeight = useCallback((id: string, h: number) => {
     setHeights((prev) => (prev[id] === h ? prev : { ...prev, [id]: h }));
   }, []);
 
   const totalHeight = useMemo(() => {
+    if (isMobile) return 0;
+
     const sectionsHeight = Object.values(heights).reduce((acc, curr) => acc + curr, 0);
 
     const root = getComputedStyle(document.documentElement);
     const margin = parseInt(root.getPropertyValue('--decorator-margin')) || 0;
     const navbarHeight = parseInt(root.getPropertyValue('--navbar-height')) || 0;
     return sectionsHeight + (margin * 2) + navbarHeight;
-  }, [heights]);
+  }, [heights, isMobile]);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
 
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
+    const handleResize = () => setWindowWidth(window.innerWidth);
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener('resize', handleResize);
@@ -47,6 +49,14 @@ function ScrollBridge({ children }: { children: React.ReactNode }) {
   }, []);
 
   const scrollToSection = useCallback((id: string) => {
+    if (isMobile) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+      return;
+    }
+    
     const targetIndex = SECTION_ORDER.indexOf(id);
     if (targetIndex === -1) return;
 
@@ -60,28 +70,26 @@ function ScrollBridge({ children }: { children: React.ReactNode }) {
   const activeSection = useMemo(() => {
     const root = getComputedStyle(document.documentElement);
     const margin = parseInt(root.getPropertyValue('--decorator-margin')) || 0;
-    const navbarHeight = parseInt(root.getPropertyValue('--navbar-height')) || 0;
 
-    const viewportTop = scrollY + margin + navbarHeight;
-    const viewportMiddle = scrollY + margin + navbarHeight + (window.innerHeight / 2);
+    // Use the center of the viewport as the reference point
+    const viewportCenter = scrollY + window.innerHeight / 2;
 
-    let accumulatedTop = 0;
+    let sectionTop = margin;
 
     for (const id of SECTION_ORDER) {
       const sectionHeight = heights[id] || 0;
-      const sectionBottom = accumulatedTop + sectionHeight;
+      const sectionBottom = sectionTop + sectionHeight;
 
-      // RULE: 
-      // 1. The middle of the screen must be past the section's top (viewportMiddle >= accumulatedTop)
-      // 2. The top of the screen must NOT have passed the section's bottom (viewportTop < sectionBottom)
-      if (viewportMiddle >= accumulatedTop && viewportTop < sectionBottom) {
+      // Check if viewport center falls within this section
+      if (viewportCenter >= sectionTop && viewportCenter < sectionBottom) {
         return id;
       }
 
-      accumulatedTop = sectionBottom;
+      sectionTop = sectionBottom;
     }
 
-    return SECTION_ORDER[0];
+    // If no section contains the viewport center, return the last section
+    return SECTION_ORDER[SECTION_ORDER.length - 1];
   }, [scrollY, heights]);
 
   return (

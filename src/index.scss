@@ -27,15 +27,61 @@ p {
     font-size: 1.2rem;
 }
 
-.dotted-background {
-    background-image: var(--bg-dots);
-}
-
 .full-background {
     background-color: var(--main-bg-color);
 }
 
+.dotted-background {
+    background-image: radial-gradient(var(--decorator-color) 1.5px, transparent 1.5px);
+    background-size: 15px 15px;
+}
+
 .hashed-background {
-    background-image: var(--bg-hash);
+    background-image: repeating-linear-gradient(315deg, var(--decorator-color) 0, var(--decorator-color) 1px, transparent 0, transparent 50%);;
     background-size: 10px 10px;
+}
+
+.crossed-background {
+    --size-multiplier: 2;
+    --total-size: calc(80px * var(--size-multiplier));
+    --cross-width: calc(20px * var(--size-multiplier));
+    --cross-thickness: calc(.5px * var(--size-multiplier));
+
+    $cross-start: calc((var(--total-size) - var(--cross-width))/2);
+    $cross-end: calc($cross-start + var(--cross-width));
+    $intersection-start: calc(var(--total-size)/2 - var(--cross-thickness)/2);
+    $intersection-end: calc(var(--total-size)/2 + var(--cross-thickness)/2);
+
+    background-image: 
+        linear-gradient(0deg, 
+            var(--main-bg-color), 
+            var(--main-bg-color) $cross-start, 
+            transparent $cross-start, 
+            transparent $cross-end, 
+            var(--main-bg-color) $cross-end),
+
+        linear-gradient(90deg, 
+            var(--main-bg-color), 
+            var(--main-bg-color) $cross-start, 
+            transparent $cross-start, 
+            transparent $intersection-start, 
+            var(--decorator-color) $intersection-start, 
+            var(--decorator-color) $intersection-end, 
+            transparent $intersection-end, 
+            transparent $cross-end, 
+            var(--main-bg-color) $cross-end),
+
+        linear-gradient(0deg, 
+            var(--main-bg-color), 
+            var(--main-bg-color) $cross-start, 
+            transparent $cross-start,
+            transparent $intersection-start,
+            var(--decorator-color) $intersection-start, 
+            var(--decorator-color) $intersection-end, 
+            transparent $intersection-end, 
+            transparent $cross-end, 
+            var(--main-bg-color) $cross-end);
+         
+    background-position: center;
+    background-size: var(--total-size) var(--total-size);
 }

@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import './MediaDisplay.module.scss';
 
 interface Props {
-  item: { url: string; type: 'image' | 'video' };
+  item: { url: string; type: 'image' | 'video'; poster?: string };
   isPrioritary?: boolean;
 }
 
@@ -52,7 +52,7 @@ function MediaDisplay({ item, isPrioritary = false }: Props) {
         muted 
         loop 
         playsInline
-        // poster can be added here if available for better UX
+        poster={item.poster}
       />
     );
   }

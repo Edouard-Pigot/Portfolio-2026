@@ -11,6 +11,7 @@
   grid-template-columns: 100px 1fr 100px;
   grid-template-rows: 100px 1fr 100px;
   background: none;
+  pointer-events: none;
 
   .heroDecorator {
     display: grid;
@@ -144,6 +145,11 @@
 }
 
 @media (max-width: 850px) {
+  .backgroundCanvas {
+    height: 100vh;
+  }
+
+
   .heroSection {
     height: calc(100vh - 51px);
     grid-template-columns: 75px 1fr 75px;
@@ -151,7 +157,7 @@
 
     #title {
       h1 {
-        font-size: 11vw;
+        font-size: min(11vw, 19vh);
       }
 
       div {
@@ -159,7 +165,7 @@
       }
 
       h2 {
-        font-size: 6vw;
+        font-size: min(6vw, 7vh);
       }
     }
   }

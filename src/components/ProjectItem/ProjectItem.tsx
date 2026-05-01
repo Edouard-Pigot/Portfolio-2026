@@ -7,7 +7,7 @@ import { type Project } from '@data/projects';
 
 import { useTranslation } from 'react-i18next';
 
-function ProjectDisplay({ title, dates, description, techStack, media, link }: Project) {
+function ProjectItem({ title, dates, description, techStack, media, link }: Project) {
 
   const { t } = useTranslation();
 
@@ -30,20 +30,13 @@ function ProjectDisplay({ title, dates, description, techStack, media, link }: P
   if(isWIP) {
     stringToDisplay = t("projects.work_in_progress");
   } else {
-    const startM = (startDate?.getUTCMonth() ?? 0) + 1;
     const startY = startDate?.getUTCFullYear();
-    
-    const endM = (endDate?.getUTCMonth() ?? 0) + 1;
     const endY = endDate?.getUTCFullYear();
 
     if (startDate?.getUTCFullYear() === endDate?.getUTCFullYear()) {
-      if(startM === endM) {
-        stringToDisplay = `${startM}/${endY}`;
-      } else {
-        stringToDisplay = `${startM}-${endM}/${endY}`;
-      }
+        stringToDisplay = `${endY}`;
     } else {
-      stringToDisplay = `${startM}/${startY}-${endM}/${endY}`;
+      stringToDisplay = `${startY}-${endY}`;
     }
   }
 
@@ -85,4 +78,4 @@ function ProjectDisplay({ title, dates, description, techStack, media, link }: P
   );
 }
 
-export default ProjectDisplay;
+export default ProjectItem;

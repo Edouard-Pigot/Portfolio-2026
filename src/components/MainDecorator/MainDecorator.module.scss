@@ -3,7 +3,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-80px, 30px);
-  font-family: 'Oxanium';
+  font-family: var(--font-oxanium);
 }
 
 .loaderPercent {
@@ -11,7 +11,7 @@
   top: 50%;
   right: 50%;
   transform: translate(118px, 30px);
-  font-family: 'Oxanium';
+  font-family: var(--font-oxanium);
 }
 
 .mainDecorator {
@@ -54,7 +54,7 @@
     left: -1px;
     color: var(--main-text-color);
     border: 1px solid var(--highlight-color);
-    font-family: var(--font-oxanium);
+    font-family: var(--font-kode);
 
     transition: color 0.3s ease, background-color 0.3s ease;
 
@@ -110,12 +110,29 @@
     margin: 0;
     height: 100%;
     width: 100%;
-    grid-template-columns: 1fr;
-    grid-template-rows: var(--navbar-height) 1fr;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    display: block;
     border: none;
+    position: relative;
+
+    #main-content-container {
+      height: auto;
+      overflow: visible;
+      z-index: 0;
+      padding-top: var(--navbar-height);
+    }
 
     #top-left-corner {
       display: none;
+    }
+
+    #top-navbar {
+      position: fixed;
+      width: 100%;
+      height: var(--navbar-height);
+      z-index: 1001;
+      background-color: var(--main-bg-color);
     }
 
     #left-toolbar {

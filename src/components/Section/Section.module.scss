@@ -1,11 +1,12 @@
 .section {
-  font-family: 'Oxanium';
+  font-family: var(--font-oxanium);
 
   color: var(--main-text-color);
-
+  
   border-bottom: solid 1px var(--decorator-color);
-
+  
   .sectionHeader {
+    font-family: var(--font-kode);
     display: flex;
     align-items: center;
     gap: .5rem;
@@ -22,7 +23,8 @@
         display: inline-block;
         width: 1rem;
         height: 1rem;
-        margin: .6rem;
+        margin-top: .79rem;
+        margin-right: .3rem;
         background-color: var(--highlight-color);
       }
     }

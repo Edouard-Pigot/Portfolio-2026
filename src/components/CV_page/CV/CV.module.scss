@@ -3,7 +3,7 @@
 .pageWrapper {
   display: flex;
   justify-content: center;
-  padding: 40px 0;
+  padding: 59px 0;
   min-height: 100vh;
   background-color: black;
 }
@@ -35,7 +35,7 @@
 }
 
 .header {
-  padding: 20px;  
+  padding: 8px 20px 5px 20px;  
   position: relative;
   border: 1px solid var(--decorator-color);
 
@@ -45,8 +45,8 @@
 
   .title {
     font-size: 28px;
-    font-weight: normal;
-    font-family: var(--font-oxanium);
+    font-weight: bold;
+    font-family: var(--font-kode);
     text-transform: uppercase;
     letter-spacing: 3px;
     color: hsl(17, 89%, 48%);
@@ -54,9 +54,9 @@
   }
 
   .name, .surname {
-    font-family: var(--font-oxanium);
+    font-family: var(--font-kode);
     font-size: 24px;
-    font-weight: normal;
+    font-weight: bold;
     line-height: normal;
   }
 
@@ -72,9 +72,9 @@
 
 .body {
   display: grid;
-  grid-template-columns: auto 175px;
+  grid-template-columns: auto 185px;
   padding: 10px 20px 20px 20px;
-  column-gap: 20px;
+  column-gap: 10px;
 
   .experienceSection, .diplomaSection, .skillsSection {
     display: flex;
@@ -85,6 +85,14 @@
     }
   }
 
+  .experienceList, .schoolingList {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid var(--decorator-color);
+    padding-left: 2rem;
+    margin-left: 5rem;
+  }
+
   .skillsSection {
     gap: 10px;
   }
@@ -92,7 +100,7 @@
   .sectionTitle {
     font-size: 18px;
     font-weight: 400;
-    font-family: var(--font-oxanium);
+    font-family: var(--font-kode);
     text-transform: uppercase;
     padding-bottom: 5px;
   }

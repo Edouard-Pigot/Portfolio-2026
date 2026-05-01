@@ -28,6 +28,8 @@ function NavBar() {
     { id: 'contact', label: t('contact.section_name') }
   ];
 
+  const activeItem = navItems.find(item => item.id === activeTab)?.label || '';
+
   const handleNavClick = (id: string) => {
     scrollContext?.scrollToSection(id);
   };
@@ -76,7 +78,11 @@ function NavBar() {
         >
           =
         </Button>
-        <div id={styles["spacer"]} className='hashed-background'/>
+        <div id={styles["spacer"]}>
+          <p className={styles["current-section"]}>
+            {activeItem}
+          </p>
+        </div>
         <UtilityButtons id={styles["mobile-utility"]}/>
       </div>
       <div 

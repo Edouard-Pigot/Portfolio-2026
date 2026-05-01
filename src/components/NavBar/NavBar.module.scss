@@ -137,6 +137,26 @@
             #spacer {
                 flex: 1 1 auto;
                 height: 100%;
+
+                .current-section {
+                    display: flex;
+                    align-items: center;
+                    justify-content: start;
+                    height: 100%;
+                    margin-left: 1rem;
+                    font-family: var(--font-oxanium);
+                    text-transform: uppercase;
+
+                    &::before {
+                        content: '';
+                        display: inline-block;
+                        width: .5rem;
+                        height: .5rem;
+                        margin-right: 5px;
+                        margin-bottom: 3px;
+                        background-color: var(--highlight-color);
+                    }
+                }
             }
 
             #mobile-utility {

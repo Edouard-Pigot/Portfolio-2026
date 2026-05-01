@@ -58,6 +58,7 @@ const toolsSkills: SkillGroup = {
     { name: 'Git',        level: 'high' },
     { name: 'GitHub',     level: 'high' },
     { name: 'Visual Studio Code', level: 'high' },
+    { name: 'Visual Studio 2019', level: 'medium' },
     { name: 'Vite',       level: 'low' }
   ]
 };

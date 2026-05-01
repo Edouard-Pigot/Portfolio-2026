@@ -30,9 +30,9 @@ function MainDecorator({ startAnimation }: Props) {
     }
   }, [startAnimation]);
 
-  /*useEffect(() => {
+  useEffect(() => {
     const timer = setInterval(() => {
-      setPercent((prev) => {
+      /*setPercent((prev) => {
         if (prev >= 90) {
           if (document.readyState === 'complete') {
             clearInterval(timer);
@@ -41,7 +41,7 @@ function MainDecorator({ startAnimation }: Props) {
           return 90;
         }
         return prev + Math.floor(Math.random() * 10);
-      });
+      });*/
     }, 150);
 
     return () => clearInterval(timer);
@@ -59,15 +59,6 @@ function MainDecorator({ startAnimation }: Props) {
         opacity: 0,
         duration: .5,
         ease: "power2.in",
-      });
-
-      timeline.to(loaderTextRef.current, {
-        opacity: 0,
-        duration: .5,
-        ease: "power2.in",
-        onComplete: () => {
-          loaderTextRef.current?.remove();
-        }
       });
 
       timeline.add("expand");
@@ -88,7 +79,7 @@ function MainDecorator({ startAnimation }: Props) {
         ease: "none"
       }, "expand");
     }
-  }, [percent]);*/
+  }, [percent]);
 
   return (
     <ScrollBridge>
@@ -103,7 +94,7 @@ function MainDecorator({ startAnimation }: Props) {
           <div id={styles["spacer"]} className='hashed-background'/>
           <UtilityButtons id={styles["nav-utilities"]} />
         </div>
-        <div id={styles["main-content-container"]} className="dotted-background">
+        <div id={styles["main-content-container"]} className="crossed-background">
           <MainContent />
         </div>
         {showLoader && 

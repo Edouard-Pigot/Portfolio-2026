@@ -5,6 +5,7 @@ const getMediaUrl = (projectId: number, mediaId: number, ext: 'webp' | 'webm') =
 export interface ProjectMedia {
   url: string;
   type: 'image' | 'video';
+  poster?: string;
 }
 
 export interface Project {
@@ -25,9 +26,9 @@ export const projects: Project[] = [
     description: "projects.details.tank_physics.description",
     techStack: ["C#", "Unity", "Blender"],
     media: [
-      { url: getMediaUrl(1, 1, 'webm'), type: 'video' },
-      { url: getMediaUrl(1, 2, 'webm'), type: 'video' },
-      { url: getMediaUrl(1, 3, 'webm'), type: 'video' },
+      { url: getMediaUrl(1, 1, 'webm'), type: 'video', poster: getMediaUrl(1, 1, 'webp') },
+      { url: getMediaUrl(1, 2, 'webm'), type: 'video', poster: getMediaUrl(1, 2, 'webp') },
+      { url: getMediaUrl(1, 3, 'webm'), type: 'video', poster: getMediaUrl(1, 3, 'webp') },
       { url: getMediaUrl(1, 4, 'webp'), type: 'image' },
       { url: getMediaUrl(1, 5, 'webp'), type: 'image' }
     ],
@@ -48,7 +49,7 @@ export const projects: Project[] = [
     description: "projects.details.tank_shooter.description",
     techStack: ["C#", "Unity", "Blender"],
     media: [
-      { url: getMediaUrl(3, 1, 'webm'), type: 'video' },
+      { url: getMediaUrl(3, 1, 'webm'), type: 'video', poster: getMediaUrl(3, 1, 'webp') },
       { url: getMediaUrl(3, 2, 'webp'), type: 'image' }
     ],
     link: "https://github.com/Edouard-Pigot/Tank-Shooter"
@@ -78,7 +79,7 @@ export const projects: Project[] = [
     dates: [1554076800, 1556668799],
     description: "projects.details.scripted_animation.description",
     techStack: ["Python", "Blender"],
-    media: [{ url: getMediaUrl(6, 1, 'webm'), type: 'video' }]
+    media: [{ url: getMediaUrl(6, 1, 'webm'), type: 'video', poster: getMediaUrl(6, 1, 'webp') }]
   },
   {
     id: 7,
@@ -87,7 +88,7 @@ export const projects: Project[] = [
     description: "projects.details.blitz.description",
     techStack: ["HTML", "CSS", "JavaScript", "NodeJS"],
     media: [
-      { url: getMediaUrl(7, 1, 'webm'), type: 'video' }
+      { url: getMediaUrl(7, 1, 'webm'), type: 'video', poster: getMediaUrl(7, 1, 'webp') },
     ],
     link: "https://github.com/Edouard-Pigot/Blitz"
   },
@@ -98,7 +99,7 @@ export const projects: Project[] = [
     description: "projects.details.elevator_controller.description",
     techStack: ["Java", "JavaFX"],
     media: [
-      { url: getMediaUrl(8, 1, 'webm'), type: 'video' },
+      { url: getMediaUrl(8, 1, 'webm'), type: 'video', poster: getMediaUrl(8, 1, 'webp') },
       { url: getMediaUrl(8, 2, 'webp'), type: 'image' }
     ],
     link: "https://github.com/Edouard-Pigot/Ascenseur"
@@ -110,7 +111,7 @@ export const projects: Project[] = [
     description: "projects.details.pacman.description",
     techStack: ["Java", "JavaFX"],
     media: [
-      { url: getMediaUrl(9, 1, 'webm'), type: 'video' }
+      { url: getMediaUrl(9, 1, 'webm'), type: 'video', poster: getMediaUrl(9, 1, 'webp') },
     ],
     link: "https://github.com/Edouard-Pigot/Pacman"
   },
@@ -160,7 +161,7 @@ export const projects: Project[] = [
     description: "projects.details.particle_emitter.description",
     techStack: ["C++", "OpenGL", "GLSL", "Qt"],
     media: [
-      { url: getMediaUrl(13, 1, 'webm'), type: 'video' },
+      { url: getMediaUrl(13, 1, 'webm'), type: 'video', poster: getMediaUrl(13, 1, 'webp') },
       { url: getMediaUrl(13, 2, 'webp'), type: 'image' }
     ],
     link: "https://github.com/Edouard-Pigot/Smoke-Particule"
@@ -172,7 +173,7 @@ export const projects: Project[] = [
     description: "projects.details.boids.description",
     techStack: ["C++", "OpenGL", "GLSL", "Qt"],
     media: [
-      { url: getMediaUrl(14, 1, 'webm'), type: 'video' },
+      { url: getMediaUrl(14, 1, 'webm'), type: 'video', poster: getMediaUrl(14, 1, 'webp') },
       { url: getMediaUrl(14, 2, 'webp'), type: 'image' }
     ],
     link: "https://github.com/Edouard-Pigot/Boids"
@@ -191,7 +192,7 @@ export const projects: Project[] = [
     dates: [1606780800, 1609459199],
     description: "projects.details.shader_intro.description",
     techStack: ["GLSL"],
-    media: [{ url: getMediaUrl(16, 1, 'webm'), type: 'video' }],
+    media: [{ url: getMediaUrl(16, 1, 'webm'), type: 'video', poster: getMediaUrl(16, 1, 'webp') }],
     link: "https://www.shadertoy.com/view/wdVfRw"
   },
   {
@@ -223,7 +224,7 @@ export const projects: Project[] = [
     title: "projects.details.portfolio_v3.title",
     dates: [1767225600, 1775001599],
     description: "projects.details.portfolio_v3.description",
-    techStack: ["React", "TypeScript", "Vite", "SASS", "GSAP", "i18next"],
+    techStack: ["React", "TypeScript", "Vite", "SASS", "ThreeJS", "GLSL", "GSAP", "i18next"],
     media: [{ url: getMediaUrl(19, 1, 'webp'), type: 'image' }]
   },
   {
