@@ -55,33 +55,39 @@
                 opacity: 1;
                 transform: scale(1);
             }
-        
-            & div::before, & div::after {
-                content: '';
-                height: 6px;
-                width: 6px;
-                display: inline-block;
-            }
 
-            & div::before {
-                background: var(--main-text-color);
-                margin-right: 9px;
-                margin-bottom: 1px;
-                opacity: 0;
-                transform: scale(0);
-                transition: opacity 0.2s, transform 0.2s, background-color 0.2s;
+            & div {
+                font-family: var(--font-kode);
+                font-size: 1.15rem;
+
+                &::before, &::after {
+                    content: '';
+                    height: 6px;
+                    width: 6px;
+                    display: inline-block;
+                }
+
+                &::before {
+                    background: var(--main-text-color);
+                    margin-right: 9px;
+                    margin-bottom: 1px;
+                    opacity: 0;
+                    transform: scale(0);
+                    transition: opacity 0.2s, transform 0.2s, background-color 0.2s;
+                }
+
+                &::after {
+                    background: transparent;
+                    margin-left: 9px; 
+                    width: 6px;
+                }
             }
 
             &:hover div::before {
                 background: var(--highlight-color);
             }
 
-            & div::after {
-                background: transparent;
-                margin-left: 9px; 
-                width: 6px;
-            }
-
+            
             &[data-active="true"] div::before {
                 opacity: 1;
                 transform: scale(1);
@@ -144,7 +150,7 @@
                     justify-content: start;
                     height: 100%;
                     margin-left: 1rem;
-                    font-family: var(--font-oxanium);
+                    font-family: var(--font-kode);
                     text-transform: uppercase;
 
                     &::before {

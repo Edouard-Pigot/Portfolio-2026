@@ -67,7 +67,7 @@ export function VolumetricContainer({ children, className }: VolumetricContainer
           toneMapping: THREE.NoToneMapping, 
           outputColorSpace: THREE.SRGBColorSpace 
         }}
-        camera={{ position: [0, 3, 20], fov: 20 }}
+        camera={{ position: [0, 3, 23], fov: 20 }}
         onCreated={({ camera }) => camera.lookAt(0, 3, 0)}
       >
         <ThemeContext.Provider value={themeColors}>
