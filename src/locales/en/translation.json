@@ -1,7 +1,7 @@
 {
   "home": {
     "section_name": "home",
-    "subtitle": "Full-stack and 3D developper"
+    "subtitle": "Web Full-stack, C++ and 3D developper"
   },
   "about": {
     "section_name": "about",
@@ -10,7 +10,7 @@
   "projects": {
     "section_name": "projects",
     "details_button": "See the project",
-    "work_in_progress": "WIP",
+    "work_in_progress": "In_progress",
     "details" : {
       "tank_physics": {
         "title": "Tank Physics",

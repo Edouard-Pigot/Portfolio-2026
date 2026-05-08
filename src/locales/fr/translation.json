@@ -1,7 +1,7 @@
 {
   "home": {
     "section_name": "accueil",
-    "subtitle": "Développeur full-stack et 3D"
+    "subtitle": "Développeur web full-stack, C++ et 3D"
   },
   "about": {
     "section_name": "à propos",
@@ -14,31 +14,31 @@
     "details" : {
       "tank_physics": {
         "title": "Tank physics",
-        "description": "Premier véritable projet sous Unity qui consistait a créé un système complet de contrôle de char avec principalement les rotations des roues, le déplacement des suspensions et des chenilles, ainsi que les contrôles horizontaux et verticaux du canon et le tir. Les déplacements du char sont gérés par le moteur physique d'Unity. Les chenilles sont animées avec des os, rajoutés avec Blender, raccordés aux positions des roues et une texture dont l'offset varie en fonction de la vitesse du char."
+        "description": "Projet inspiré par les tanks du jeu Battlefield Heroes, et premier projet sur le moteur de jeu Unity. Récupèration des modèles 3D du jeu avec BFMeshRipper, modification avec Blender pour l'ajout de bones contrôlant la déformation des chenilles et import dans Unity. Sur Unity création de scripts contrôlant le déplacement via touches du clavier, manipulant des WheelColliders natifs d'Unity. Les roues déplacent les bones qui agissent comme des suspensions, déplaçant le maillage de la chenille, dont les UV de la texture sont déplacés pour simuler la rotation. Des scripts contrôlent également la rotation de la tourelle et du canon avec la souris et le tir avec un délai de rechargement. Une ébauche d'implémentation de la connection en ligne multijoueur et de la logique de drapeaux à capturer (mode conquête de Battlefield) avait également été faite."
       },
       "modeling_3d": {
         "title": "Modélisation 3D",
-        "description": "Projets scolaires d'introduction à la modélisation sous Blender. Réalisation d'un katana avec un patron et d'un poulpe grâce aux courbes de Bézier."
+        "description": "Cours d'introduction à la modélisation sous Blender. Réalisation de modèles 3D dont un katana, avec l'utilisation d'images de référence, et d'un poulpe, utilisant les courbes de Bézier."
       },
       "tank_shooter": {
         "title": "Tank shooter",
-        "description": "Prototype de top shooter sous Unity avec une gestion de la physique des projectiles pour avoir un système de ricochets sur les obstacles. Le clavier contrôle les déplacements du tank tandis que la tourelle est dirigée vers le curseur de la souris. Un générateur de maillage permet de laisser la trace du passage des chenilles sur le sol et le châssis du char se tourne automatiquement pour suivre la direction demandée par le joueur."
+        "description": "Prototype de jeu sur le moteur Unity inspiré par le mini-jeu Tanks! du jeu Wii Play. Gestion complète des projectiles sans utiliser la physique d'Unity via un script contrôlant le déplacement et les ricochets. Déplacement du tank au clavier, avec calcul de la rotation du chassis en fonction de la direction, et rotation de la tourelle calculée pour qu'elle se tourne en direction du point de visée. Les chenilles laissent des traces formées par un maillage généré procéduralement."
       },
       "procedural_swords": {
         "title": "Epées procédurales",
-        "description": "Écriture d'un script Python sous Blender permettant la génération automatique d'armes (épées, poignards, lances, ...) en fonction de paramètres indiqués par l'utilisateur comme la longueur et l'épaisseur de la lame, la longueur du manche, la largeur de la garde, ..."
+        "description": "Cours de scripting sur Blender en Python permettant la génération automatique d'épées grâce à des paramètres fournis par l'utilisateur : longueur et épaisseur de la lame, longueur du manche, largeur de la garde, type d'embout. Différentes combinaisons de paramètres permettent de générer des armes différentes (lances, claymores, rapières...)."
       },
       "face_detector": {
         "title": "Détecteur de faces",
-        "description": "Scripts Python sous Blender qui parcours le maillage d'un objet 3D et va colorer les faces en fonction de différents paramètres."
+        "description": "Cours de scripting sur Blender en Python permettant le parcours d'un maillage, la détection des angles d'incidence entre chaque faces et la coloration de chacune d'entre elles en fonction de la catégorie : convexe ou concave. "
       },
       "scripted_animation": {
         "title": "Animation scriptée",
-        "description": "Script Python permettant l'animation d'un véhicule."
+        "description": "Cours de scripting sur Blender en Python. Modélisation d'un véhicule et scripting d'une boucle d'animation"
       },
       "blitz": {
         "title": "Blitz",
-        "description": "Projet de fin de L3 Informatique réalisé à 4. Il s'agit du jeu de carte Blitz. Disponible sur navigateur il permet de jouer en multijoueur en temps réel avec un lobby pour créer et rejoindre des parties, se connecter ou créer un compte. Le site et le jeu sont 100 % en HTML/CSS/NodeJS ce qui permet une compatibilité avec tous les appareils et une plus grande simplicité d'utilisation. L'interface est intuitive et incorpore une fonction de chat lors d'une partie."
+        "description": "Projet de fin de Licence Informatique réalisé en groupe de quatre. Il s'agit du jeu de carte Blitz. Disponible sur navigateur il permet de jouer en multijoueur en temps réel avec un lobby pour créer et rejoindre des parties, se connecter ou créer un compte. Le site et le jeu sont 100 % en HTML/CSS/NodeJS ce qui permet une compatibilité avec tous les appareils et une plus grande simplicité d'utilisation. L'interface est intuitive et incorpore une fonction de chat lors d'une partie."
       },
       "elevator_controller": {
         "title": "Controleur d'ascenseur",
