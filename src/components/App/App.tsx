@@ -2,20 +2,19 @@ import './App.module.scss';
 
 import MainDecorator from '@components/MainDecorator/MainDecorator';
 import PageLoader from '@components/PageLoader/PageLoader';
-import CV from '@components/CV_page/CV/CV';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 function App() {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [canShowContent, setCanShowContent] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const mainDecoratorRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (document.readyState === 'complete') {
-      setIsLoaded(true);
+      setIsLoading(false);
     } else {
-      window.onload = () => setIsLoaded(true);
+      window.onload = () => setIsLoading(false);
     }
   }, []);
 
@@ -25,14 +24,11 @@ function App() {
         <Route path="/" element={
             <>
               <PageLoader 
-                isReady={isLoaded}
-                onFinished={() => setCanShowContent(true)}
+                isLoading={isLoading}
+                mainDecoratorRef={mainDecoratorRef}
               />
-              <MainDecorator startAnimation={canShowContent}/>
+              <MainDecorator ref={mainDecoratorRef} />
             </>
-        } />
-        <Route path="/cv" element={
-          <CV />
         } />
       </Routes>
     </BrowserRouter>

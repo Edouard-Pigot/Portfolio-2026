@@ -71,6 +71,15 @@
     text-align: justify;
   }
 
+  .tasks-list {
+    list-style-type: square;
+    margin-left: 1rem;
+
+    li {
+      font-size: 1.1rem;
+    }
+  }
+
   ul {
     margin-top: 1rem;
   }

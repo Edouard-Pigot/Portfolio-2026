@@ -25,6 +25,10 @@
   width: calc(100% - var(--decorator-margin) * 2);
   height: calc(100% - var(--decorator-margin) * 2);
 
+  > div {
+    visibility: hidden;
+  }
+
   &.isExpanded {
     transform: translate(0, 0);
     top: 0;

@@ -13,30 +13,18 @@ function ProjectItem({ title, dates, description, techStack, media, link }: Proj
 
   let stringToDisplay = "";
   let isWIP = false;
-  let startDate, endDate;
 
-  if(dates) {
-    if(dates[0])
-      startDate = new Date(dates[0]*1000);
-  
-    if(dates[1]) {
-      if(dates[1] === -1)
-        isWIP = true;
-      else
-        endDate = new Date(dates[1]*1000);
-    }
+  if(dates.end.year === -1) {
+    isWIP = true;
   }
 
   if(isWIP) {
     stringToDisplay = t("projects.work_in_progress");
   } else {
-    const startY = startDate?.getUTCFullYear();
-    const endY = endDate?.getUTCFullYear();
-
-    if (startDate?.getUTCFullYear() === endDate?.getUTCFullYear()) {
-        stringToDisplay = `${endY}`;
+    if (dates.start.year === dates.end.year) {
+        stringToDisplay = `${dates.end.year}`;
     } else {
-      stringToDisplay = `${startY}-${endY}`;
+      stringToDisplay = `${dates.start.year}-${dates.end.year}`;
     }
   }
 

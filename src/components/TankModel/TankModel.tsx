@@ -390,7 +390,7 @@ const TankModel = memo(() => {
       let angleDiff = targetAngle - currentAngle;
       angleDiff = Math.atan2(Math.sin(angleDiff), Math.cos(angleDiff));
 
-      const rotationSpeed = 0.01;
+      const rotationSpeed = 0.02;
       turretRef.current.rotation.y += angleDiff * rotationSpeed;
 
       const localGunTarget = targetPoint.clone();

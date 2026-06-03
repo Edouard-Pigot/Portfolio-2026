@@ -5,92 +5,92 @@
   },
   "about": {
     "section_name": "about",
-    "description": "Software Engineer at Dassault Systèmes, I specialize in developing User Interface (UI) infrastructures. My expertise combines the power of C++20 for native development with the flexibility of JavaScript and TypeScript for web environments. With a Master’s degree in Computer Science (specializing in Geometry and Computer Graphics), I have extensive experience solving complex technical challenges, ranging from VR collision algorithms to 3D rendering optimization. Driven by technological innovation, I thrive in Agile Scrum environments where I combine technical precision, effective teamwork, and a strong focus on client satisfaction."
+    "description": "Multidisciplinary developer passionate about creating innovative solutions that meet user needs. My academic background and diverse professional experiences have allowed me to develop solid expertise in application and web software development, as well as project management. I am constantly self-learning to acquire new technical skills and refine my creativity on stimulating projects."
   },
   "projects": {
     "section_name": "projects",
-    "details_button": "See the project",
+    "details_button": "View project",
     "work_in_progress": "In_progress",
-    "details" : {
+    "details": {
       "tank_physics": {
-        "title": "Tank Physics",
-        "description": "My first major Unity project, focused on creating a complete tank control system. Key features include realistic wheel rotation, suspension movement, and tread animation, as well as horizontal and vertical turret controls and firing mechanics. Tank movement is handled by Unity's physics engine. Treads were rigged with bones in Blender and synced to wheel positions, using a texture offset that varies based on the vehicle's speed."
+        "title": "Tank physics",
+        "description": "Project inspired by the tanks from the game Battlefield Heroes, and first project on the Unity game engine. Recovered 3D models from the game with BFMeshRipper, modified them with Blender to add bones controlling track deformation, and imported them into Unity. Created scripts in Unity controlling movement via keyboard keys, manipulating Unity's native WheelColliders. The wheels move the bones acting as suspensions, moving the track mesh, whose texture UVs are shifted to simulate rotation. Scripts also control the turret and cannon rotation with the mouse and firing with a reload delay. A draft implementation of online multiplayer connection and capture the flag logic (Battlefield's conquest mode) was also made."
       },
       "modeling_3d": {
         "title": "3D Modeling",
-        "description": "School projects introducing modeling in Blender. Features a katana created using a template and an octopus modeled with Bézier curves."
+        "description": "Introductory course to modeling in Blender. Creation of 3D models including a katana, using reference images, and an octopus, using Bézier curves."
       },
       "tank_shooter": {
-        "title": "Tank Shooter",
-        "description": "A top-down shooter prototype in Unity featuring a projectile physics system with ricochets. The keyboard controls tank movement while the turret tracks the mouse cursor. A mesh generator creates dynamic tread marks on the ground, and the tank chassis automatically rotates to follow the player's intended direction."
+        "title": "Tank shooter",
+        "description": "Game prototype on the Unity engine inspired by the Tanks! mini-game from Wii Play. Full projectile management without using Unity's physics via a script controlling movement and ricochets. Tank movement via keyboard, with chassis rotation calculation based on direction, and turret rotation calculated to face the aiming point. The tracks leave trails formed by a procedurally generated mesh."
       },
       "procedural_swords": {
-        "title": "Procedural Swords",
-        "description": "A Python script for Blender that automatically generates weapon models (swords, daggers, spears, etc.) based on user-defined parameters such as blade length and thickness, handle length, and guard width."
+        "title": "Procedural swords",
+        "description": "Scripting course in Blender using Python allowing the automatic generation of swords based on user-provided parameters: blade length and thickness, handle length, guard width, tip type. Different parameter combinations allow generating different weapons (spears, claymores, rapiers...)."
       },
       "face_detector": {
-        "title": "Face Detector",
-        "description": "Python scripts for Blender that traverse a 3D object's mesh and color faces based on various geometric parameters."
+        "title": "Face detector",
+        "description": "Scripting course in Blender using Python allowing the traversal of a mesh, detection of incidence angles between each face, and coloring each of them according to their category: convex or concave."
       },
       "scripted_animation": {
-        "title": "Scripted Animation",
-        "description": "A Python script designed to automate vehicle animation."
+        "title": "Scripted animation",
+        "description": "Scripting course in Blender using Python. Modeling of a vehicle and scripting of an animation loop."
       },
       "blitz": {
         "title": "Blitz",
-        "description": "A final-year undergraduate project developed in a team of four. Blitz is a card game available in the browser, featuring real-time multiplayer, a lobby system for creating/joining games, and account management. Built 100% with HTML, CSS, and NodeJS for cross-device compatibility and ease of use. The interface is intuitive and includes an integrated chat function."
+        "description": "Inspired by our games of Cabo between classes during the Computer Science Bachelor's degree, this year-end project was specified and developed in a group of four students. Features include the ability to create an account (with a verification email sent), invite players to a friend list and compare scores on a leaderboard, host and join games, customize card display, and chat with other players during a game."
       },
       "elevator_controller": {
-        "title": "Elevator Controller",
-        "description": "A software engineering project involving the implementation of a modular interface and management system for an elevator car."
+        "title": "Elevator controller",
+        "description": "Software engineering course project simulating an elevator management program, with information sharing between a central unit, the floors, and the elevator. The program adapts to any number of floors the elevator needs to manage."
       },
       "pacman": {
         "title": "Pacman",
-        "description": "A software engineering project focused on recreating the 1980s Pacman. It features original graphics, the classic map, and authentic AI logic for the ghosts. The project heavily utilizes Design Patterns to decouple gameplay mechanics from the engine logic."
+        "description": "Second software engineering project, inspired by the game Pacman but with total creative freedom. For this project, the choice was made to exactly recreate the original Pacman game by consulting information from the gamedeveloper.com (formerly Gamasutra) website. The ghost AIs and entity movements are identical to the original, even the bugs! The game board consists of two grids: the main grid containing the logical representations of game objects (ghosts, walls, dots, Pacman...) and a sub-grid representing pixels, used for positioning ghost sprites and Pacman's movements (who can cut corners by turning diagonally within a main grid cell). Finally, the map is generated via an editable text file, allowing the creation of custom maps."
       },
       "lumipic": {
         "title": "Lumipic",
-        "description": "Photo album creation software developed for a Human-Computer Interaction course. The interface follows the Windows 10 File Explorer theme and includes both light and dark modes. It allows users to browse local folders, filtering for image files only. Users can create albums by selecting and grouping images into named collections."
+        "description": "Human-computer interaction course project. Software allowing users to view image files contained in computer folders, create albums, and move these images into them. The interface uses graphical elements from the Windows 10 file explorer, with a dark theme and a light theme."
       },
       "flood_simulator": {
-        "title": "Flood Simulator",
-        "description": "A research project (TER) in partnership with the IPGR. The goal was to create a museum flood simulator as an educational tool for training museum staff in disaster scenarios like floods or pipe bursts. Developed in Unity for web deployment, the major challenge was balancing performance and visual quality to provide a realistic simulation capable of running on low-end hardware. Developed as a duo, this project continued as an internship from June to July 2020."
+        "title": "Flood simulator",
+        "description": "Project proposed by the Institute for Risk Prevention and Management for the TER (Research Environment Work) course. Worked in pairs to improve a museum flood simulator intended for staff training in the event of water disasters. Building on the work of former students, we remade the fluid simulation and rendering systems to transition from simple planes rising in each room to calculating water movement in space, simulating water flowing through doors, windows, or stairs. Water rendering is done via Marching Cubes."
       },
       "portfolio_v1": {
-        "title": "Portfolio V1",
-        "description": "Creation of this website to centralize and showcase my projects during my 2021 internship search."
+        "title": "Portfolio",
+        "description": "Creation of a portfolio website to gather and present my projects in one place as part of my search for an end-of-studies internship for the year 2021."
       },
       "particle_emitter": {
-        "title": "Particle Emitter",
-        "description": "An Animation and Rendering project featuring a smoke particle system. The system allows for customization of parameters like texture color, lifespan, and emission frequency. The texture is animated via an atlas handled within a custom shader."
+        "title": "Particle emitter",
+        "description": "Animation and rendering course project. Creation of a particle system that emits smoke. The smoke consists of an animated texture via an atlas. Parameters allow modifying the color, lifetime, and emission frequency of the particles."
       },
       "boids": {
         "title": "Boids",
-        "description": "An Animation and Rendering project focused on creating fish AI using boid algorithms. Includes obstacle avoidance and predator evasion mechanics using spherical colliders."
+        "description": "Second animation and rendering project consisting of creating a fish school AI using boids."
       },
       "drone_choreography": {
-        "title": "Drone Choreography",
-        "description": "A WebGL-based drone choreography visualizer. It reads a keyframe file to animate drone models with user-controlled playback. Features include toggles for a ground grid, axis markers, flight paths, ground-drop lines, and drone labels. It also includes collision detection and speed monitoring."
+        "title": "Drone choreography",
+        "description": "Animation and rendering project. Creation of a drone choreography visualizer in WebGL. A keyframe file defines the drone animation, controlled by the user via a slider. Visual debugging allows displaying a grid, axes, drone trajectories, the drone's position relative to the ground, and the name of each drone. The program can detect collisions and excessive drone speeds, preventing accidents in real situations."
       },
       "shader_intro": {
-        "title": "Introduction to Shaders",
-        "description": "An introductory course on GLSL and shader writing using Shadertoy. Includes a fragment shader depicting a day/night cycle over the ocean."
+        "title": "Introduction to shaders",
+        "description": "Introductory course to the GLSL language and writing shaders on the shadertoy.com website. Creation of a fragment shader representing a day/night cycle over the sea with sunrise and sunset, moonrise and moonset, clouds, stars, and waves."
       },
       "portfolio_v2": {
         "title": "Portfolio V2",
-        "description": "An updated design and content refresh for my portfolio, notably adding light and dark mode support."
+        "description": "Updated the design and content of my portfolio, and added light and dark themes activated automatically based on the time or the user's choice."
       },
       "catan": {
         "title": "Catan",
-        "description": "An experiment in recreating the board game Catan in 3D. Includes procedural generation of a hexagonal game board, resource management, and turn-based gameplay logic."
+        "description": "Experimentation to recreate the Catan board game in 3D on the Unity engine. The game board tiles are arranged randomly. A state machine manages the game loop, with the first two turns where players build their first settlements and gather resources, then the main loop where each player rolls the dice and performs available actions: moving the robber, stealing resources, building structures (settlement or road), and ending the turn."
       },
       "portfolio_v3": {
         "title": "Portfolio V3",
-        "description": "In progress."
+        "description": "Updated the design and content of my portfolio. The color theme is selected based on system preference or manual user choice. All texts are translated via i18next. The interfaces are fully responsive on desktop and mobile, and reusable via React components. The home section displays an interactive 3D model modeled by myself, with procedural animations, to demonstrate my 3D skills. The track mesh is a ThreeJS cylinder whose vertices are displaced along a predefined path via a shader. Optimization is maximized, with carousel media loaded on the fly, and video playback is activated only when visible on the screen."
       },
       "visit_paris": {
         "title": "Visit Paris",
-        "description": "In progress."
+        "description": "Web application project gathering the cultural and tourist sites in and around Paris that I have personally visited. The ultimate goal of this application is to allow tourists to organize their stay in Paris by easily spotting places that might interest them. Locations are displayed on a Leaflet map and are categorized by theme (monument, museum, park...). Tags allow filtering locations to match individual visit desires (historical period, visit theme, type of place, opening hours, price, temporary exhibitions, events...)."
       }
     }
   },
@@ -115,37 +115,43 @@
       "temporary": "Fixed-term contract",
       "permanent": "Permanent position"
     },
-    "current_position": "Now",
+    "current_position": "Present",
     "details": {
       "credit_mutuel": {
-        "position": "Seasonal bank clerk",
+        "position": "Summer Assistant",
         "company": "Crédit Mutuel"
       },
       "credit_mutuel_1": {
-        "description": "Marseille La Joliette branch. Archive management and sorting, customer reception (guidance, credit card and check collection), and data entry of corporate financial statements into the IT system."
+        "description": "Marseille la Joliette branch.",
+        "tasks": "Sorting and moving the branch's physical archives.\\ Welcoming clients in person.\\ Data entry of corporate balance sheets to update client files."
       },
       "fiducial_cloud": {
-        "position": "Full-Stack developer",
+        "position": "Full-Stack Developer",
         "company": "Fiducial Cloud",
-        "description": "Enhanced an open-source project management tool by integrating communication features with the company's internal software."
+        "description": "Development of features for an open-source project management tool within a cloud infrastructure. Role as a full-stack developer to improve planning capabilities and data integration.",
+        "tasks": "Improvement of the open-source project management tool's features.\\ Development and maintenance of the planning module using PHP.\\ Design of scripts for extracting and processing data from internal databases."
       },
       "credit_mutuel_2": {
-        "description": "Telephone customer service: handling transfers, credit cards, and checks; managing accounts and savings plans; scheduling appointments; providing pricing information; and processing loan drawdowns."
+        "description": "Mediterranean call center, where clients wishing to contact their advisor are redirected if they are unavailable.",
+        "tasks": "Collection of client identification information.\\ Identification of client needs and routing to the appropriate services.\\ Resolution of common problems related to accounts, bank cards, and other financial products.\\ Scheduling appointments for clients requiring branch assistance."
       },
       "ipgr": {
-       "position": "Unity 3D developer",
-        "company": "Institut de Prévention et de Gestion des Risques Urbains",
-        "description": "Taking over a museum flood simulator on the Unity engine.\nOverhaul of the water simulation system by including a physical model, replacing the static water planes used by the previous development team.\nPreliminary work on improving water rendering using Marching Cubes."
+        "position": "Unity 3D Developer",
+        "company": "Institute for the Prevention and Management of Urban Risks",
+        "description": "Development and optimization of an urban risk simulator, specifically a flood modeling tool within a museum. Role as a Unity developer to improve the accuracy of physical simulations and the performance of the rendering engine.",
+        "tasks": "Improvement of the flood simulation system by replacing static surfaces with dynamic physical simulation in C#.\\ Implementation of the marching cubes technique for realistic and fluid water rendering.\\ Performance optimization via a preliminary study and progressive integration of the Job System and ECS (Entity Component System).\\ Debugging and maintenance of the source code to ensure simulator stability."
       },
       "dassault_systemes": {
-        "position": "Software engineer",
+        "position": "Software Engineer",
         "company": "Dassault Systèmes"
       },
       "dassault_systemes_1": {
-        "description": "Specification and development of interaction methods with UIs in virtual reality to make the most of the 3D environment.\nScalable architecture by inheritance on interaction types and collision boxes.\nCreation of immersive layouts designed for VR."
+        "description": "Development of advanced interaction solutions for virtual reality environments within an industrial software platform. As a software engineer, the goal was to improve the user experience and the extensibility of the existing system.",
+        "tasks": "Design and specification of new interaction methods dedicated to virtual reality interfaces.\\ Development of robust software modules in C++ while respecting a clear and extensible software architecture.\\ Design and exposure of APIs allowing client developers to extend the infrastructure's features.\\ Integration within a team following the Agile Scrum methodology to ensure development tracking and incremental delivery."
       },
       "dassault_systemes_2": {
-        "description": "In an Agile team of developers providing a UI infrastructure for Dassault Systèmes developers internationally.\nMaintenance and development of features on the UI infrastructure components in web with Javascript and native with C++.\nSupport to clients on the use of APIs and best practices.\nWriting of tests and documentations for developers and client teams.\nDefinition of specifications with UX teams."
+        "description": "Development and maintenance of user interface components intended for internal technical teams, aiming to harmonize and optimize development tools.",
+        "tasks": "Design and implementation of user interface components based on specifications gathered from clients and UX teams.\\ Corrective and evolutive maintenance of existing components to ensure tool reliability and performance.\\ Writing technical documentation to facilitate the integration and use of components by other development teams.\\ Active participation in Agile Scrum methodology rituals to organize the development cycle and deliver features iteratively."
       }
     }
   },

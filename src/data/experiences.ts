@@ -4,58 +4,69 @@
 
 export type ContractType = 'internship' | 'temporary' | 'permanent';
 
+export interface Date {
+  month: number | undefined;
+  year: number;
+}
+
 export interface Experience {
   positionName: string;
   companyName: string;
   contractType: ContractType;
   location: string;
-  periods: [number, number];
+  periods: {start: Date, end: Date} | {start: Date, end: Date}[];
   description: string;
+  tasks?: string;
   techStack?: string[];
 }
 
 export const experiences: Experience[] = [
-  /*{
+  {
     positionName: "experiences.details.credit_mutuel.position",
     companyName: "experiences.details.credit_mutuel.company",
     contractType: "temporary",
     location: "Marseille",
-    periods: [1467331200, 1470009599],
-    description: "experiences.details.credit_mutuel_1.description"
-  },*/
+    periods: {start:{month: 7, year: 2016}, end:{month: 7, year: 2016}},
+    description: "experiences.details.credit_mutuel_1.description",
+    tasks: "experiences.details.credit_mutuel_1.tasks"
+  },
   {
     positionName: "experiences.details.fiducial_cloud.position",
     companyName: "experiences.details.fiducial_cloud.company",
     contractType: "internship",
     location: "Aix-en-Provence",
-    periods: [1522540800, 1530403199],
+    periods: {start:{month: 4, year: 2018}, end:{month: 6, year: 2018}},
     description: "experiences.details.fiducial_cloud.description",
+    tasks: "experiences.details.fiducial_cloud.tasks",
     techStack: ["PHP", "Smarty", "SQL", "Python", "HTML", "CSS"]
+  },
+  {
+    positionName: "experiences.details.credit_mutuel.position",
+    companyName: "experiences.details.credit_mutuel.company",
+    contractType: "temporary",
+    location: "Marseille",
+    periods: [{start:{month: 7, year: 2018}, end:{month: 8, year: 2018}}, {start:{month: 7, year: 2019}, end:{month: 8, year: 2019}}, {start:{month: 7, year: 2020}, end:{month: 8, year: 2020}}],
+    description: "experiences.details.credit_mutuel_2.description",
+    tasks: "experiences.details.credit_mutuel_2.tasks"
   },
   {
     positionName: "experiences.details.ipgr.position",
     companyName: "experiences.details.ipgr.company",
     contractType: "internship",
     location: "Marseille",
-    periods: [1590969600, 1596239999],
+    periods: {start:{month: 6, year: 2020}, end:{month: 7, year: 2020}},
     description: "experiences.details.ipgr.description",
+    tasks: "experiences.details.ipgr.tasks",
     techStack: ["Unity", "C#", "Blender", "GitHub"]
   },
-  /*{
-    positionName: "experiences.details.credit_mutuel.position",
-    companyName: "experiences.details.credit_mutuel.company",
-    contractType: "temporary",
-    location: "Marseille",
-    periods: [[1530403200, 1535759999], [1561939200, 1567295999], [1593561600, 1598918399]],
-    description: "experiences.details.credit_mutuel_2.description"
-  },*/
   {
     positionName: "experiences.details.dassault_systemes.position",
     companyName: "experiences.details.dassault_systemes.company",
     contractType: "internship",
     location: "Vélizy-Villacoublay",
-    periods: [1617235200, 1633046399],
+    periods: {start:{month: 4, year: 2021}, end:{month: 9, year: 2021}},
     description: "experiences.details.dassault_systemes_1.description",
+    tasks: "experiences.details.dassault_systemes_1.tasks",
     techStack: ["C++", "Agile Scrum", "Jira"]
   },
   {
@@ -63,8 +74,9 @@ export const experiences: Experience[] = [
     companyName: "experiences.details.dassault_systemes.company",
     contractType: "permanent",
     location: "Vélizy-Villacoublay",
-    periods: [1640995200, -1],
+    periods: {start:{month: 1, year: 2022}, end:{month: 10, year: 2025}},
     description: "experiences.details.dassault_systemes_2.description",
+    tasks: "experiences.details.dassault_systemes_2.tasks",
     techStack: ["C++", "JavaScript", "TypeScript", "JSON Schema", "HTML", "CSS", "SASS", "Agile Scrum", "Jira"]
   }
 ];

@@ -19,6 +19,7 @@ function ExperienceSection() {
           subtitle={t(experience.positionName)} 
           subtitleInfo={t("experiences.contract_types." + experience.contractType)} 
           description={t(experience.description)} 
+          list={experience.tasks ? t(experience.tasks).split('\\') : []}
           techStack={experience.techStack} />
       ))}
     </div>

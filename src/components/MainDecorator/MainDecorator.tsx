@@ -5,85 +5,12 @@ import MainContent from '@components/MainContent/MainContent';
 import ScrollBridge from '@components/ScrollBridge/ScrollBridge';
 import UtilityButtons from '../UtilityButtons/UtilityButtons';
 
-import { useState, useRef, useEffect } from 'react';
+import React, { forwardRef } from 'react';
 
-//import { gsap } from 'gsap';
-
-interface Props {
-  startAnimation: boolean;
-}
-
-function MainDecorator({ startAnimation }: Props) {
-
-  const [showLoader] = useState(true);
-  const [percent] = useState(0);
-
-  const mainDecoratorRef = useRef<HTMLDivElement>(null);
-  const loaderRef = useRef<HTMLDivElement>(null);
-  /*const loaderTextRef = useRef<HTMLDivElement>(null);
-  const menusRef = useRef<HTMLDivElement>(null);
-  const mainContentRef = useRef<HTMLDivElement>(null);*/
-
-  useEffect(() => {
-    if (startAnimation) {
-
-    }
-  }, [startAnimation]);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      /*setPercent((prev) => {
-        if (prev >= 90) {
-          if (document.readyState === 'complete') {
-            clearInterval(timer);
-            return 100;
-          }
-          return 90;
-        }
-        return prev + Math.floor(Math.random() * 10);
-      });*/
-    }, 150);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  useEffect(() => {
-    if (percent === 100 && mainDecoratorRef.current && loaderRef.current) {
-      const timeline = gsap.timeline({
-        onComplete: () => {
-          gsap.set(loaderRef.current, { pointerEvents: "none" });
-        }
-      });
-
-      timeline.to(loaderRef.current, {
-        opacity: 0,
-        duration: .5,
-        ease: "power2.in",
-      });
-
-      timeline.add("expand");
-
-      timeline.to(mainDecoratorRef.current, {
-        width: "calc(100% - var(--decorator-margin) * 2)",
-        height: "calc(100% - var(--decorator-margin) * 2)",
-        duration: 2,
-        ease: "none"
-      }, "expand");
-
-      timeline.to(mainDecoratorRef.current, {
-        top: "0%",
-        left: "0%",
-        xPercent: 0,
-        yPercent: 0,
-        duration: 2,
-        ease: "none"
-      }, "expand");
-    }
-  }, [percent]);
-
+const MainDecorator = forwardRef<HTMLDivElement, {}>((_props, ref) => {
   return (
     <ScrollBridge>
-      <div ref={mainDecoratorRef} className={`${styles.mainDecorator}`}>
+      <div ref={ref as React.Ref<HTMLDivElement>} className={`${styles.mainDecorator}`}>
         <div id={styles["top-left-corner"]} >
           EP
         </div>
@@ -97,20 +24,9 @@ function MainDecorator({ startAnimation }: Props) {
         <div id={styles["main-content-container"]} className="crossed-background">
           <MainContent />
         </div>
-        {showLoader && 
-          <div ref={loaderRef} className={styles.loadingLine} style={{ width: `${percent}%` }}/>
-        }
       </div>
-      {/*showLoader && (
-          <div ref={loaderTextRef}>
-            <div className={styles["loaderText"]}>INITIALIZING...</div>
-            <div className={styles["loaderPercent"]}>
-              {percent < 100 ? `${percent}%` : "READY"}
-            </div>
-          </div>
-        )*/}
     </ScrollBridge>
   )
-}
+});
 
 export default MainDecorator;
