@@ -78,17 +78,17 @@ export default function ContactSection() {
 
         <div className={styles.field}>
           <label>{t("contact.name")}</label>
-          <input type="text" name="name" value={formData.name} onChange={handleChange} required />
+          <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder={t("contact.nameExample")} required />
         </div>
 
         <div className={styles.field}>
           <label>{t("contact.mail")}</label>
-          <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+          <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder={t("contact.mailExample")} required />
         </div>
 
         <div className={styles.field}>
           <label>{t("contact.message")}</label>
-          <textarea name="message" value={formData.message} onChange={handleChange} required />
+          <textarea name="message" value={formData.message} onChange={handleChange} placeholder={t("contact.messageExample")} required />
         </div>
 
         <button type="submit">{t("contact.send")}</button>

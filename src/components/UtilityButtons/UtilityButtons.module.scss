@@ -32,6 +32,8 @@
   }
 
   &:hover {
+    color: var(--highlight-color);
+
     svg {
       stroke: var(--highlight-color);
     }

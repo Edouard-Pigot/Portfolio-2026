@@ -1,11 +1,10 @@
-import styles from './MainDecorator.module.scss';
-
 import NavBar from '@components/NavBar/NavBar';
 import MainContent from '@components/MainContent/MainContent';
 import ScrollBridge from '@components/ScrollBridge/ScrollBridge';
 import UtilityButtons from '../UtilityButtons/UtilityButtons';
-
 import React, { forwardRef } from 'react';
+
+import styles from './MainDecorator.module.scss';
 
 const MainDecorator = forwardRef<HTMLDivElement, {}>((_props, ref) => {
   return (

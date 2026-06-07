@@ -115,33 +115,33 @@ function PageLoader ({ isLoading, mainDecoratorRef }: Props) {
 
             // HIDE SQUARES
             spans.forEach((child : HTMLElement, index: number) => {
-              expandTimeline.set(child, { visibility: 'hidden' }, timing + 0.3 * index);
+              expandTimeline.set(child, { visibility: 'hidden' }, timing + 0.2 * index);
             });
-            timing += 0.9;
+            timing += 0.6;
 
             // HIDE TEXT
             if(loaderTextRef.current) {
               expandTimeline.set(loaderTextRef.current.children[0], { visibility: 'hidden' }, timing);
-              timing += 0.5;
+              timing += 0.3;
               expandTimeline.set(loaderTextRef.current.children[1], { visibility: 'hidden' }, timing);
-              timing += 0.5;
+              timing += 0.3;
             }
 
             // EXPAND TO FULL WIDTH
-            let duration = 1.0;
+            let duration = 0.5;
             expandTimeline.to(progressRef.current, {
               width: finalWidth,
               duration: duration,
-              ease: 'none'
+              ease: 'easeInOut',
             }, timing); 
             timing += duration;
 
             // EXPAND TO FULL HEIGHT
-            duration = 1.0;
+            duration = 0.5;
             expandTimeline.to(progressRef.current, {
               height: finalHeight,
               duration: duration,
-              ease: 'none',
+              ease: 'easeInOut',
 
               onComplete: () => {
                 document.body.classList.remove(styles['no-scroll']);
@@ -165,7 +165,6 @@ function PageLoader ({ isLoading, mainDecoratorRef }: Props) {
               }
             }, timing);
             timing += duration;
-            
           }
         });
 

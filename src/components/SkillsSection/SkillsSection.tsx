@@ -28,7 +28,7 @@ const frontWebSkills: SkillGroup = {
     { name: 'TypeScript', level: 'high' },
     { name: 'React',      level: 'medium' },
     { name: 'JQuery',     level: 'low' },
-    { name: 'Vite',       level: 'low' },
+    { name: 'ThreeJS',     level: 'low' }
   ]
 };
 const backWebSkills: SkillGroup = {
@@ -38,7 +38,8 @@ const backWebSkills: SkillGroup = {
     { name: 'MySQL',      level: 'high' },
     { name: 'PHP',        level: 'low' },
     { name: 'Node.js',    level: 'low' },
-    { name: 'Python',     level: 'low' }
+    { name: 'Python',     level: 'low' },
+    { name: 'PostgreSQL', level: 'low' }
   ]
 };
 const nativeSkills: SkillGroup = {
@@ -59,7 +60,8 @@ const toolsSkills: SkillGroup = {
     { name: 'GitHub',     level: 'high' },
     { name: 'Visual Studio Code', level: 'high' },
     { name: 'Visual Studio 2019', level: 'medium' },
-    { name: 'Vite',       level: 'low' }
+    { name: 'Vite',       level: 'low' },
+    { name: 'Jira',       level: 'low' }
   ]
 };
 const allSkills = [frontWebSkills, backWebSkills, nativeSkills, toolsSkills];

@@ -183,8 +183,11 @@
   "contact": {
     "section_name": "contact",
     "name": "Nom",
+    "nameExample": "John Doe",
     "mail": "Email",
+    "mailExample": "email@example.com",
     "message": "Message",
+    "messageExample": "Bonjour, je suis intéressé par votre profil, contactez-moi !",
     "send": "Envoyer",
     "fail": "Erreur lors de l'envoi, réessayer",
     "success": "Message envoyé",
@@ -198,7 +201,8 @@
     "toggle_aria_light": "Passer au thème clair"
   },
   "language": {
-    "dropdown_aria": "Changer la langue"
+    "toggle_aria_en": "Switch to English",
+    "toggle_aria_fr": "Passer en français"
   },
   "dates": {
     "months": {

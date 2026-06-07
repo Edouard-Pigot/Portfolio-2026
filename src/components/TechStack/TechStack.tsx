@@ -1,13 +1,22 @@
+import { forwardRef } from 'react';
+
 import styles from './TechStack.module.scss';
 
-function TechStack(prop: { techStack: string[], className?: string }) {
-  return (
-    <ul className={`${prop.className} ${styles['tech-stack']}`}>
-      {prop.techStack.map((tech) => (
-        <li key={tech + '_' + prop.className}>{tech}</li>
-      ))}
-    </ul>  
-  );
-}
+type TechStackProps = {
+  techStack: string[];
+  className?: string;
+};
+
+const TechStack = forwardRef<HTMLUListElement, TechStackProps>(
+  function TechStack({ techStack, className }, ref) {
+    return (
+      <ul ref={ref} className={`${className ?? ''} ${styles['tech-stack']}`.trim()}>
+        {techStack.map((tech) => (
+          <li key={`${tech}_${className ?? 'tech-stack'}`}>{tech}</li>
+        ))}
+      </ul>
+    );
+  }
+);
 
 export default TechStack;
