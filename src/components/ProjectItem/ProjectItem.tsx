@@ -22,7 +22,7 @@ function ProjectItem({ title, dates, description, techStack, media, link }: Proj
   const stackRef = useRef(null);
   const buttonRef = useRef(null);
 
-   useGSAP(() => {
+  useGSAP(() => {
     gsap.from([titleRef.current, dateRef.current, textRef.current, stackRef.current, buttonRef.current], {
       x: -25,
       opacity: 0,

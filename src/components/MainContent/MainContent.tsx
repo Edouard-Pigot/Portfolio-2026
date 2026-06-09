@@ -6,7 +6,7 @@ import AboutSection from '@/components/AboutSection/AboutSection';
 import ProjectsSection from '@components/ProjectsSection/ProjectsSection';
 import SkillsSection from '@components/SkillsSection/SkillsSection';
 import ExperienceSection from '../ExperienceSection/ExperienceSection';
-import SchoolingSection from '../SchoolingSection/SchoolingSection';
+import EducationSection from '../EducationSection/EducationSection';
 import ContactSection from '../ContactSection/ContactSection';
 import FooterSection from '../FooterSection/FooterSection';
 
@@ -22,7 +22,7 @@ function MainContent() {
     { index: 'projects', title: t("projects.section_name"), content: <ProjectsSection /> },
     { index: 'skills', title: t("skills.section_name"), content: <SkillsSection /> },
     { index: 'experience', title: t("experiences.section_name"), content: <ExperienceSection /> },
-    { index: 'schooling', title: t("schooling.section_name"), content: <SchoolingSection /> },
+    { index: 'education', title: t("education.section_name"), content: <EducationSection /> },
     { index: 'contact', title: t("contact.section_name"), content: <ContactSection /> }
   ];
 

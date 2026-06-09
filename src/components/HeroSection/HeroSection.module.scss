@@ -104,7 +104,6 @@
     height: 100vh;
   }
 
-
   .heroSection {
     height: calc(100vh - 51px);
     grid-template-columns: 75px 1fr 75px;
@@ -123,5 +122,15 @@
         font-size: min(6vw, 7vh);
       }
     }
+  }
+}
+
+@media (max-height: 500px) {
+  .backgroundCanvas {
+    height: 100vh;
+  }
+
+  .heroSection {
+    height: 100vh;
   }
 }

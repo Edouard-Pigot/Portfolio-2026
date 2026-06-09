@@ -155,28 +155,32 @@
       }
     }
   },
-  "schooling": {
-    "section_name": "schooling",
+  "education": {
+    "section_name": "education",
     "details": {
       "bac": {
         "name": "High School Diploma in Science and Technology of Industry and Sustainable Development (STI2D)",
-        "school": "Lycée Pierre-Gilles de Gennes",
-        "description": ""
+        "school": "Pierre-Gilles de Gennes High School",
+        "description": "Information Systems and Numeric Track",
+        "tasks": ""
       },
       "dut": {
         "name": "Two-year University Degree in Technology (DUT) in Computer Science",
-        "school": "IUT of Aix-en-Provence",
-        "description": ""
+        "school": "Technology Institute of Aix-en-Provence",
+        "description": "Android programming option",
+        "tasks": "Algorithms & Programming: C, Java, C++ languages\\Web Development: Client/Server Architecture (HTML5, CSS3, JavaScript, PHP)\\Databases: Design (Merise/UML) and Operation (SQL)\\Software Engineering: Object Modeling and Design Methodologies\\Systems & Networks: Linux/Unix Administration, Network Services, and Security\\Mobile Programming: Android Application Development\\Discrete Mathematics: Logic, Sets, and Graph Theory\\Algebra & Analysis: Linear Algebra and Matrix Computation\\Probability & Statistics: Data Analysis and Modeling\\Operations Research: Optimization and Decision Support\\Project Management: Agile Methods, Planning, and Tracking\\Economics & Law: IT Law, Organizational Functioning\\Technical English: Professional Communication and Documentation\\Expression-Communication: Technical Writing and Presentation Techniques"
       },
       "licence": {
         "name": "Bachelor's Degree in Computer Science",
-        "school": "Aix-Marseille University - Luminy Faculty of Science",
-        "description": ""
+        "school": "Marseille Luminy Faculty of Science",
+        "description": "HCI and 3D Modeling options",
+        "tasks": "Advanced Object-Oriented Programming: In-depth Java and Design Patterns.\\Systems Architecture: Internal Processor Operation and Memory Management.\\Operating Systems: System Programming in C (Processes, Signals, Pipes).\\Networks: Communication Protocols and TCP/IP Layers.\\Software Engineering: Software Development Lifecycle, Testing, and Validation.\\Algorithms & Complexity: Study of Algorithmic Efficiency.\\Computability & Logic: Automata, Grammars, and Limits of Computation.\\Databases: Relational Model, Normalization, and Transactions.\\Mathematics for Computer Science: Linear Algebra, Probability, and Numerical Analysis."
       },
       "master": {
-        "name": "Master's Degree in Computer Science - Geometry and Computer Graphics",
-        "school": "Aix-Marseille University - Luminy Faculty of Science",
-        "description": ""
+        "name": "Master's Degree in Computer Science",
+        "school": "Marseille Luminy Faculty of Science",
+        "description": "Geometry and Computer Graphics Track",
+        "tasks": "Real-Time Rendering: Graphics Pipeline, Shaders (GLSL), and Graphics APIs (OpenGL/Vulkan).\\3D Animation: Particle Systems, Forward/Inverse Kinematics, and Game Engines.\\Geometric Modeling: Bézier Curves, Splines, and Subdivision Surfaces.\\Mesh Processing: Topology, Smoothing, Compression, and 3D Surface Reconstruction.\\Computational Geometry: Delaunay Triangulations, Voronoi Diagrams, and Spatial Data Structures.\\Digital Image Processing: Filtering, Segmentation, and Frequency Analysis.\\Computer Vision: Pattern Recognition, Image Registration, and Camera Calibration.\\Machine Learning: Introduction to Neural Networks Applied to Images."
       }
     }
   },

@@ -155,28 +155,32 @@
       }
     }
   },
-  "schooling": {
-    "section_name": "parcours",
+  "education": {
+    "section_name": "scolarité",
     "details": {
       "bac": {
-        "name": "Baccalauréat STI2D SIN",
+        "name": "Baccalauréat Science et Technologie de l'Industrie et du Développement Durable (STI2D)",
         "school": "Lycée Pierre-Gilles de Gennes",
-        "description": ""
+        "description": "Parcours Systèmes d'Information et Numérique",
+        "tasks": ""
       },
       "dut": {
         "name": "DUT informatique",
         "school": "IUT d'Aix-en-Provence",
-        "description": ""
+        "description": "Option programmation Android",
+        "tasks": "Algorithmique & Programmation : Langages C, Java, C++\\Développement Web : Architecture Client/Serveur (HTML5, CSS3, JavaScript, PHP)\\Bases de données : Conception (Merise/UML) et exploitation (SQL)\\Génie Logiciel : Modélisation objet et méthodologies de conception\\Systèmes & Réseaux : Administration Linux/Unix, services réseaux et sécurité\\Programmation Mobile : Développement d'applications Android\\Mathématiques discrètes : Logique, ensembles et théorie des graphes\\Algèbre & Analyse : Algèbre linéaire et calculs matriciels\\Probabilités & Statistiques : Analyse de données et modélisation\\Recherche Opérationnelle : Optimisation et aide à la décision\\Gestion de projet : Méthodes agiles, planification et suivi\\Économie & Droit : Droit de l'informatique, fonctionnement des organisations\\Anglais Technique : Communication professionnelle et documentation\\Expression-Communication : Rédaction technique et techniques de présentation"
       },
       "licence": {
         "name": "Licence informatique",
         "school": "Faculté des Sciences Marseille Luminy",
-        "description": ""
+        "description": "Options IHM et modélisation 3D",
+        "tasks": "Programmation Orientée Objet Avancée : Approfondissement Java et Design Patterns.\\Architecture des Systèmes : Fonctionnement interne des processeurs et gestion mémoire.\\Systèmes d'Exploitation : Programmation système en C (processus, signaux, pipes).\\Réseaux : Protocoles de communication et couches TCP/IP.\\Génie Logiciel : Cycle de vie du logiciel, tests et validation.\\Algorithmique & Complexité : Étude de l'efficacité des algorithmes.\\Calculabilité & Logique : Automates, grammaires et limites du calcul.\\Bases de Données : Modèle relationnel, normalisation et transactions.\\Mathématiques pour l'Informatique : Algèbre linéaire, probabilités et analyse numérique."
       },
       "master": {
-        "name": "Master informatique - Géométrie et Informatique Graphique",
+        "name": "Master informatique",
         "school": "Faculté des Sciences Marseille Luminy",
-        "description": ""
+        "description": "Parcours Géométrie et Informatique Graphique",
+        "tasks": "Rendu Temps Réel : Pipeline graphique, Shaders (GLSL) et API graphiques (OpenGL/Vulkan).\\Animation 3D : Systèmes de particules, cinématique directe/inverse et moteurs de jeu.\\Modélisation Géométrique : Courbes de Bézier, Splines et surfaces de subdivision.\\Traitement de Maillages : Topologie, lissage, compression et reconstruction de surfaces 3D.\\Géométrie Algorithmique : Triangulations de Delaunay, diagrammes de Voronoi et structures de données spatiales.\\Traitement Numérique d'Images : Filtrage, segmentation et analyse fréquentielle.\\Vision par Ordinateur : Reconnaissance de formes, recalage d'images et calibration caméra.\\Apprentissage Automatique (Machine Learning) : Introduction aux réseaux de neurones appliqués à l'image."
       }
     }
   },

@@ -18,7 +18,7 @@
   margin: var(--decorator-margin);
   position: fixed;
   display: grid;
-  grid-template-columns: 67px 1fr;
+  grid-template-columns: var(--toolbar-width) 1fr;
   grid-template-rows: var(--navbar-height) 1fr;
   border: 1px solid var(--decorator-color);
 
@@ -115,8 +115,6 @@
     margin: 0;
     height: 100%;
     width: 100%;
-    grid-template-columns: auto;
-    grid-template-rows: auto auto;
     display: block;
     border: none;
     position: relative;
@@ -128,7 +126,7 @@
       padding-top: var(--navbar-height);
     }
 
-    #top-left-corner {
+    #top-left-corner, #left-toolbar {
       display: none;
     }
 
@@ -139,9 +137,37 @@
       z-index: 1001;
       background-color: var(--main-bg-color);
     }
+  }
+}
 
-    #left-toolbar {
+@media (max-height: 500px) {
+  .mainDecorator {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: block;
+    border: none;
+    position: relative;
+
+    #main-content-container {
+      height: auto;
+      overflow: visible;
+      z-index: 0;
+      width: calc(100% - var(--navbar-height));
+      margin-left: var(--navbar-height);
+    }
+
+    #top-left-corner, #left-toolbar {
       display: none;
+    }
+
+    #top-navbar {
+      width: var(--navbar-height);
+      height: 100%;
+      position: fixed;
+      border-right: 1px solid var(--decorator-color);
+      border-bottom: none;
+      z-index: 1;
     }
   }
 }

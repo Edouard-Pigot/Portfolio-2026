@@ -1,8 +1,11 @@
-import styles from './TimelineItem.module.scss';
-
 import TechStack from '../TechStack/TechStack';
-
 import { useTranslation } from 'react-i18next';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+import { useRef } from 'react';
+
+import styles from './TimelineItem.module.scss';
 
 type DateFormat = "MM/YYYY" | "YYYY";
 
@@ -27,6 +30,8 @@ interface TimelineItemProps {
   list?: string[];
   techStack?: string[];
 }
+
+gsap.registerPlugin(ScrollTrigger);
 
 function TimelineItem({ timelineDates, dateFormat, location, title, subtitle, subtitleInfo, description, list, techStack }: TimelineItemProps) {
   const { t } = useTranslation();
@@ -97,8 +102,30 @@ function TimelineItem({ timelineDates, dateFormat, location, title, subtitle, su
     );
   }
 
+  const componentRef = useRef(null);
+  const descriptionRef = useRef(null);
+  const taskRef = useRef(null);
+  const techStackRef = useRef(null);
+
+  useGSAP(() => {
+    const targets = [descriptionRef.current, taskRef.current, techStackRef.current].filter(el => el !== null);
+    if (targets.length > 0) {
+      gsap.from(targets, {
+        x: -25,
+        opacity: 0,
+        duration: 1.0,
+        stagger: 0.2,
+        ease: 'power1.out',
+        scrollTrigger: {
+          trigger: componentRef.current,
+          start: 'top 70%'
+        }
+      });
+    }
+  }, {scope: componentRef});
+
   return (
-    <div className={styles.timelineItem}>
+    <div className={styles.timelineItem} ref={componentRef}>
       {getH6Content(timelineDates, dateFormat, location)}
       <h4>{title}</h4>
       <h5>
@@ -110,16 +137,16 @@ function TimelineItem({ timelineDates, dateFormat, location, title, subtitle, su
           </>
         )}
       </h5>
-      {(description && <p>{description}</p>)}
-      {(list && list.length > 0) && (
-        <ul className={styles['tasks-list']}>
+      {(description && <p ref={descriptionRef}>{description}</p>)}
+      {(list && list.length > 0 && list[0] !== "") && (
+        <ul className={styles['tasks-list']} ref={taskRef}>
           {list.map((item, index) => (
             <li key={index}>{item}</li>
           ))}
         </ul>
       )}
       {(techStack && techStack.length > 0) && (
-        <div className={styles['project-details']}>
+        <div className={styles['project-details']} ref={techStackRef}>
           {techStack.length > 0 && (
             <TechStack techStack={techStack} />
           )}

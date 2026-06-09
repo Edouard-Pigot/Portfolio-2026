@@ -5,12 +5,12 @@ function ScrollTrack({ children }: { children: React.ReactNode }) {
   const context = useContext(ScrollHeightContext);
   if (!context) return <>{children}</>;
 
-  const isMobile = window.innerWidth < 850;
+  const isMobile = window.innerWidth < 850 || window.innerHeight < 500;
 
   return (
     <div style={{ 
       height: '100%',
-      transform: isMobile ? 'none' : `translateY(-${context.scrollY}px)`, 
+      transform: isMobile ? 'translateY(0)' : `translateY(-${context.scrollY}px)`, 
       willChange: isMobile ? 'auto' : 'transform'
     }}>
       {children}

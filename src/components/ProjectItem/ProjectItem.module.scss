@@ -95,7 +95,7 @@
   }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 1000px) {
   .project {
     display: block;
     .project-media {
@@ -108,6 +108,14 @@
       min-height: auto;
       height: auto;
       padding: 3rem 3rem 5rem 3rem;
+    }
+  }
+}
+
+@media (max-height: 500px) {
+  .project {
+    .project-content {
+      padding: 2rem;
     }
   }
 }

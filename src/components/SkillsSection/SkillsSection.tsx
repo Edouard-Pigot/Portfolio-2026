@@ -1,6 +1,10 @@
-import styles from './SkillsSection.module.scss';
-
 import { useTranslation } from 'react-i18next';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+import { useRef } from 'react';
+
+import styles from './SkillsSection.module.scss';
 
 const LEVEL_PRIORITY = {
   high: 3,
@@ -66,17 +70,58 @@ const toolsSkills: SkillGroup = {
 };
 const allSkills = [frontWebSkills, backWebSkills, nativeSkills, toolsSkills];
 
+gsap.registerPlugin(ScrollTrigger);
+
 function SkillsSection() {
   const { t } = useTranslation();
 
+  const sectionRef = useRef(null);
+  const legendRef = useRef(null);
+
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: 'top 70%'
+      }
+    });
+
+    const columns = sectionRef.current?.querySelectorAll(`div.${styles.skillColumn}`);
+    if (!columns || columns.length === 0) return;
+
+    columns.forEach((column : HTMLElement) => {
+      const title = column.querySelector('h4');
+      const items = column.querySelectorAll('li');
+      
+      if (title) {
+        tl.from(title, {
+          x: -25,
+          opacity: 0,
+          duration: 0.4,
+          ease: 'power1.out'
+        });
+      }
+      
+      if (items && items.length > 0) {
+        tl.from(items, {
+          x: -25,
+          opacity: 0,
+          duration: 0.2,
+          ease: 'power1.out',
+          stagger: 0.05
+        });
+      }
+    });
+  }, {scope: sectionRef});
+
   return (
     <>
-    <div className={styles.legend}>
+    <div className={styles.legend} ref={legendRef}>
       <span className={styles.high}>{t('skills.legend.high')}</span>
       <span className={styles.medium}>{t('skills.legend.medium')}</span>
       <span className={styles.low}>{t('skills.legend.low')}</span>
     </div>
-    <div className={styles.skillsGrid}>
+    <div className={styles.skillsGrid} ref={sectionRef}>
         {allSkills.map((group) => {
           const sortedSkills = [...group.skills].sort((a, b) => 
             LEVEL_PRIORITY[b.level] - LEVEL_PRIORITY[a.level]
