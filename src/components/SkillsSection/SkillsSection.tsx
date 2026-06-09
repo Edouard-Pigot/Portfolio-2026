@@ -75,8 +75,8 @@ gsap.registerPlugin(ScrollTrigger);
 function SkillsSection() {
   const { t } = useTranslation();
 
-  const sectionRef = useRef(null);
-  const legendRef = useRef(null);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const legendRef = useRef<HTMLDivElement | null>(null);
 
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -89,7 +89,7 @@ function SkillsSection() {
     const columns = sectionRef.current?.querySelectorAll(`div.${styles.skillColumn}`);
     if (!columns || columns.length === 0) return;
 
-    columns.forEach((column : HTMLElement) => {
+    columns.forEach((column) => {
       const title = column.querySelector('h4');
       const items = column.querySelectorAll('li');
       
