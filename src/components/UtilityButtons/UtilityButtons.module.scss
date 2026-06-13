@@ -70,7 +70,7 @@
   .utilities {
     display: flex;
 
-    & > div {
+    & > button {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -101,7 +101,7 @@
 
 @media (max-width: 850px) {
   .utilities {
-    & > div {
+    & > button {
       width: 100%;
       height: var(--navbar-height);
 
@@ -115,7 +115,7 @@
         width: 0;
         height: 1px;
         transition: width 0.2s;
-        right: 0;
+        right: auto;
         bottom: 0;
       }
 
@@ -131,7 +131,7 @@
 
 @media (max-height: 500px) {
   .utilities {
-    & > div {
+    & > button {
       height: 100%;
 
       &:nth-child(1), &:nth-child(2) {

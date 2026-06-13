@@ -98,7 +98,9 @@ export default function ContactSection() {
           <textarea name="message" id="message" autoComplete="off" value={formData.message} onChange={handleChange} placeholder={t("contact.messageExample")} required />
         </div>
 
-        <Button type="submit" ref={submitButton} disabled={formData.name === '' || !isValidEmail(formData.email) || formData.message === ''}>{t("contact.send")}</Button>
+        <Button type="submit" ref={submitButton} disabled={formData.name === '' || !isValidEmail(formData.email) || formData.message === ''}>
+          <p>{t("contact.send")}</p>
+        </Button>
         
         {status && <p className={styles.status}>{status}</p>}
       </form>

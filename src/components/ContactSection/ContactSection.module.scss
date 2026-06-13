@@ -6,6 +6,14 @@
   padding-bottom: 5rem;
   gap: 10rem;
 
+  button {
+    width: 100%;
+
+    & div > a, & div > p {
+      padding: 1rem !important;
+    }
+  }
+
   .form {
     flex: 0 0 50%;
     max-width: 500px;
@@ -43,12 +51,6 @@
       font-size: 1.5rem;
     }
 
-    [type=submit] {
-      div {
-        padding: 1rem;
-      }
-    }
-
     .status {
       text-align: center;
       margin-top: 1rem;
@@ -65,14 +67,6 @@
     gap: 3rem;
     width: 100%;
     max-width: 500px;
-
-    button {
-      width: 100%;
-
-      div {
-        padding: 1rem;
-      }
-    }
   }
 }
 
