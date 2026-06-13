@@ -1,9 +1,10 @@
-import styles from './ContactSection.module.scss';
+import Button from '@components/Button/Button';
 
 import { useState, useRef, type ChangeEvent, type FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
-
 import { useTranslation } from 'react-i18next';
+
+import styles from './ContactSection.module.scss';
 
 interface ContactData {
   name: string;
@@ -16,6 +17,7 @@ export default function ContactSection() {
   const { t } = useTranslation();
 
   const form = useRef<HTMLFormElement>(null);
+  const submitButton = useRef<HTMLButtonElement>(null);
 
   const [status, setStatus] = useState<string>('');
   const [formData, setFormData] = useState<ContactData>({
@@ -28,6 +30,11 @@ export default function ContactSection() {
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const isValidEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
   };
 
   const sendEmail = (e: FormEvent<HTMLFormElement>) => {
@@ -77,24 +84,43 @@ export default function ContactSection() {
         </div>
 
         <div className={styles.field}>
-          <label>{t("contact.name")}</label>
-          <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder={t("contact.nameExample")} required />
+          <label htmlFor="name">{t("contact.name")}</label>
+          <input type="text" name="name" id="name" autoComplete="name" value={formData.name} onChange={handleChange} placeholder={t("contact.nameExample")} required />
         </div>
 
         <div className={styles.field}>
-          <label>{t("contact.mail")}</label>
-          <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder={t("contact.mailExample")} required />
+          <label htmlFor="email">{t("contact.mail")}</label>
+          <input type="email" name="email" id="email" autoComplete="email" value={formData.email} onChange={handleChange} placeholder={t("contact.mailExample")} required />
         </div>
 
         <div className={styles.field}>
-          <label>{t("contact.message")}</label>
-          <textarea name="message" value={formData.message} onChange={handleChange} placeholder={t("contact.messageExample")} required />
+          <label htmlFor="message">{t("contact.message")}</label>
+          <textarea name="message" id="message" autoComplete="off" value={formData.message} onChange={handleChange} placeholder={t("contact.messageExample")} required />
         </div>
 
-        <button type="submit">{t("contact.send")}</button>
+        <Button type="submit" ref={submitButton} disabled={formData.name === '' || !isValidEmail(formData.email) || formData.message === ''}>{t("contact.send")}</Button>
         
         {status && <p className={styles.status}>{status}</p>}
       </form>
+
+      <div className={styles.links}>
+        <Button>
+          <a href={`${import.meta.env.BASE_URL}${t("contact.resume_link")}`} download={t("contact.resume_name")} target="_blank" rel="noopener noreferrer">
+            <p>{t("contact.resume")}</p>
+            <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="24px">
+              <path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/>
+            </svg>
+          </a>
+        </Button>
+        <Button>
+          <a href='https://www.linkedin.com/in/edouard-pigot/' target="_blank" rel="noopener noreferrer">
+            <p>LinkedIn</p>
+            <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="24px">
+              <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"/>
+            </svg>
+          </a>
+        </Button>
+      </div>
     </div>
   );
 }

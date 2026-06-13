@@ -1,6 +1,3 @@
-$size: 1rem;
-$icon-size: 17px;
-
 .button {
     display: inline-flex;
     align-items: center;
@@ -14,8 +11,6 @@ $icon-size: 17px;
     background: none;
 
     cursor: pointer;
-
-    padding: .5rem 1rem;
     
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -25,25 +20,65 @@ $icon-size: 17px;
 
     position: relative;
 
+    
+    border: 1px solid var(--highlight-color);
+
+    &:disabled {
+        border: 1px solid var(--decorator-color);
+        cursor: not-allowed;
+        opacity: 0.5;
+        color: var(--decorator-color);
+    }
+
+    &:hover:not(:disabled) .button-text {
+        background-color: var(--highlight-color);
+        color: var(--main-bg-color);
+        fill: var(--main-bg-color);
+        stroke: var(--main-bg-color);
+    }
+
     .button-text {
-        line-height: 1;
-
-        font-weight: 500;
         font-family: var(--font-oxanium);
+        font-weight: 500;
+        font-size: 1rem;
 
-        font-size: $size;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        padding: 5px 10px;
+        width: 100%;
+        height: 100%;
 
-        margin-top: 2px;
+        transition: background-color 0.2s, color 0.2s, fill 0.2s;
 
-        text-transform: uppercase;
+        > * {
+            text-decoration: none;
+            color: var(--main-text-color);
+            fill: var(--main-text-color);
+            stroke: var(--main-text-color);
+        }
 
-        svg, img {
-            height: $icon-size;
-            width: $icon-size;
+        &:hover > * {
+            color: var(--main-bg-color);
+            fill: var(--main-bg-color);
+            stroke: var(--main-bg-color);
+        }
+
+        & > a, & > p {
+            margin-top: 3px;
+            font-weight: 500;
+            font-size: 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            color: var(--main-text-color);
+            transition: color 0.2s;
         }
     }
 
-    &.active {
+    &.active > * {
         color: var(--main-text-color);
         fill: var(--main-text-color);
         stroke: var(--main-text-color);

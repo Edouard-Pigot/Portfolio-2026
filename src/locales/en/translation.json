@@ -1,4 +1,8 @@
 {
+  "loading": {
+    "loading": "Loading...",
+    "loaded": "Ready"
+  },
   "home": {
     "section_name": "home",
     "subtitle": "Web Full-stack, C++ and 3D developper"
@@ -195,7 +199,10 @@
     "send": "Send",
     "fail": "Error while sending, try again",
     "success": "Message sent",
-    "sending": "Sending..."
+    "sending": "Sending...",
+    "resume": "Resume",
+    "resume_link": "/resumes/Resume_Edouard-PIGOT.pdf",
+    "resume_name": "Resume Edouard PIGOT.pdf"
   },
   "footer": {
     "copyright": ", Edouard PIGOT, All rights reserved"

@@ -1,4 +1,8 @@
 {
+  "loading": {
+    "loading": "Chargement...",
+    "loaded": "Prêt"
+  },
   "home": {
     "section_name": "accueil",
     "subtitle": "Développeur web full-stack, C++ et 3D"
@@ -195,7 +199,10 @@
     "send": "Envoyer",
     "fail": "Erreur lors de l'envoi, réessayer",
     "success": "Message envoyé",
-    "sending": "Envoi en cours..."
+    "sending": "Envoi en cours...",
+    "resume": "CV",
+    "resume_link": "/resumes/CV_Edouard-PIGOT.pdf",
+    "resume_name": "CV Edouard PIGOT.pdf"
   },
   "footer": {
     "copyright": ", Edouard PIGOT, Tous droits réservés"

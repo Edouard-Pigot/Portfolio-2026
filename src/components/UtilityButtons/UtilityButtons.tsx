@@ -79,7 +79,7 @@ function UtilityButtons(props: React.HTMLAttributes<HTMLDivElement>) {
         aria-label={themeToggleAriaText}
         onClick={toggleTheme}
         id={styles["theme-toggle"]}>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" height="17px" width="17px">
           <path
             d={theme === "dark" ? sunSVG : moonSVG}
             strokeWidth="1" 

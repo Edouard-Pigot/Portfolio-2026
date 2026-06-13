@@ -3,12 +3,12 @@ import styles from './Button.module.scss';
 import type { ForwardedRef } from 'react';
 import { forwardRef } from 'react';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLDivElement> {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   isActive?: boolean;
   children: React.ReactNode;
 };
 
-function ButtonComponent(props: ButtonProps, ref: ForwardedRef<HTMLDivElement>) {
+function ButtonComponent(props: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) {
   const { className, children, isActive, 'aria-label': ariaLabel, ...rest } = props;
 
   let combinedClassName = styles.button;
@@ -19,18 +19,18 @@ function ButtonComponent(props: ButtonProps, ref: ForwardedRef<HTMLDivElement>) 
 
   return (
     <>
-      <div 
+      <button 
         className={combinedClassName} 
-        aria-label={ariaLabel} // Accessibility
-        title={ariaLabel}      // Visual Tooltip (matches label)
+        aria-label={ariaLabel}
+        title={ariaLabel}
         ref={ref}
         data-active={isActive}
-        {...rest}              // Spread remaining props (onClick, type, etc.)
+        {...rest}
       >
         <div className={styles["button-text"]}>
           {children}
         </div>
-      </div>
+      </button>
     </>
   )
 };

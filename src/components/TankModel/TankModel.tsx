@@ -310,8 +310,8 @@ const TankModel = memo(() => {
       const waddleAmp = 0.01;
       groupRef.current.rotation.z = Math.sin(time * waddleFreq) * waddleAmp * speed;
 
-      const tankRotationSpeed = 0.1;
-      groupRef.current.rotation.y = (groupRef.current.rotation.y + delta * tankRotationSpeed) % (Math.PI * 2);
+      const tankRotationSpeed = 0.5;
+      groupRef.current.rotation.y = Math.sin(time * tankRotationSpeed) * (25 * Math.PI / 360) + (65 * Math.PI / 360);
     }
 
     // 2. Suspension Logic

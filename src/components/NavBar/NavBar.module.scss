@@ -26,6 +26,8 @@
 
         .nav-button {
             height: 100%;
+            padding: .5rem 1rem;
+            border: none;
 
             &:hover {
                 color: var(--highlight-color);
@@ -56,9 +58,14 @@
                 transform: scale(1);
             }
 
-            & div {
+            & > div {
                 font-family: var(--font-kode);
                 font-size: 1.15rem;
+                text-transform: uppercase;
+                border: none;
+                background-color: inherit !important;
+                color: inherit !important;
+                padding: initial;
 
                 &::before, &::after {
                     content: '';
@@ -107,6 +114,7 @@
             justify-content: space-between;
             height: 100%;
             width: 100%;
+            z-index: 2;
 
             #mobile-burger {
                 display: flex;
@@ -161,35 +169,25 @@
                 transition: border-color .2s ease;
                 justify-content: start;
                 
-                
-
                 &:hover {
                     border: 1px solid var(--highlight-color);
                 }
 
                 div {
                     font-family: var(--font-kode);
+                    font-size: 1.5rem;
 
-                    &::before, &::after {
+                    &::before {
                         content: '';
                         height: 6px;
                         width: 6px;
                         display: inline-block;
-                    }
-
-                    &::before {
                         background: var(--main-text-color);
                         margin-right: 9px;
                         margin-bottom: 1px;
                         opacity: 0;
                         transform: scale(0);
                         transition: opacity 0.2s, transform 0.2s, background-color 0.2s;
-                    }
-
-                    &::after {
-                        background: transparent;
-                        margin-left: 9px; 
-                        width: 6px;
                     }
                 }
 
@@ -212,7 +210,7 @@
 
         #mobile-nav-bar {
             #mobile-burger {
-                width: 53px;
+                width: var(--navbar-height);
                 height: 100%;
                 border-right: 1px solid var(--decorator-color);
                 
@@ -252,16 +250,18 @@
         }
 
         #mobile-popup {
-            top: 51px;
+            bottom: -1px;
+            right: 0;
             border-bottom: 1px solid var(--decorator-color);
             width: 100%;
+            height: calc(100vh - var(--navbar-height));
+            max-height: 30rem;
+            flex-direction: column;
+            justify-content: space-around;
+            display: flex;
 
             .nav-button {
-                padding-block: 2rem;
-            }
-
-            &.open {
-                display: block;
+                height: 100%;
             }
         }
     }
@@ -275,8 +275,9 @@
             
             #mobile-burger {
                 width: 100%;
-                height: 53px;
+                height: var(--navbar-height);
                 border-bottom: 1px solid var(--decorator-color);
+                border-right: none;
                 
                 &::after {
                     height: 0;
@@ -296,6 +297,7 @@
 
             #spacer {
                 width: 100%;
+                height: auto;
 
                 .current-section {
                     width: 100%;
@@ -314,31 +316,27 @@
 
             #mobile-utility {
                 border-top: 1px solid var(--decorator-color);
+                border-left: none;
                 display: flex;
                 flex-direction: column;
-
-                & div {
-                    &:first-child {
-                        margin-top: 4px;
-                    }
-                    &:last-child {
-                        margin-bottom: 4px;
-                    }
-                }
             }
         }
 
         #mobile-popup {
             top: 0;
-            left: var(--navbar-height);
+            right: -1px;
             border-right: 1px solid var(--decorator-color);
+            border-bottom: none;
             width: 15rem;
             height: 100%;
+            max-height: none;
             flex-direction: column;
             justify-content: space-around;
+            display: flex;
 
             .nav-button {
                 height: 100%;
+                transform: translateY(-10);
             }
 
             &.open {

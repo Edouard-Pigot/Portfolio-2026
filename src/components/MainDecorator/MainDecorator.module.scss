@@ -155,6 +155,7 @@
       z-index: 0;
       width: calc(100% - var(--navbar-height));
       margin-left: var(--navbar-height);
+      padding-top: 0;
     }
 
     #top-left-corner, #left-toolbar {
