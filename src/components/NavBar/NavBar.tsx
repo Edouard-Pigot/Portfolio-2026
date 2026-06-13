@@ -13,7 +13,7 @@ function NavBar() {
 
   const scrollContext = useContext(ScrollHeightContext);
 
-  const burgerRef = useRef<HTMLDivElement>(null);
+  const burgerRef = useRef<HTMLButtonElement >(null);
   const menuPopupRef = useRef<HTMLDivElement>(null);
   const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
   const tlRef = useRef<gsap.core.Timeline | null>(null);

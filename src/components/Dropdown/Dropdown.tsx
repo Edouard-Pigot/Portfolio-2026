@@ -27,7 +27,7 @@ function Dropdown(props: DropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
   const dropdownMenu = useRef<HTMLDivElement>(null);
-  const dropdownButton = useRef<HTMLDivElement>(null);
+  const dropdownButton = useRef<HTMLButtonElement>(null);
 
   const handleClickOutside = (event: MouseEvent) => {
     if (isOpen &&
