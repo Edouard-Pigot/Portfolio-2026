@@ -43,13 +43,13 @@ export default function ContactSection() {
     // Honeypot check
     if (formData._honey) {
       console.warn("Bot detected.");
-      setStatus(t("contact.success")); 
+      setStatus("contact.success"); 
       return;
     }
 
     if (!form.current) return;
 
-    setStatus(t('contact.sending'));
+    setStatus("contact.sending");
 
     emailjs.sendForm(
       'service_57vrrtb', 
@@ -58,12 +58,12 @@ export default function ContactSection() {
       'YkglMNSzDoUkOmfpv'
     )
     .then(() => {
-        setStatus(t("contact.success"));
+        setStatus("contact.success");
         setFormData({ name: '', email: '', message: '', _honey: '' });
     })
     .catch((error) => {
         console.error('EmailJS Error:', error);
-        setStatus(t("contact.fail"));
+        setStatus("contact.fail");
     });
   };
 
@@ -102,7 +102,7 @@ export default function ContactSection() {
           <p>{t("contact.send")}</p>
         </Button>
         
-        {status && <p className={styles.status}>{status}</p>}
+        {status && <p className={styles.status}>{t(status)}</p>}
       </form>
 
       <div className={styles.links}>
