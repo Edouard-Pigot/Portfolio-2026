@@ -1,34 +1,7 @@
-.legend {
-  display: flex;
-  gap: 2rem;
-  margin-left: 4.5rem;
-
-  span::before {
-    content: '';
-    display: inline-block;
-    width: .75rem;
-    height: .8rem;
-    margin-right: .5rem;
-  }
-
-  .high::before {
-    background-color: var(--highlight-high-color);
-  }
-
-  .medium::before {
-    background-color: var(--highlight-medium-color);
-  }
-
-  .low::before {
-    background-color: var(--highlight-low-color);
-  }
-}
-
 .skillsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-template-rows: auto 1fr;
-  margin-top: 2rem;
   padding: 0 3rem 5rem 3rem;
 
   .skillColumn {
@@ -38,7 +11,7 @@
     padding-inline: 2rem;
 
     .groupTitle {
-      margin-block: 2rem;
+      margin-bottom: 2rem;
       font-size: 2rem;
       font-family: var(--font-kode);
       text-transform: uppercase;
@@ -50,57 +23,33 @@
       margin: 0;
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
 
       .skillItem {
         position: relative;
-        overflow: hidden;
-        padding: 0.6rem 1rem 0.4rem 1rem;
+        padding: 0.9rem 1.5rem 0.6rem 1.5rem;
         font-size: 1.1rem;
-        border-left: 4px solid transparent;
-        transition: color 0.3s ease;
         z-index: 1;
+        border-left: 1px solid var(--decorator-color);
+        transition: border-left-color .2s ease;
+        display: inline-flex;
+        align-items: center;
 
         &::before {
           content: "";
           position: absolute;
-          top: 0;
-          left: 0;
-          width: 0;
-          height: 100%;
-          z-index: -1;
-          transition: width 0.2s ease;
+          left: -1px;
+          width: 1px;
+          height: 0;
+          transition: height .2s ease;
+          background-color: var(--highlight-color);
+          margin-top: -2px; //idk why it doesn't align with the border...
         }
 
         &:hover {
           &::before {
-            width: .2rem;
+            height: 100%;
           }
-        }
-
-        &.high {
-          border-left-color: var(--highlight-high-color);
-
-          &::before {
-            background-color: var(--highlight-high-color);
-          }
-        }
-        
-        &.medium {
-          border-left-color: var(--highlight-medium-color);
-
-          &::before {
-            background-color: var(--highlight-medium-color);
-          }
-        }
-
-        &.low {
-          border-left-color: var(--highlight-low-color);
-
-          &::before {
-            background-color: var(--highlight-low-color);
-          }
-        }
+        }        
       }
     }
   }

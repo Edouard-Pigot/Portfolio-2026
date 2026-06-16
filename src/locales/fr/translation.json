@@ -34,7 +34,7 @@
       },
       "face_detector": {
         "title": "Détecteur de faces",
-        "description": "Cours de scripting sur Blender en Python permettant le parcours d'un maillage, la détection des angles d'incidence entre chaque faces et la coloration de chacune d'entre elles en fonction de la catégorie : convexe ou concave. "
+        "description": "Cours de scripting sur Blender en Python permettant le parcours d'un maillage, la détection des angles d'incidence entre chaque face et la coloration de chacune d'entre elles en fonction de la catégorie : convexe ou concave. "
       },
       "scripted_animation": {
         "title": "Animation scriptée",
@@ -50,7 +50,7 @@
       },
       "pacman": {
         "title": "Pacman",
-        "description": "Second projet de génie logiciel, inspiré du jeu Pacman mais avec une liberté créatrice totale. Pour ce projet le parti a été pris de recréer exactement le jeu Pacman originel en consultant les informations du site gamedevelopper.com (ex Gamasutra). Les IA des fantômes et les déplacements des entités sont identiques à l'original, même les bugs ! Le plateau de jeu est composé de deux grilles : la grille principale qui contient les représentations logiques des objets du jeu (fantômes, murs, points, Pacman...) et une sous grille représentant les pixels, utilisées pour le positionnement des sprites des fantômes et les déplacements de Pacman (qui peut couper les virages en tournant en diagonal dans une cases de la grille principale). Enfin la carte est générée via un fichier texte éditable, permettant la création de carte personnalisées."
+        "description": "Second projet de génie logiciel, inspiré du jeu Pacman mais avec une liberté créatrice totale. Pour ce projet le parti a été pris de recréer exactement le jeu Pacman originel en consultant les informations du site gamedevelopper.com (ex Gamasutra). Les IA des fantômes et les déplacements des entités sont identiques à l'original, même les bugs ! Le plateau de jeu est composé de deux grilles : la grille principale qui contient les représentations logiques des objets du jeu (fantômes, murs, points, Pacman...) et une sous grille représentant les pixels, utilisées pour le positionnement des sprites des fantômes et les déplacements de Pacman (qui peut couper les virages en tournant en diagonal dans une case de la grille principale). Enfin la carte est générée via un fichier texte éditable, permettant la création de cartes personnalisées."
       },
       "lumipic": {
         "title": "Lumipic",
@@ -58,7 +58,7 @@
       },
       "flood_simulator": {
         "title": "Simulateur d'inondation",
-        "description": "Projet proposé par l'Institut de Prévention et de Gestion des Risques pour le cours de TER (Travail en Environnement de Recherche). Travail en binôme sur l'amélioration d'un simulateur d'inondation de musées prévu pour la formation du personnel dans le cas de catastrophes hydriques. Reprenant le travail réalisé par d'anciens étudiants, nous avons refait les systèmes de simulation de fluide et de rendu pour passer de simples plans qui montent dans chaques pièces à un calcul de déplacement de l'eau dans l'espace, permettant de simuler l'eau passant par les portes, fenêtres ou escaliers. Le rendu de l'eau se fait via Marching Cubes."
+        "description": "Projet proposé par l'Institut de Prévention et de Gestion des Risques pour le cours de TER (Travail en Environnement de Recherche). Travail en binôme sur l'amélioration d'un simulateur d'inondation de musées prévu pour la formation du personnel dans le cas de catastrophes hydriques. Reprenant le travail réalisé par d'anciens étudiants, nous avons refait les systèmes de simulation de fluide et de rendu pour passer de simples plans qui montent dans chaque pièce à un calcul de déplacement de l'eau dans l'espace, permettant de simuler l'eau passant par les portes, fenêtres ou escaliers. Le rendu de l'eau se fait via Marching Cubes."
       },
       "portfolio_v1": {
         "title": "Portfolio",
@@ -78,7 +78,7 @@
       },
       "shader_intro": {
         "title": "Introduction aux shaders",
-        "description": "Cours d'introduction au langage GLSL et à l'écriture de shaders sur le site shadertoy.com. Réalisation d'un fragment shader représentant un cycle jour/nuit au dessus de la mer avec levé et couché de soleil et de lune, nuages, étoiles et vagues."
+        "description": "Cours d'introduction au langage GLSL et à l'écriture de shaders sur le site shadertoy.com. Réalisation d'un fragment shader représentant un cycle jour/nuit au dessus de la mer avec lever et coucher de soleil et de lune, nuages, étoiles et vagues."
       },
       "portfolio_v2": {
         "title": "Portfolio V2",
@@ -86,11 +86,11 @@
       },
       "catan": {
         "title": "Catan",
-        "description": "Expérimentation pour la recréation du jeu de société Catan en 3D sur le moteur Unity. Les tuiles du plateau de jeu sont disposées aléatoirement. Une machine à états gère la boucle de jeu, avec les deux premières tours où les joueurs construisent leurs premières colonies et récupèrent les ressources, puis la boucle principale où chaque joueur lance les dès, et fait les actions disponibles : déplacement de l'espion, vol de ressources, construction de structures (colonie ou route) et fin de tour."
+        "description": "Expérimentation pour la recréation du jeu de société Catan en 3D sur le moteur Unity. Les tuiles du plateau de jeu sont disposées aléatoirement. Une machine à états gère la boucle de jeu, avec les deux premiers tours où les joueurs construisent leurs premières colonies et récupèrent les ressources, puis la boucle principale où chaque joueur lance les dès, et fait les actions disponibles : déplacement de l'espion, vol de ressources, construction de structures (colonie ou route) et fin de tour."
       },
       "portfolio_v3": {
         "title": "Portfolio V3",
-        "description": "Mise à jour du design et du contenu de mon portfolio. Le thème de couleur est sélectionné en fonction de la préférence système ou du choix manuel de l'utilisateur. Tout les textes sont traduits via i18next. Les interfaces sont totalement responsives sur desktop et mobile, et réutilisables via des composants React. La section d'accueil affiche un modèle 3D interactif modélisé par mes soins, dont les animations sont procédurales, pour faire la démonstration de mes compétences en 3D. Le maillage des chenilles est un cylindre ThreeJS dont les vertices sont déplacées le long d'un chemin prédifini via un shader. L'optimisation est maximale, avec les médias des caroussels chargés à la volée, et la lecture des vidéos est activées uniquement lorsqu'elles sont visibles à l'écran."
+        "description": "Mise à jour du design et du contenu de mon portfolio. Le thème de couleur est sélectionné en fonction de la préférence système ou du choix manuel de l'utilisateur. Tout les textes sont traduits via i18next. Les interfaces sont totalement responsives sur desktop et mobile, et réutilisables via des composants React. La section d'accueil affiche un modèle 3D interactif modélisé par mes soins, dont les animations sont procédurales, pour faire la démonstration de mes compétences en 3D. Le maillage des chenilles est un cylindre ThreeJS dont les vertices sont déplacées le long d'un chemin prédifini via un shader. L'optimisation est maximale, avec les médias des carroussels chargés à la volée, et la lecture des vidéos est activée uniquement lorsqu'elles sont visibles à l'écran."
       },
       "visit_paris": {
         "title": "Visit Paris",
@@ -184,7 +184,7 @@
         "name": "Master informatique",
         "school": "Faculté des Sciences Marseille Luminy",
         "description": "Parcours Géométrie et Informatique Graphique",
-        "tasks": "Rendu Temps Réel : Pipeline graphique, Shaders (GLSL) et API graphiques (OpenGL/Vulkan).\\Animation 3D : Systèmes de particules, cinématique directe/inverse et moteurs de jeu.\\Modélisation Géométrique : Courbes de Bézier, Splines et surfaces de subdivision.\\Traitement de Maillages : Topologie, lissage, compression et reconstruction de surfaces 3D.\\Géométrie Algorithmique : Triangulations de Delaunay, diagrammes de Voronoi et structures de données spatiales.\\Traitement Numérique d'Images : Filtrage, segmentation et analyse fréquentielle.\\Vision par Ordinateur : Reconnaissance de formes, recalage d'images et calibration caméra.\\Apprentissage Automatique (Machine Learning) : Introduction aux réseaux de neurones appliqués à l'image."
+        "tasks": "Rendu Temps Réel : Pipeline graphique, Shaders (GLSL) et API graphiques (OpenGL/Vulkan).\\Animation 3D : Systèmes de particules, cinématique directe/inverse et moteurs de jeu.\\Modélisation Géométrique : Courbes de Bézier, Splines et surfaces de subdivision.\\Traitement de Maillages : Topologie, lissage, compression et reconstruction de surfaces 3D.\\Géométrie Algorithmique : Triangulations de Delaunay, diagrammes de Voronoi et structures de données spatiales.\\Traitement Numérique d'Images : Filtrage, segmentation et analyse fréquentielle.\\Vision par Ordinateur : Reconnaissance de formes.\\Apprentissage Automatique (Machine Learning) : Introduction aux réseaux de neurones appliqués à l'image."
       }
     }
   },
