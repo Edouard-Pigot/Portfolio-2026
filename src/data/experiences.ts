@@ -22,15 +22,6 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
-    positionName: "experiences.details.credit_mutuel.position",
-    companyName: "experiences.details.credit_mutuel.company",
-    contractType: "temporary",
-    location: "Marseille",
-    periods: {start:{month: 7, year: 2016}, end:{month: 7, year: 2016}},
-    description: "experiences.details.credit_mutuel_1.description",
-    tasks: "experiences.details.credit_mutuel_1.tasks"
-  },
-  {
     positionName: "experiences.details.fiducial_cloud.position",
     companyName: "experiences.details.fiducial_cloud.company",
     contractType: "internship",
@@ -45,9 +36,9 @@ export const experiences: Experience[] = [
     companyName: "experiences.details.credit_mutuel.company",
     contractType: "temporary",
     location: "Marseille",
-    periods: [{start:{month: 7, year: 2018}, end:{month: 8, year: 2018}}, {start:{month: 7, year: 2019}, end:{month: 8, year: 2019}}, {start:{month: 7, year: 2020}, end:{month: 8, year: 2020}}],
-    description: "experiences.details.credit_mutuel_2.description",
-    tasks: "experiences.details.credit_mutuel_2.tasks"
+    periods: [{start:{month: 7, year: 2016}, end:{month: 7, year: 2016}}, {start:{month: 7, year: 2018}, end:{month: 8, year: 2018}}, {start:{month: 7, year: 2019}, end:{month: 8, year: 2019}}, {start:{month: 7, year: 2020}, end:{month: 8, year: 2020}}],
+    description: "experiences.details.credit_mutuel.description",
+    tasks: "experiences.details.credit_mutuel.tasks"
   },
   {
     positionName: "experiences.details.ipgr.position",
@@ -62,21 +53,11 @@ export const experiences: Experience[] = [
   {
     positionName: "experiences.details.dassault_systemes.position",
     companyName: "experiences.details.dassault_systemes.company",
-    contractType: "internship",
-    location: "Vélizy-Villacoublay",
-    periods: {start:{month: 4, year: 2021}, end:{month: 9, year: 2021}},
-    description: "experiences.details.dassault_systemes_1.description",
-    tasks: "experiences.details.dassault_systemes_1.tasks",
-    techStack: ["C++", "Agile Scrum", "Jira"]
-  },
-  {
-    positionName: "experiences.details.dassault_systemes.position",
-    companyName: "experiences.details.dassault_systemes.company",
     contractType: "permanent",
     location: "Vélizy-Villacoublay",
-    periods: {start:{month: 1, year: 2022}, end:{month: 10, year: 2025}},
-    description: "experiences.details.dassault_systemes_2.description",
-    tasks: "experiences.details.dassault_systemes_2.tasks",
+    periods: {start:{month: 4, year: 2021}, end:{month: 10, year: 2025}},
+    description: "experiences.details.dassault_systemes.description",
+    tasks: "experiences.details.dassault_systemes.tasks",
     techStack: ["C++", "JavaScript", "TypeScript", "JSON Schema", "HTML", "CSS", "SASS", "Agile Scrum", "Jira"]
   }
 ];

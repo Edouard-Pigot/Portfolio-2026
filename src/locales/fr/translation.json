@@ -100,11 +100,6 @@
   },
   "skills": {
     "section_name": "compétences",
-    "legend": {
-      "high": "Maîtrise",
-      "medium": "Pratique",
-      "low": "Notions"
-    },
     "groups": {
       "frontend": "Front-end",
       "backend": "Back-end & base de données",
@@ -121,23 +116,17 @@
     },
     "current_position": "Actuellement",
     "details": {
-      "credit_mutuel": {
-        "position": "Auxiliaire de vacances",
-        "company": "Crédit Mutuel"
-      },
-      "credit_mutuel_1": {
-        "description": "Agence Marseille la Joliette.",
-        "tasks": "Tri et déplacement des archives physiques de l'agence.\\ Accueil physique des clients.\\ Saisie informatique des bilans d'entreprises pour mise à jour des dossiers clients."
-      },
       "fiducial_cloud": {
         "position": "Développeur Full-Stack",
         "company": "Fiducial Cloud",
         "description": "Développement de fonctionnalités pour un outil open-source de gestion de projets au sein d'une infrastructure cloud. Rôle de développeur full-stack pour améliorer les capacités de planification et l'intégration de données.",
         "tasks": "Amélioration des fonctionnalités de l'outil de gestion de projets open-source.\\ Développement et maintenance du module de planification en utilisant le langage PHP.\\ Conception de scripts pour l'extraction et le traitement des données depuis les bases de données internes."
       },
-      "credit_mutuel_2": {
-        "description": "Accueil téléphonique Méditerranée, où les clients souhaitant joindre leur conseiller sont rédirigés si celui-ci n'est pas disponible.",
-        "tasks": "Recueil des informations d'identification des clients.\\ Identification des besoins des clients et orientation vers les services appropriés.\\ Résolution de problèmes courants liés aux comptes, cartes bancaires et autres produits financiers.\\ Prise de rendez-vous pour les clients nécessitant une assistance en agence."
+      "credit_mutuel": {
+        "position": "Auxiliaire de vacances",
+        "company": "Crédit Mutuel",
+        "description": "Agence Marseille la Joliette en 2016. Accueil téléphonique Méditerranée en 2018, 2019, 2020.",
+        "tasks": "Tri et déplacement des archives physiques de l'agence.\\ Accueil physique des clients.\\ Saisie informatique des bilans d'entreprises pour mise à jour des dossiers clients.\\ Recueil des informations d'identification des clients.\\ Identification des besoins des clients et orientation vers les services appropriés.\\ Résolution de problèmes courants liés aux comptes, cartes bancaires et autres produits financiers.\\ Prise de rendez-vous pour les clients nécessitant une assistance en agence."
       },
       "ipgr": {
         "position": "Développeur Unity 3D",
@@ -147,15 +136,9 @@
       },
       "dassault_systemes": {
         "position": "Ingénieur logiciel",
-        "company": "Dassault Systèmes"
-      },
-      "dassault_systemes_1": {
-        "description": "Développement de solutions d'interaction avancées pour des environnements en réalité virtuelle au sein d'une plateforme logicielle industrielle. En tant qu'ingénieur logiciel, l'objectif était d'améliorer l'expérience utilisateur et l'extensibilité du système existant.",
-        "tasks": "Conception et spécification de nouvelles méthodes d'interaction dédiées aux interfaces en réalité virtuelle.\\ Développement de modules logiciels robustes en C++ en respectant une architecture logicielle claire et extensible.\\ Conception et exposition d'API permettant aux développeurs clients d'étendre les fonctionnalités de l'infrastructure.\\ Intégration au sein d'une équipe suivant la méthodologie Agile Scrum pour assurer le suivi des développements et la livraison incrémentale."
-      },
-      "dassault_systemes_2": {
+        "company": "Dassault Systèmes",
         "description": "Développement et maintenance de composants d'interface utilisateur destinés aux équipes techniques internes, visant à harmoniser et optimiser les outils de développement.",
-        "tasks": "Conception et implémentation de composants d'interface utilisateur en s'appuyant sur les spécifications recueillies auprès des clients et des équipes UX.\\ Maintenance corrective et évolutive des composants existants pour assurer la fiabilité et la performance des outils.\\ Rédaction de la documentation technique pour faciliter l'intégration et l'utilisation des composants par les autres équipes de développement.\\ Participation active aux rituels de la méthodologie Agile Scrum pour organiser le cycle de développement et livrer des fonctionnalités de manière itérative."
+        "tasks": "Conception, spécification et développement de nouvelles méthodes d'interaction dédiées aux interfaces en réalité virtuelle.\\ Conception et implémentation de composants d'interface utilisateur en s'appuyant sur les spécifications recueillies auprès des clients et des équipes UX.\\ Maintenance corrective et évolutive des composants existants pour assurer la fiabilité et la performance des outils.\\ Rédaction de la documentation technique pour faciliter l'intégration et l'utilisation des composants par les autres équipes de développement.\\ Participation active aux rituels de la méthodologie Agile Scrum pour organiser le cycle de développement et livrer des fonctionnalités de manière itérative."
       }
     }
   },

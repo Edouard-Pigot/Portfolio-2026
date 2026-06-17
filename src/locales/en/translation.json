@@ -100,11 +100,6 @@
   },
   "skills": {
     "section_name": "skills",
-    "legend": {
-      "high": "Expertise",
-      "medium": "Proficient",
-      "low": "Fundamentals"
-    },
     "groups": {
       "frontend": "Front-end",
       "backend": "Back-end & database",
@@ -121,23 +116,17 @@
     },
     "current_position": "Present",
     "details": {
-      "credit_mutuel": {
-        "position": "Summer Assistant",
-        "company": "Crédit Mutuel"
-      },
-      "credit_mutuel_1": {
-        "description": "Marseille la Joliette branch.",
-        "tasks": "Sorting and moving the branch's physical archives.\\ Welcoming clients in person.\\ Data entry of corporate balance sheets to update client files."
-      },
       "fiducial_cloud": {
         "position": "Full-Stack Developer",
         "company": "Fiducial Cloud",
         "description": "Development of features for an open-source project management tool within a cloud infrastructure. Role as a full-stack developer to improve planning capabilities and data integration.",
         "tasks": "Improvement of the open-source project management tool's features.\\ Development and maintenance of the planning module using PHP.\\ Design of scripts for extracting and processing data from internal databases."
       },
-      "credit_mutuel_2": {
-        "description": "Mediterranean call center, where clients wishing to contact their advisor are redirected if they are unavailable.",
-        "tasks": "Collection of client identification information.\\ Identification of client needs and routing to the appropriate services.\\ Resolution of common problems related to accounts, bank cards, and other financial products.\\ Scheduling appointments for clients requiring branch assistance."
+      "credit_mutuel": {
+        "position": "Summer Assistant",
+        "company": "Crédit Mutuel",
+        "description": "Marseille la Joliette branch in July 2016. Mediterranean call center in 2018, 2019 and 2020.",
+        "tasks": "Sorting and moving the branch's physical archives.\\ Welcoming clients in person.\\ Data entry of corporate balance sheets to update client files.\\ Collection of client identification information.\\ Identification of client needs and routing to the appropriate services.\\ Resolution of common problems related to accounts, bank cards, and other financial products.\\ Scheduling appointments for clients requiring branch assistance."
       },
       "ipgr": {
         "position": "Unity 3D Developer",
@@ -147,15 +136,9 @@
       },
       "dassault_systemes": {
         "position": "Software Engineer",
-        "company": "Dassault Systèmes"
-      },
-      "dassault_systemes_1": {
-        "description": "Development of advanced interaction solutions for virtual reality environments within an industrial software platform. As a software engineer, the goal was to improve the user experience and the extensibility of the existing system.",
-        "tasks": "Design and specification of new interaction methods dedicated to virtual reality interfaces.\\ Development of robust software modules in C++ while respecting a clear and extensible software architecture.\\ Design and exposure of APIs allowing client developers to extend the infrastructure's features.\\ Integration within a team following the Agile Scrum methodology to ensure development tracking and incremental delivery."
-      },
-      "dassault_systemes_2": {
+        "company": "Dassault Systèmes",
         "description": "Development and maintenance of user interface components intended for internal technical teams, aiming to harmonize and optimize development tools.",
-        "tasks": "Design and implementation of user interface components based on specifications gathered from clients and UX teams.\\ Corrective and evolutive maintenance of existing components to ensure tool reliability and performance.\\ Writing technical documentation to facilitate the integration and use of components by other development teams.\\ Active participation in Agile Scrum methodology rituals to organize the development cycle and deliver features iteratively."
+        "tasks": "Design, specification and development of new interaction methods dedicated to virtual reality interfaces.\\ Design and implementation of user interface components based on specifications gathered from clients and UX teams.\\ Corrective and evolutive maintenance of existing components to ensure tool reliability and performance.\\ Writing technical documentation to facilitate the integration and use of components by other development teams.\\ Active participation in Agile Scrum methodology rituals to organize the development cycle and deliver features iteratively."
       }
     }
   },
