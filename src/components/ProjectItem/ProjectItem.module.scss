@@ -68,6 +68,11 @@
     .project-details {
       display: flex;
       justify-content: space-between;
+      align-items: start;
+
+      .project-link {
+        flex-shrink: 0;
+      }
     }
   }
 }
@@ -89,7 +94,7 @@
   }
 }
 
-@media (max-height: 500px) {
+@media (max-height: 500px) or (max-width: 500px){
   .project {
     .project-content {
       padding: 2rem;
