@@ -33,8 +33,9 @@
       right: -1px;
   }
 
-  & div {
+  & div, div a {
     border: none !important;
+    font-size: 12px !important;
 
     svg {
       stroke-width: 0.15rem;
@@ -43,7 +44,7 @@
   }
 
   &:hover {
-    div {
+    div, div a {
       fill: initial;
       stroke: initial;
       background-color: initial !important;  

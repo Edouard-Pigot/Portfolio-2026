@@ -16,6 +16,10 @@ i18n
   .init({
     resources,
     fallbackLng: "en",
+    detection: {
+      order: ['path', 'navigator'], 
+      lookupFromPathIndex: 0
+    },
     interpolation: {
       escapeValue: false
     }

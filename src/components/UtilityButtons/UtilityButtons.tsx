@@ -4,8 +4,11 @@ import Button from '@components/Button/Button';
 
 import { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link, useLocation } from 'react-router-dom';
 
 function UtilityButtons(props: React.HTMLAttributes<HTMLDivElement>) {
+
+  const location = useLocation();
 
   const { i18n, t } = useTranslation();
 
@@ -15,10 +18,6 @@ function UtilityButtons(props: React.HTMLAttributes<HTMLDivElement>) {
   const [theme, setTheme] = useState(() => {
     return document.documentElement.getAttribute('data-theme') || "light";
   });
-  const [language, setLanguage] = useState(i18n.language);
-
-  const [themeToggleAriaText, setThemeToggleAriaText] = useState("");
-  const [languageToggleAriaText, setLanguageToggleAriaText] = useState("");
 
   const applyTheme = useCallback((newTheme : string, save : boolean = false) => {
     document.documentElement.setAttribute("data-theme", newTheme);
@@ -29,18 +28,11 @@ function UtilityButtons(props: React.HTMLAttributes<HTMLDivElement>) {
     }
   }, []);
 
-  useEffect(() => {
-    const newThemeToggleAriaText = theme === "dark" 
-      ? t('theme.toggle_aria_light') 
-      : t('theme.toggle_aria_dark');
-
-    const newLanguageToggleAriaText = language === "en" 
-      ? t('language.toggle_aria_fr') 
-      : t('language.toggle_aria_en');
-
-    setThemeToggleAriaText(newThemeToggleAriaText);
-    setLanguageToggleAriaText(newLanguageToggleAriaText);
-  }, [theme, t, i18n.language]);
+  const getSwitchPath = (targetLang: string) => {
+    const segments = location.pathname.split('/');
+    segments[1] = targetLang;
+    return segments.join('/');
+  };
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -67,16 +59,10 @@ function UtilityButtons(props: React.HTMLAttributes<HTMLDivElement>) {
     applyTheme(switchToTheme, true);
   };
 
-  const toggleLanguage = () => {
-    const newLanguage = i18n.language === 'en' ? 'fr' : 'en';
-    i18n.changeLanguage(newLanguage);
-    setLanguage(newLanguage);
-  }
-
   return (
     <div id={props.id} className={styles["utilities"]}>
       <Button 
-        aria-label={themeToggleAriaText}
+        aria-label={theme === "dark" ? t('theme.toggle_aria_light') : t('theme.toggle_aria_dark')}
         onClick={toggleTheme}
         id={styles["theme-toggle"]}>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" height="17px" width="17px">
@@ -88,10 +74,11 @@ function UtilityButtons(props: React.HTMLAttributes<HTMLDivElement>) {
         </svg>
       </Button>
       <Button 
-        aria-label={languageToggleAriaText}
-        onClick={toggleLanguage}
+        aria-label={i18n.language === 'en' ? t('language.toggle_aria_fr') : t('language.toggle_aria_en')}
         id={styles["language-toggle"]}>
-        {i18n.language === 'en' ? 'fr' : 'en'}
+          <Link to={getSwitchPath(i18n.language === 'en' ? 'fr' : 'en')}>
+            {i18n.language === 'en' ? 'fr' : 'en'}
+          </Link>
       </Button>
     </div>
   );
