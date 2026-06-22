@@ -13,6 +13,7 @@ function ExperienceSection() {
     <div className={styles.experiences}>
       {[...experiences].reverse().map(experience => (
         <TimelineItem 
+          key={t(experience.companyName)}
           timelineDates={experience.periods} 
           location={experience.location} 
           title={t(experience.companyName)} 

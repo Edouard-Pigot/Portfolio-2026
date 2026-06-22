@@ -13,6 +13,7 @@ function EducationSection() {
     <div className={styles.education}>
       {[...education].reverse().map(school => (
         <TimelineItem 
+          key={t(school.diplomaName)}
           timelineDates={school.diplomaYear} 
           location={school.location} 
           title={t(school.diplomaName)} 

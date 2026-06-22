@@ -10,7 +10,7 @@
   height: calc(100vh - 51px - 40px);
   display: grid;
   grid-template-columns: 100px 1fr 100px;
-  grid-template-rows: 100px 1fr 100px;
+  grid-template-rows: 0 1fr 0;
   background: none;
   pointer-events: none;
 
@@ -25,7 +25,7 @@
     font-family: var(--font-kode);
 
     h1 {
-      font-size: 9vw;
+      font-size: min(9vw, 29vh);
       text-transform: uppercase;
       margin-left: -.5rem;
     }
@@ -35,7 +35,7 @@
       align-items: center;
       justify-content: start;
       gap: 2rem;
-      margin-bottom: 2vw;
+      margin-bottom: min(2vw, 5vh);
 
       span {
         width: 1rem;
@@ -50,7 +50,7 @@
     }
 
     h2 {
-      font-size: 3vw;
+      font-size: min(3vw, 9vh);
       color: var(--primary-color);
       text-transform: uppercase;
     }

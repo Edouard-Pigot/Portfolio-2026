@@ -14,7 +14,7 @@ export const skills: Skills[] = [
   },
   {
     category: "skills.groups.software",
-    skills: ['C++', 'Unity', 'C#', 'Java', 'Qt', 'Blender']
+    skills: ['C++', 'Unity', 'C#', 'Qt', 'Blender']
   },
   {
     category: "skills.groups.tools",
