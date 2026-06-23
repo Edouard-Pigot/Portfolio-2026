@@ -24,6 +24,10 @@ function PageLoader ({ isLoading, mainDecoratorRef }: Props) {
   useEffect(() => {
     const root = getComputedStyle(document.documentElement);
     const color = root.getPropertyValue('--highlight-color').trim() || '#000';
+
+    percentTl.current = gsap.timeline();
+    tl.current = gsap.timeline({ repeat: -1 });
+
     if (isLoading) {
       document.body.classList.add(styles['no-scroll']);
 
@@ -31,7 +35,6 @@ function PageLoader ({ isLoading, mainDecoratorRef }: Props) {
         const spans = progressRef.current.querySelectorAll('span');
 
         // PERCENT ANIMATION
-        percentTl.current = gsap.timeline();
         percentTl.current.to(
           { percent: 0 },
           {
@@ -44,7 +47,6 @@ function PageLoader ({ isLoading, mainDecoratorRef }: Props) {
         );
 
         // SQUARES ANIMATION
-        tl.current = gsap.timeline({ repeat: -1 });
         tl.current.to(spans, {
           backgroundColor: color,
           duration: 0.05,
@@ -57,7 +59,7 @@ function PageLoader ({ isLoading, mainDecoratorRef }: Props) {
         });
       }
     } else {
-      if (tl.current && progressRef.current) {
+      if (progressRef.current) {
         const spans = progressRef.current.querySelectorAll('span');
         const expandTimeline = gsap.timeline();
 

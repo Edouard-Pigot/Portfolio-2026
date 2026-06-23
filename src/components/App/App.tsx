@@ -46,11 +46,29 @@ function App() {
   const mainDecoratorRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (document.readyState === 'complete') {
+    const handleLoadComplete = () => {
+      console.log("loading complete") ;
       setIsLoading(false);
-    } else {
-      window.onload = () => setIsLoading(false);
     }
+    
+    // If page is already loaded, set immediately
+    if (document.readyState === 'complete') {
+      handleLoadComplete();
+      return;
+    }
+    
+    // Add both DOMContentLoaded and load listeners for reliability
+    window.addEventListener('load', handleLoadComplete);
+    window.addEventListener('DOMContentLoaded', handleLoadComplete);
+    
+    // Fallback timeout after 3 seconds
+    const timeout = setTimeout(handleLoadComplete, 3000);
+    
+    return () => {
+      window.removeEventListener('load', handleLoadComplete);
+      window.removeEventListener('DOMContentLoaded', handleLoadComplete);
+      clearTimeout(timeout);
+    };
   }, []);
 
   return (
