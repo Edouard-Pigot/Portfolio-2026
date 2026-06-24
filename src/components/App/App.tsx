@@ -71,7 +71,7 @@ function App() {
   }, []);
 
   return (
-    <HashRouter basename="/Portfolio-2026">
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Navigate to="/fr" replace />} />
         <Route path="/:lang" element={<LanguageWrapper />}>
