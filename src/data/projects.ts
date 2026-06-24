@@ -230,7 +230,8 @@ export const projects: Project[] = [
     dates: {start:{month: 1, year: 2026}, end:{month: 5, year: 2026}},
     description: "projects.details.portfolio_v3.description",
     techStack: ["React", "TypeScript", "Vite", "SASS", "ThreeJS", "GLSL", "GSAP", "i18next"],
-    media: [{ url: getMediaUrl(19, 1, 'webp'), type: 'image' }]
+    media: [{ url: getMediaUrl(19, 1, 'webp'), type: 'image' }],
+    link: "https://github.com/Edouard-Pigot/Portfolio-2026"
   },
   {
     id: 20,

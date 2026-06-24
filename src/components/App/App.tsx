@@ -3,7 +3,7 @@ import './App.module.scss';
 import MainDecorator from '@components/MainDecorator/MainDecorator';
 import PageLoader from '@components/PageLoader/PageLoader';
 
-import { BrowserRouter, Routes, Route, useParams, Navigate, Outlet } from 'react-router-dom';
+import { HashRouter, Routes, Route, useParams, Navigate, Outlet } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
@@ -47,7 +47,6 @@ function App() {
 
   useEffect(() => {
     const handleLoadComplete = () => {
-      console.log("loading complete") ;
       setIsLoading(false);
     }
     
@@ -72,7 +71,7 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter basename="/Portfolio-2026">
+    <HashRouter basename="/Portfolio-2026">
       <Routes>
         <Route path="/" element={<Navigate to="/fr" replace />} />
         <Route path="/:lang" element={<LanguageWrapper />}>
@@ -87,7 +86,7 @@ function App() {
         } />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 

@@ -32,7 +32,7 @@ function ProjectItem({ title, dates, description, techStack, media, link }: Proj
       ease: 'power1.out',
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: 'top 70%'
+        start: 'top 90%'
       }
     });
   }, {scope: sectionRef});
@@ -53,7 +53,6 @@ function ProjectItem({ title, dates, description, techStack, media, link }: Proj
       stringToDisplay = `${dates.start.year}-${dates.end.year}`;
     }
   }
-
 
   return (
     <div className={styles['project']} ref={sectionRef}>

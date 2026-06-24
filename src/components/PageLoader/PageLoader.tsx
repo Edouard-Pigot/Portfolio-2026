@@ -25,7 +25,9 @@ function PageLoader ({ isLoading, mainDecoratorRef }: Props) {
     const root = getComputedStyle(document.documentElement);
     const color = root.getPropertyValue('--highlight-color').trim() || '#000';
 
+    percentTl.current?.kill();
     percentTl.current = gsap.timeline();
+    tl.current?.kill();
     tl.current = gsap.timeline({ repeat: -1 });
 
     if (isLoading) {
@@ -71,10 +73,11 @@ function PageLoader ({ isLoading, mainDecoratorRef }: Props) {
         }
 
         // FINAL PERCENT ANIMATION
+        const currentPercent = percent;
         let timing = 0.0;
         timing += 0.5;
         percentTl.current?.to(
-          { percent: 90 },
+          { percent: currentPercent },
           {
             percent: 100,
             duration: timing,
