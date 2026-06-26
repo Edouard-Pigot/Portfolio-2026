@@ -14,14 +14,56 @@ function PageLoader ({ isLoading, mainDecoratorRef }: Props) {
 
   const { t } = useTranslation();
 
-  const wrapperRef = useRef<HTMLDivElement>(null);
   const progressRef = useRef<HTMLDivElement>(null);
   const loaderTextRef = useRef<HTMLDivElement>(null);
   const tl = useRef<gsap.core.Timeline | null>(null);
   const percentTl = useRef<gsap.core.Timeline | null>(null);
   const [percent, setPercent] = useState(0);
+  const [wasActivated, setWasActivated] = useState(false);
+  const threshold = 400;
+
+   const revealDecorators = () => {
+    if (!mainDecoratorRef?.current) return;
+    
+    const decoratorChildren = Array.from(mainDecoratorRef.current.children).filter(
+      (child): child is HTMLElement => child instanceof HTMLElement
+    );
+
+    const revealTimeline = gsap.timeline();
+    decoratorChildren.forEach((child: HTMLElement, index: number) => {
+      const delay = 0.25;
+      const blinkDuration = 0.05;
+      const start = index * delay;
+      revealTimeline.set(child, { visibility: 'visible' }, start);
+      revealTimeline.set(child, { visibility: 'hidden' }, start + blinkDuration);
+      revealTimeline.set(child, { visibility: 'visible' }, start + blinkDuration * 2);
+      document.body.classList.remove(styles['no-scroll']);
+    });
+  };
 
   useEffect(() => {
+  let timer: ReturnType<typeof setTimeout> | undefined = undefined;
+
+  if (isLoading) {
+    timer = setTimeout(() => {
+      setWasActivated(true);
+    }, threshold);
+  } else {
+    if (timer) clearTimeout(timer);
+    if (!wasActivated) {
+      revealDecorators();
+    }
+  }
+
+  return () => {
+    if (timer) clearTimeout(timer);
+  };
+}, [isLoading, threshold, wasActivated]);
+
+  useEffect(() => {
+
+    if (!wasActivated) return;
+
     const root = getComputedStyle(document.documentElement);
     const color = root.getPropertyValue('--highlight-color').trim() || '#000';
 
@@ -65,17 +107,11 @@ function PageLoader ({ isLoading, mainDecoratorRef }: Props) {
         const spans = progressRef.current.querySelectorAll('span');
         const expandTimeline = gsap.timeline();
 
-        let decoratorChildren: HTMLElement[] = [];
-        if (mainDecoratorRef?.current) {
-          decoratorChildren = Array.from(mainDecoratorRef.current.children).filter(
-            (child): child is HTMLElement => child instanceof HTMLElement
-          );
-        }
-
         // FINAL PERCENT ANIMATION
         const currentPercent = percent;
         let timing = 0.0;
         timing += 0.5;
+
         percentTl.current?.to(
           { percent: currentPercent },
           {
@@ -106,42 +142,31 @@ function PageLoader ({ isLoading, mainDecoratorRef }: Props) {
 
               // DECORATOR CHILDREN ANIMATION
               expandTimeline.call(() => {
-                const wrapper = wrapperRef.current;
-
-                if (wrapper) {
-                  wrapper.parentNode?.removeChild(wrapper);
-                }
-
-                const revealTimeline = gsap.timeline();
-
-                decoratorChildren.forEach((child : HTMLElement, index : number) => {
-                  const delay = 0.25;
-                  const blinkDuration = 0.15;
-                  const start = index * delay;
-                  revealTimeline.set(child, { visibility: 'visible' }, start);
-                  revealTimeline.set(child, { visibility: 'hidden' }, start + blinkDuration);
-                  revealTimeline.set(child, { visibility: 'visible' }, start + blinkDuration * 2);
-                  document.body.classList.remove(styles['no-scroll']);
-                });
+                revealDecorators();
+                setWasActivated(false);
               }, [], timing);
             }
           }
         );
       } else {
         document.body.classList.remove(styles['no-scroll']);
+        setWasActivated(false);
       }
     }
-  }, [isLoading]);
+  }, [isLoading, wasActivated]);
 
   useEffect(() => {
     return () => {
       tl.current?.kill();
+      percentTl.current?.kill();
       document.body.classList.remove(styles['no-scroll']);
     };
   }, []);
 
+  if (!wasActivated) return null;
+
   return (
-    <div className={styles['loader-wrapper']} ref={wrapperRef}>
+    <div className={styles['loader-wrapper']}>
       <div className={styles['loader-text']} ref={loaderTextRef}>
         <div className={styles["loader-title"]}>{t('loading.loading')}</div>
         <div className={styles["loader-percent"]}>
